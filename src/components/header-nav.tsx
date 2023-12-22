@@ -32,22 +32,20 @@ export function HeaderNav() {
   ];
 
   return (
-    <nav>
-      <NavigationMenu>
-        <NavigationMenuList>
-          {navs.map((nav) => (
-            <NavigationMenuItem key={nav.href}>
-              <Button
-                asChild
-                variant={"link"}
-                className={cn(isActive(nav.href) && "underline")}
-              >
-                <Link href={nav.href}>{nav.label}</Link>
-              </Button>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
-    </nav>
+    <NavigationMenu>
+      <NavigationMenuList>
+        {navs.map((nav) => (
+          <NavigationMenuItem key={nav.href}>
+            <Button
+              asChild
+              variant="link"
+              className={cn(isActive(nav.href) && "underline")}
+            >
+              <Link href={nav.href}>{nav.label}</Link>
+            </Button>
+          </NavigationMenuItem>
+        ))}
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 }
