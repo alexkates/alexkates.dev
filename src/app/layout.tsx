@@ -24,13 +24,13 @@ export default function RootLayout({ children }: Props) {
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "antialiased max-w-2xl mb-40 flex flex-col mx-4 mt-8 lg:mx-auto",
           fontSans.variable
         )}
       >
         <Providers>
           <Header />
-          {children}
+          <main>{children}</main>
         </Providers>
       </body>
     </html>
