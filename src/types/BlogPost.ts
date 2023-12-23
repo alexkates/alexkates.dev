@@ -1,7 +1,8 @@
-type PostNode = {
+type BlogPost = {
   id: string;
   slug: string;
   title: string;
   subtitle: string;
 };
-export default PostNode;
+
+export default BlogPost;
