@@ -6,6 +6,9 @@ import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
+import { Alert, AlertDescription } from "./ui/alert";
+import { Lightbulb } from "lucide-react";
+import "highlight.js/styles/github-dark-dimmed.min.css";
 
 const components: Components = {
   h1: ({ className, node: _n, ...props }) => (
@@ -94,6 +97,21 @@ const components: Components = {
         {children}
       </code>
     );
+  },
+  div: (props) => {
+    if (props.node?.properties.dataNodeType === "callout-emoji") {
+      return null;
+    }
+    if (props.node?.properties.dataNodeType === "callout-text") {
+      return (
+        <Alert className="my-8">
+          <Lightbulb />
+          <AlertDescription>{props.children}</AlertDescription>
+        </Alert>
+      );
+    }
+
+    return <div {...props} />;
   },
 };
 

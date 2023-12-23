@@ -11,6 +11,8 @@ export default async function fetchBlogPost(
         post(slug: "${slug}") {
           title
           subtitle
+          publishedAt
+          views
           content {
             html
             markdown

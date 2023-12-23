@@ -23,6 +23,9 @@ dependencies:
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
+  highlight.js:
+    specifier: ^11.9.0
+    version: 11.9.0
   lucide-react:
     specifier: ^0.299.0
     version: 0.299.0(react@18.2.0)
