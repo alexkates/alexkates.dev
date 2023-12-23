@@ -22,7 +22,12 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={cn("antialiased max-w-2xl mb-40 flex flex-col px-4 mt-4 mx-auto gap-4", fontSans.variable)}>
+      <body
+        className={cn(
+          "antialiased max-w-2xl mb-40 flex flex-col px-4 mt-4 mx-auto gap-4",
+          fontSans.variable,
+        )}
+      >
         <Providers>
           <Header />
           <main>{children}</main>

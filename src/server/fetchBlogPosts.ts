@@ -1,6 +1,10 @@
 import BlogPost from "@/types/BlogPost";
 
-export default async function fetchBlogPosts(username = "thealexkates", pageSize = 20, page = 1): Promise<BlogPost[]> {
+export default async function fetchBlogPosts(
+  username = "thealexkates",
+  pageSize = 20,
+  page = 1,
+): Promise<BlogPost[]> {
   const endpoint = "https://gql.hashnode.com/";
   const query = {
     query: `{
