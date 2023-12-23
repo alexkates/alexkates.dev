@@ -8,6 +8,11 @@ type BlogPost = {
   coverImage: {
     url: string;
   };
+  content: {
+    html: string;
+    markdown: string;
+    text: string;
+  };
 };
 
 export default BlogPost;
