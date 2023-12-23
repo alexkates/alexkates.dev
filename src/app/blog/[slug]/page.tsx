@@ -1,14 +1,25 @@
 import fetchBlogPost from "@/server/fetchBlogPost";
+import "./page.css";
+import { Mdx } from "@/components/mdx";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const {
-    content: { html },
+    title,
+    subtitle,
+    content: { markdown },
   } = await fetchBlogPost("alexkates.dev", params.slug);
 
   return (
-    <article
-      className="flex flex-col gap-4"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <section>
+      <span className="flex flex-col mb-8">
+        <h1 className="text-3xl font-bold">{title}</h1>
+        <h2>{subtitle}</h2>
+      </span>
+      <article>
+        <Mdx
+          code={(markdown ?? "").replace(/align=\"(left|right|center)\"/g, "")}
+        />
+      </article>
+    </section>
   );
 }

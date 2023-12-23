@@ -9,8 +9,11 @@ export default async function fetchBlogPost(
     query: `{
       publication(host: "${host}") {
         post(slug: "${slug}") {
+          title
+          subtitle
           content {
             html
+            markdown
           }
         }
       }
