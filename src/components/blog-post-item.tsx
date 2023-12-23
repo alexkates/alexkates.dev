@@ -1,5 +1,5 @@
 import BlogPost from "@/types/BlogPost";
-import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   post: BlogPost;
@@ -7,12 +7,18 @@ type Props = {
 
 export default function BlogPostItem({ post }: Props) {
   return (
-    <li>
-      <Link href={`https://alexkates.dev/${post.slug}`} target="_blank">
-        {post.title}
-      </Link>
-      <div className="text-muted-foreground">
-        {post.views.toLocaleString()} views
+    <li className="flex flex-col items-center">
+      <div className="flex flex-col items-center">
+        <Image
+          width={250}
+          height={150}
+          alt={post.title}
+          src={post.coverImage.url}
+        />
+        <div className="flex justify-between w-full text-xs text-muted-foreground">
+          <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+          <span>{post.views.toLocaleString()} views</span>
+        </div>
       </div>
     </li>
   );

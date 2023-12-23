@@ -22,6 +22,10 @@ export default async function fetchBlogPosts(
                           slug
                           title
                           subtitle
+                          coverImage {
+                            url
+                          }
+                          publishedAt
                           views
                         }
                     }

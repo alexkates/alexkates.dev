@@ -4,6 +4,10 @@ type BlogPost = {
   title: string;
   subtitle: string;
   views: number;
+  publishedAt: string;
+  coverImage: {
+    url: string;
+  };
 };
 
 export default BlogPost;
