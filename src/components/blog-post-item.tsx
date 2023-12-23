@@ -10,12 +10,12 @@ export default function BlogPostItem({ post }: Props) {
     <li className="flex flex-col items-center">
       <div className="flex flex-col items-center">
         <Image
-          width={250}
+          width={500}
           height={150}
           alt={post.title}
           src={post.coverImage.url}
         />
-        <div className="flex justify-between w-full text-xs text-muted-foreground">
+        <div className="flex justify-between w-full text-sm ">
           <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
           <span>{post.views.toLocaleString()} views</span>
         </div>

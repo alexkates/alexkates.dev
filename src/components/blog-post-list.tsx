@@ -7,7 +7,7 @@ type Props = {
 
 function BlogPostList({ posts }: Props) {
   return (
-    <ul className="grid grid-cols-2 gap-6">
+    <ul className="grid sm:grid-cols-2 gap-6">
       {posts.map((post) => (
         <BlogPostItem key={post.id} post={post} />
       ))}

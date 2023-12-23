@@ -24,7 +24,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="en">
       <body
         className={cn(
-          "antialiased max-w-2xl mb-40 flex flex-col mx-4 mt-8 lg:mx-auto",
+          "antialiased max-w-2xl mb-40 flex flex-col px-4 mt-4 mx-auto gap-4",
           fontSans.variable
         )}
       >
