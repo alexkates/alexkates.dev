@@ -5,5 +5,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
     content: { html },
   } = await fetchBlogPost("alexkates.dev", params.slug);
 
-  return <article dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <article
+      className="flex flex-col gap-4"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 }
