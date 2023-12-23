@@ -3,6 +3,7 @@ type BlogPost = {
   slug: string;
   title: string;
   subtitle: string;
+  views: number;
 };
 
 export default BlogPost;

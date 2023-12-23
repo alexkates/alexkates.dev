@@ -22,6 +22,7 @@ export default async function fetchBlogPosts(
                           slug
                           title
                           subtitle
+                          views
                         }
                     }
                 }

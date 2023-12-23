@@ -11,6 +11,9 @@ export default function BlogPostItem({ post }: Props) {
       <Link href={`https://alexkates.dev/${post.slug}`} target="_blank">
         {post.title}
       </Link>
+      <div className="text-muted-foreground">
+        {post.views.toLocaleString()} views
+      </div>
     </li>
   );
 }

@@ -6,9 +6,7 @@ export default async function Home() {
 
   return (
     <main>
-      <section>
-        <BlogPostList posts={posts} />
-      </section>
+      <BlogPostList posts={posts} />
     </main>
   );
 }

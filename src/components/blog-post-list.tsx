@@ -7,7 +7,7 @@ type Props = {
 
 function BlogPostList({ posts }: Props) {
   return (
-    <ul>
+    <ul className="space-y-2">
       {posts.map((post) => (
         <BlogPostItem key={post.id} post={post} />
       ))}
