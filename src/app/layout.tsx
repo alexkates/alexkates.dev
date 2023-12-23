@@ -1,9 +1,9 @@
+import Header from "@/components/header";
+import Providers from "@/components/providers";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import Header from "@/components/header";
-import Providers from "@/components/providers";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,12 +22,7 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "antialiased max-w-2xl mb-40 flex flex-col px-4 mt-4 mx-auto gap-4",
-          fontSans.variable
-        )}
-      >
+      <body className={cn("antialiased max-w-2xl mb-40 flex flex-col px-4 mt-4 mx-auto gap-4", fontSans.variable)}>
         <Providers>
           <Header />
           <main>{children}</main>
