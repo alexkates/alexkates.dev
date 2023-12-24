@@ -37,11 +37,12 @@ const components: Components = {
     <h6 className={cn("text-base font-semibold", className)} {...props} />
   ),
   a: ({ className, href, node, target, ref, ...props }) => {
-    if (
-      typeof node?.properties.href === "string" &&
-      node?.properties.href.includes("twitter.com")
-    ) {
-      const tweetId = node?.properties.href.split("/").pop();
+    const tweetMatch = (node?.properties?.href as string)?.match(
+      /twitter\.com\/\w+\/status\/(\d+)/
+    );
+
+    if (typeof node?.properties.href === "string" && tweetMatch) {
+      const tweetId = tweetMatch[1];
 
       if (!tweetId) return null;
 
