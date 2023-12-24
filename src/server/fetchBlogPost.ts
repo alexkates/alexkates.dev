@@ -1,13 +1,10 @@
 import BlogPost from "@/types/BlogPost";
 
-export default async function fetchBlogPost(
-  host = "alexkates.dev",
-  slug: string
-): Promise<BlogPost> {
+export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
   const endpoint = "https://gql.hashnode.com/";
   const query = {
     query: `{
-      publication(host: "${host}") {
+      publication(id: "610c80b2528eff11aea86afd") {
         post(slug: "${slug}") {
           title
           subtitle

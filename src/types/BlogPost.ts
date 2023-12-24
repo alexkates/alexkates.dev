@@ -13,7 +13,7 @@ type BlogPost = {
     markdown: string;
     text: string;
   };
-  seo: {
+  seo?: {
     title: string;
     description: string;
   };

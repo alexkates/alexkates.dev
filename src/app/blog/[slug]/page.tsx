@@ -1,15 +1,41 @@
 import fetchBlogPost from "@/server/fetchBlogPost";
-import "./page.css";
 import { Mdx } from "@/components/mdx";
+import { Metadata } from "next/types";
 
-export default async function Page({ params }: { params: { slug: string } }) {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export async function generateMetadata({ params }: Props) {
+  const post = await fetchBlogPost(params.slug);
+  const title = post.seo?.title || post.title;
+  const description = post.seo?.description || post.subtitle || post.title;
+  const siteName = "https://alexkates.dev";
+  const url = `${siteName}/blog/${params.slug}`;
+
+  const metadata: Metadata = {
+    title,
+    description,
+    openGraph: {
+      type: "article",
+      siteName,
+      url,
+    },
+  };
+
+  return metadata;
+}
+
+export default async function Page({ params }: Props) {
   const {
     title,
     subtitle,
     publishedAt,
     views,
     content: { markdown },
-  } = await fetchBlogPost("alexkates.dev", params.slug);
+  } = await fetchBlogPost(params.slug);
 
   return (
     <section>
