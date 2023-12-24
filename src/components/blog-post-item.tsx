@@ -18,7 +18,7 @@ export default function BlogPostItem({ post }: Props) {
             src={post.coverImage.url}
             className="rounded-lg"
           />
-          <div className="flex justify-between w-full text-sm ">
+          <div className="flex justify-between w-full text-xs">
             <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
             <span>{post.views.toLocaleString()} views</span>
           </div>
