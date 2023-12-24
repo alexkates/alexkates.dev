@@ -36,11 +36,7 @@ const components: Components = {
   h6: ({ className, node: _n, ...props }) => (
     <h6 className={cn("text-base font-semibold", className)} {...props} />
   ),
-  a: ({ className, href, node, ref, ...props }) => {
-    // { "type": "text", "value": "https://www.youtube.com/watch?v=FnmZhXWohP0" }
-    // { "type": "element", "tagName": "a", "properties": { "href": "https://twitter.com/mattpocockuk/status/1699507864895738143" }
-
-    // if node.properties.href is a string and includes twitter.com then extract the tweet id
+  a: ({ className, href, node, target, ref, ...props }) => {
     if (
       typeof node?.properties.href === "string" &&
       node?.properties.href.includes("twitter.com")
@@ -52,10 +48,28 @@ const components: Components = {
       return <Tweet id={tweetId} />;
     }
 
+    if (
+      typeof node?.properties.href === "string" &&
+      node?.properties.href.includes("youtube.com")
+    ) {
+      const youtubeId = new URL(node?.properties.href).searchParams.get("v");
+
+      if (!youtubeId) return null;
+
+      return (
+        <iframe
+          src={`https://www.youtube.com/embed/${youtubeId}`}
+          allowFullScreen
+          className="w-full h-96"
+        />
+      );
+    }
+
     return (
       <Link
         className={cn("underline underline-offset-4", className)}
         href={href ?? ""}
+        target={target ?? "_blank"}
         {...props}
       />
     );
@@ -63,23 +77,14 @@ const components: Components = {
   strong: ({ className, node: _n, ...props }) => (
     <strong className={cn("font-bold", className)} {...props} />
   ),
-  p: (props) => {
-    // if (node?.properties?.text === "%[") return null;
-    // return <p>{JSON.stringify(node, null, 2)}</p>;
-
-    // console.log(props.node);
-
-    return <p className={cn("my-4", props.className)} {...props} />;
-  },
+  p: (props) => <p className={cn("my-4", props.className)} {...props} />,
   ul: ({ className, node: _n, ...props }) => (
     <ul className={cn("ml-6 list-disc", className)} {...props} />
   ),
   ol: ({ className, node: _n, ...props }) => (
     <ol className={cn("ml-6 list-decimal", className)} {...props} />
   ),
-  li: ({ className, node: _n, ...props }) => (
-    <li className={cn("mt-2", className)} {...props} />
-  ),
+  li: (props) => <li className={cn("mt-2", props.className)} {...props} />,
   blockquote: ({ className, node: _n, ...props }) => (
     <blockquote
       className={cn("my-3 border-l-2 pl-6 italic", className)}
@@ -151,9 +156,12 @@ export function Mdx({ code, baseUri }: MdxProps) {
     return baseUri ? `${baseUri}${href}` : href;
   };
 
-  const transformEmbeds = (code: string) => {
-    return code.replace(/%\[(.*?)\]/g, "$1");
-  };
+  const transformEmbeds = (code: string) => code.replace(/%\[(.*?)\]/g, "$1");
+
+  const removeAligns = (code: string) =>
+    code.replace(/align=\"(left|right|center)\"/g, "");
+
+  const sanatize = (code: string) => removeAligns(transformEmbeds(code));
 
   return (
     <ReactMarkdown
@@ -169,7 +177,7 @@ export function Mdx({ code, baseUri }: MdxProps) {
       urlTransform={transformLink}
       className="mdx"
     >
-      {transformEmbeds(code)}
+      {sanatize(code)}
     </ReactMarkdown>
   );
 }

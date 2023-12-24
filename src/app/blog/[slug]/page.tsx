@@ -21,9 +21,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </h3>
       </span>
       <article>
-        <Mdx
-          code={(markdown ?? "").replace(/align=\"(left|right|center)\"/g, "")}
-        />
+        <Mdx code={markdown} />
       </article>
     </section>
   );
