@@ -18,6 +18,9 @@ export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
             title
             description
           }
+          coverImage{
+            url
+          }
         }
       }
     }`,

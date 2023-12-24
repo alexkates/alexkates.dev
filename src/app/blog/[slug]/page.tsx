@@ -14,14 +14,28 @@ export async function generateMetadata({ params }: Props) {
   const description = post.seo?.description || post.subtitle || post.title;
   const siteName = "https://alexkates.dev";
   const url = `${siteName}/blog/${params.slug}`;
+  const images = post.coverImage.url;
 
   const metadata: Metadata = {
+    alternates: {
+      canonical: url,
+    },
     title,
     description,
     openGraph: {
+      title,
+      description,
       type: "article",
       siteName,
       url,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images,
+      creator: "@thealexkates",
     },
   };
 
