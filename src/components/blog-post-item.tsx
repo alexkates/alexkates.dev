@@ -9,7 +9,7 @@ type Props = {
 export default function BlogPostItem({ post }: Props) {
   return (
     <li className="flex flex-col items-center">
-      <div className="flex flex-col items-center border border-transparent hover:border-primary p-2 rounded-lg transition ease-in-out duration-300">
+      <div className="flex flex-col items-center hover:scale-105 p-2 rounded-lg transition-transform ease-in-out duration-300">
         <Link href={`/blog/${post.slug}`}>
           <Image
             width={500}
