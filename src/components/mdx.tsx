@@ -9,6 +9,7 @@ import rehypeHighlight from "rehype-highlight";
 import { Alert, AlertDescription } from "./ui/alert";
 import { Lightbulb } from "lucide-react";
 import "highlight.js/styles/github-dark-dimmed.min.css";
+import { Tweet } from "react-tweet";
 
 const components: Components = {
   h1: ({ className, node: _n, ...props }) => (
@@ -35,19 +36,41 @@ const components: Components = {
   h6: ({ className, node: _n, ...props }) => (
     <h6 className={cn("text-base font-semibold", className)} {...props} />
   ),
-  a: ({ className, href, node: _n, ref, ...props }) => (
-    <Link
-      className={cn("underline underline-offset-4", className)}
-      href={href ?? ""}
-      {...props}
-    />
-  ),
+  a: ({ className, href, node, ref, ...props }) => {
+    // { "type": "text", "value": "https://www.youtube.com/watch?v=FnmZhXWohP0" }
+    // { "type": "element", "tagName": "a", "properties": { "href": "https://twitter.com/mattpocockuk/status/1699507864895738143" }
+
+    // if node.properties.href is a string and includes twitter.com then extract the tweet id
+    if (
+      typeof node?.properties.href === "string" &&
+      node?.properties.href.includes("twitter.com")
+    ) {
+      const tweetId = node?.properties.href.split("/").pop();
+
+      if (!tweetId) return null;
+
+      return <Tweet id={tweetId} />;
+    }
+
+    return (
+      <Link
+        className={cn("underline underline-offset-4", className)}
+        href={href ?? ""}
+        {...props}
+      />
+    );
+  },
   strong: ({ className, node: _n, ...props }) => (
     <strong className={cn("font-bold", className)} {...props} />
   ),
-  p: ({ className, node: _n, ...props }) => (
-    <p className={cn("my-4", className)} {...props} />
-  ),
+  p: (props) => {
+    // if (node?.properties?.text === "%[") return null;
+    // return <p>{JSON.stringify(node, null, 2)}</p>;
+
+    // console.log(props.node);
+
+    return <p className={cn("my-4", props.className)} {...props} />;
+  },
   ul: ({ className, node: _n, ...props }) => (
     <ul className={cn("ml-6 list-disc", className)} {...props} />
   ),
@@ -128,6 +151,10 @@ export function Mdx({ code, baseUri }: MdxProps) {
     return baseUri ? `${baseUri}${href}` : href;
   };
 
+  const transformEmbeds = (code: string) => {
+    return code.replace(/%\[(.*?)\]/g, "$1");
+  };
+
   return (
     <ReactMarkdown
       components={components}
@@ -142,7 +169,7 @@ export function Mdx({ code, baseUri }: MdxProps) {
       urlTransform={transformLink}
       className="mdx"
     >
-      {code}
+      {transformEmbeds(code)}
     </ReactMarkdown>
   );
 }
