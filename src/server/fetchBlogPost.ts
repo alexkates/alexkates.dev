@@ -17,6 +17,10 @@ export default async function fetchBlogPost(
             html
             markdown
           }
+          seo {
+            title
+            description
+          }
         }
       }
     }`,

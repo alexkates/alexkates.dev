@@ -13,6 +13,10 @@ type BlogPost = {
     markdown: string;
     text: string;
   };
+  seo: {
+    title: string;
+    description: string;
+  };
 };
 
 export default BlogPost;
