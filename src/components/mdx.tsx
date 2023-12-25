@@ -1,15 +1,15 @@
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import "highlight.js/styles/github-dark-dimmed.min.css";
+import { Lightbulb } from "lucide-react";
+import Link from "next/link";
 import ReactMarkdown, { Components } from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeSlug from "rehype-slug";
-import rehypeRaw from "rehype-raw";
+import { Tweet } from "react-tweet";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import { Alert, AlertDescription } from "./ui/alert";
-import { Lightbulb } from "lucide-react";
-import "highlight.js/styles/github-dark-dimmed.min.css";
-import { Tweet } from "react-tweet";
 
 const components: Components = {
   h1: ({ className, node: _n, ...props }) => <h1 className={cn("mb-4 mt-6 text-3xl font-bold", className)} {...props} />,

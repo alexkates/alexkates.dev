@@ -1,7 +1,7 @@
 "use client";
 
 import Cookies from "js-cookie";
-import { useEffect, useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 type Props = {

@@ -1,7 +1,7 @@
-import fetchBlogPost from "@/server/fetchBlogPost";
-import { Mdx } from "@/components/mdx";
-import { Metadata } from "next/types";
 import Analytics from "@/components/analytics";
+import { Mdx } from "@/components/mdx";
+import fetchBlogPost from "@/server/fetchBlogPost";
+import { Metadata } from "next/types";
 
 type Props = {
   params: {
