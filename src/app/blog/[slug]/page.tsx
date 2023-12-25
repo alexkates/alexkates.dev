@@ -44,20 +44,20 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function Page({ params }: Props) {
   const {
-    title,
-    subtitle,
     publishedAt,
+    readTimeInMinutes,
+    title,
     views,
     content: { markdown },
   } = await fetchBlogPost(params.slug);
 
   return (
     <section>
-      <span className="flex flex-col mb-8">
+      <span className="flex flex-col mb-8 gap-1">
         <h1 className="text-3xl font-bold">{title}</h1>
-        <h2>{subtitle}</h2>
-        <h3 className="text-sm font-light">
-          {new Date(publishedAt).toLocaleDateString()} • {views} views
+        <h3 className="text-xs font-light">
+          {new Date(publishedAt).toLocaleDateString()} • {views} views •{" "}
+          {readTimeInMinutes} min read
         </h3>
       </span>
       <article>

@@ -9,9 +9,9 @@ export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
           title
           subtitle
           publishedAt
+          readTimeInMinutes
           views
           content {
-            html
             markdown
           }
           seo {
@@ -63,5 +63,5 @@ interface Post {
 }
 
 interface Content {
-  html: string;
+  markdown: string;
 }

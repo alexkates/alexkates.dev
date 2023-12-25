@@ -1,17 +1,16 @@
 type BlogPost = {
   id: string;
-  slug: string;
-  title: string;
-  subtitle: string;
-  views: number;
   publishedAt: string;
+  readTimeInMinutes: number;
+  slug: string;
+  subtitle: string;
+  title: string;
+  views: number;
   coverImage: {
     url: string;
   };
   content: {
-    html: string;
     markdown: string;
-    text: string;
   };
   seo?: {
     title: string;
