@@ -30,7 +30,9 @@ export function HeaderNav() {
       <NavigationMenuList className="gap-4">
         {navs.map((nav) => (
           <NavigationMenuItem key={nav.href}>
-              <Link href={nav.href} className={cn(isActive(nav.href) && "underline")}>{nav.label}</Link>
+            <Link href={nav.href} className={cn(isActive(nav.href) && "underline")}>
+              {nav.label}
+            </Link>
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
