@@ -5,7 +5,6 @@ import Link from "next/link";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { Button } from "./ui/button";
 
 export function HeaderNav() {
   const pathname = usePathname();
@@ -28,12 +27,10 @@ export function HeaderNav() {
 
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className="gap-4">
         {navs.map((nav) => (
           <NavigationMenuItem key={nav.href}>
-            <Button asChild variant="link" className={cn(isActive(nav.href) && "underline")}>
-              <Link href={nav.href}>{nav.label}</Link>
-            </Button>
+              <Link href={nav.href} className={cn(isActive(nav.href) && "underline")}>{nav.label}</Link>
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
