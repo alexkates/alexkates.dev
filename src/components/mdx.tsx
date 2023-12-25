@@ -128,17 +128,15 @@ const components: Components = {
     );
   },
   div: (props) => {
-    if (props.node?.properties.dataNodeType === "callout-emoji") {
-      return null;
-    }
-    if (props.node?.properties.dataNodeType === "callout-text") {
+    if (props.node?.properties.dataNodeType === "callout-emoji") return null;
+
+    if (props.node?.properties.dataNodeType === "callout-text")
       return (
         <Alert className="my-8">
           <Lightbulb />
           <AlertDescription>{props.children}</AlertDescription>
         </Alert>
       );
-    }
 
     return <div {...props} />;
   },
