@@ -6,6 +6,7 @@ export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
     query: `{
       publication(id: "610c80b2528eff11aea86afd") {
         post(slug: "${slug}") {
+          id
           title
           subtitle
           publishedAt
@@ -20,6 +21,9 @@ export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
           }
           coverImage{
             url
+          }
+          publication {
+            id
           }
         }
       }

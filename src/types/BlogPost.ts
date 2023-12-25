@@ -16,6 +16,9 @@ type BlogPost = {
     title: string;
     description: string;
   };
+  publication: {
+    id: string;
+  };
 };
 
 export default BlogPost;

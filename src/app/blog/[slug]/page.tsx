@@ -1,6 +1,7 @@
 import fetchBlogPost from "@/server/fetchBlogPost";
 import { Mdx } from "@/components/mdx";
 import { Metadata } from "next/types";
+import Analytics from "@/components/analytics";
 
 type Props = {
   params: {
@@ -48,6 +49,8 @@ export default async function Page({ params }: Props) {
     readTimeInMinutes,
     title,
     views,
+    id: postId,
+    publication: { id: publicationId },
     content: { markdown },
   } = await fetchBlogPost(params.slug);
 
@@ -63,6 +66,7 @@ export default async function Page({ params }: Props) {
       <article>
         <Mdx code={markdown} />
       </article>
+      <Analytics postId={postId} publicationId={publicationId} />
     </section>
   );
 }
