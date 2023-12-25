@@ -6,12 +6,7 @@ type Props = {
 
 function Providers({ children }: Props) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
       {children}
     </ThemeProvider>
   );

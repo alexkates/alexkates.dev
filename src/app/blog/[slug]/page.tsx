@@ -56,11 +56,10 @@ export default async function Page({ params }: Props) {
 
   return (
     <section>
-      <span className="flex flex-col mb-8 gap-1">
+      <span className="mb-8 flex flex-col gap-1">
         <h1 className="text-3xl font-bold">{title}</h1>
         <h3 className="text-xs font-light">
-          {new Date(publishedAt).toLocaleDateString()} • {views} views •{" "}
-          {readTimeInMinutes} min read
+          {new Date(publishedAt).toLocaleDateString()} • {views} views • {readTimeInMinutes} min read
         </h3>
       </span>
       <article>

@@ -47,13 +47,7 @@ export default function Analytics({ publicationId, postId }: Props) {
   const sendViewsToHashnodeAnalyticsDashboard = useCallback(async () => {
     const LOCATION = window.location;
     const NAVIGATOR = window.navigator;
-    const currentFullURL =
-      LOCATION.protocol +
-      "//" +
-      LOCATION.hostname +
-      LOCATION.pathname +
-      LOCATION.search +
-      LOCATION.hash;
+    const currentFullURL = LOCATION.protocol + "//" + LOCATION.hostname + LOCATION.pathname + LOCATION.search + LOCATION.hash;
 
     const query = new URL(currentFullURL).searchParams;
 
@@ -102,10 +96,7 @@ export default function Analytics({ publicationId, postId }: Props) {
   useEffect(() => {
     sendViewsToHashnodeInternalAnalytics();
     sendViewsToHashnodeAnalyticsDashboard();
-  }, [
-    sendViewsToHashnodeInternalAnalytics,
-    sendViewsToHashnodeAnalyticsDashboard,
-  ]);
+  }, [sendViewsToHashnodeInternalAnalytics, sendViewsToHashnodeAnalyticsDashboard]);
 
   return null;
 }
