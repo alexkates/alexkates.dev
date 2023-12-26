@@ -1,28 +1,16 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { CalendarIcon, EyeIcon } from "lucide-react";
+import { SortTypes } from "@/types/SortTypes";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useDebouncedCallback } from "use-debounce";
 import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-
-type Props = {};
+import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
 function Sort() {
   const { replace } = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const handleSort = useDebouncedCallback((sort: string) => {
+  const handleSortType = (sort: string) => {
     const params = new URLSearchParams(searchParams);
 
     if (sort) {
@@ -32,24 +20,17 @@ function Sort() {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  }, 300);
-
-  const sort = searchParams.get("sort")?.toString();
+  };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={"outline"} size={"icon"}>
-          <CalendarIcon className={cn(sort === "published date" || !sort ? "block" : "hidden")} />
-          <EyeIcon className={cn(sort === "views" ? "block" : "hidden")} />
-        </Button>
+        <Button variant={"link"}>Sort by</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>Sort By</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={searchParams.get("sort")?.toString()} onValueChange={handleSort}>
-          <DropdownMenuRadioItem value="published date">Published Date</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="views">Views</DropdownMenuRadioItem>
+        <DropdownMenuRadioGroup value={searchParams.get("sort")?.toString()} onValueChange={handleSortType}>
+          <DropdownMenuRadioItem value={SortTypes.Date}>Date</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value={SortTypes.Views}>Views</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

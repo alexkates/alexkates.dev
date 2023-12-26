@@ -10,12 +10,10 @@ export default async function Page({
   searchParams?: {
     query?: string;
     sort?: string;
-    direction?: string;
   };
 }) {
   const query = searchParams?.query || "";
   const sort = searchParams?.sort || "date";
-  const direction = searchParams?.direction || "desc";
   const posts = await fetchBlogPosts();
 
   return (
@@ -25,7 +23,7 @@ export default async function Page({
         <Sort />
       </section>
       <Suspense key={query} fallback={"Loading..."}>
-        <BlogPostList posts={posts} query={query} sort={sort} direction={direction} />
+        <BlogPostList posts={posts} query={query} sort={sort} />
       </Suspense>
     </main>
   );

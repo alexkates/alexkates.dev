@@ -1,27 +1,19 @@
 import BlogPost from "@/types/BlogPost";
+import { SortTypes } from "@/types/SortTypes";
 import BlogPostItem from "./blog-post-item";
 
 type Props = {
   posts: BlogPost[];
   query: string;
   sort: string;
-  direction: string;
 };
 
-function BlogPostList({ posts, query, sort, direction }: Props) {
+function BlogPostList({ posts, query, sort }: Props) {
   const sortedPosts = posts.sort((a, b) => {
-    if (sort === "published date") {
-      if (direction === "asc") {
-        return new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
-      } else if (direction === "desc") {
-        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-      }
-    } else if (sort === "views") {
-      if (direction === "asc") {
-        return a.views - b.views;
-      } else if (direction === "desc") {
-        return b.views - a.views;
-      }
+    if (sort === SortTypes.Date) {
+      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    } else if (sort === SortTypes.Views) {
+      return b.views - a.views;
     }
 
     return 0;
