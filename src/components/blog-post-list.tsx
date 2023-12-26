@@ -10,7 +10,7 @@ type Props = {
 
 function BlogPostList({ posts, query, sort, direction }: Props) {
   const sortedPosts = posts.sort((a, b) => {
-    if (sort === "data") {
+    if (sort === "published date") {
       if (direction === "asc") {
         return new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
       } else if (direction === "desc") {
@@ -28,7 +28,7 @@ function BlogPostList({ posts, query, sort, direction }: Props) {
   });
 
   return (
-    <ul className="grid gap-4 sm:grid-cols-2">
+    <ul className="grid gap-4 grid-cols-2 md:grid-cols-3">
       {sortedPosts
         .filter((post) => post.content.text?.toLowerCase().includes(query?.toLowerCase()))
         .map((post) => (
