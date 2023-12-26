@@ -17,14 +17,16 @@ export default async function Page({
   const posts = await fetchBlogPosts();
 
   return (
-    <main className="flex flex-col gap-y-2">
+    <main className="flex flex-col gap-y-4">
       <section className="flex gap-x-2">
         <Search placeholder="Search blog posts..." />
         <Sort />
       </section>
-      <Suspense key={query} fallback={"Loading..."}>
-        <BlogPostList posts={posts} query={query} sort={sort} />
-      </Suspense>
+      <section>
+        <Suspense key={query} fallback={"Loading..."}>
+          <BlogPostList posts={posts} query={query} sort={sort} />
+        </Suspense>
+      </section>
     </main>
   );
 }
