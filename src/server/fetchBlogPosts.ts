@@ -23,6 +23,9 @@ export default async function fetchBlogPosts(username = "thealexkates", pageSize
                           }
                           publishedAt
                           views
+                          content {
+                            text
+                          }
                         }
                     }
                 }

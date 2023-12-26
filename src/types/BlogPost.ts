@@ -11,6 +11,7 @@ type BlogPost = {
   };
   content: {
     markdown: string;
+    text: string;
   };
   seo?: {
     title: string;

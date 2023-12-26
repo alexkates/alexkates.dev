@@ -3,14 +3,17 @@ import BlogPostItem from "./blog-post-item";
 
 type Props = {
   posts: BlogPost[];
+  query: string;
 };
 
-function BlogPostList({ posts }: Props) {
+function BlogPostList({ posts, query }: Props) {
   return (
     <ul className="grid gap-4 sm:grid-cols-2">
-      {posts.map((post) => (
-        <BlogPostItem key={post.id} post={post} />
-      ))}
+      {posts
+        .filter((post) => post.content.text?.toLowerCase().includes(query?.toLowerCase()))
+        .map((post) => (
+          <BlogPostItem key={post.id} post={post} />
+        ))}
     </ul>
   );
 }
