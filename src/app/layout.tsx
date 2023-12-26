@@ -23,11 +23,13 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("mx-auto mb-40 mt-4 flex max-w-2xl flex-col gap-4 px-4 antialiased", fontSans.variable)}>
-        <Providers>
-          <Header />
-          <main>{children}</main>
-        </Providers>
+      <body>
+        <div className={cn("container", fontSans.variable)}>
+          <Providers>
+            <Header />
+            <main>{children}</main>
+          </Providers>
+        </div>
       </body>
     </html>
   );
