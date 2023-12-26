@@ -16,7 +16,7 @@ export function HeaderNav() {
       label: "home",
     },
     {
-      href: "/blog",
+      href: "/blog?sort=published date&direction=desc",
       label: "blog",
     },
     {

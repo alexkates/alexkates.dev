@@ -1,6 +1,7 @@
 "use client";
 
-import { SortAsc } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { CalendarIcon, EyeIcon } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { Button } from "./ui/button";
@@ -33,11 +34,14 @@ function Sort() {
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
+  const sort = searchParams.get("sort")?.toString();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant={"outline"} size={"icon"}>
-          <SortAsc className="w-5 h-5" />
+          <CalendarIcon className={cn(sort === "published date" || !sort ? "block" : "hidden")} />
+          <EyeIcon className={cn(sort === "views" ? "block" : "hidden")} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
