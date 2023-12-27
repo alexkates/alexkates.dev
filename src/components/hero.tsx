@@ -5,7 +5,7 @@ export default function Hero() {
     <>
       <div className={"flex flex-row items-center text-2xl"}>
         <span className="mr-1 animate-wave animation-delay-1000">👋</span>
-        <h1 className="font-medium tracking-tighter">Hi, I&apos;m Alex.</h1>
+        <span className="font-medium">Hi, I&apos;m Alex.</span>
       </div>
       <p className="prose prose-neutral dark:prose-invert">
         I&apos;m a{" "}
