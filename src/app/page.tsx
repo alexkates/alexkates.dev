@@ -2,14 +2,22 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="flex flex-col gap-4">
-      <h1 className="text-xl font-semibold tracking-tight">Hello, world! I&apos;m Alex. 👋</h1>
+    <section className="flex flex-col">
+      <h2 className="">About me</h2>
       <p>
-        I&apos;m a software developer, pragmatic minimalist, and lifelong learner. I currently working at{" "}
+        I&apos;m a{" "}
+        <Link className="underline" href="https://leerob.io/blog/product-engineers?ref=alexkates.dev">
+          product engineer
+        </Link>{" "}
+        and{" "}
+        <Link className="underline" href="https://ammar-hakim.org/sj/pn/pn0/pn0-minimalism.html?ref=alexkates.dev">
+          software minimalist
+        </Link>{" "}
+        currently working at{" "}
         <Link className="underline" href="https://croissant.com?ref=alexkates.dev">
           Croissant
         </Link>{" "}
-        as the Director of Engineering.
+        as Director of Engineering.
       </p>
     </section>
   );
