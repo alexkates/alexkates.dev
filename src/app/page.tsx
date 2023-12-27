@@ -3,18 +3,21 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section className="flex flex-col">
-      <h2>About me</h2>
-      <p>
+      <div className="flex flex-row items-center text-2xl">
+        <span className="mr-1 animate-wave">👋</span>
+        <h1 className="font-medium tracking-tighter">Hi, I&apos;m Alex.</h1>
+      </div>
+      <p className="prose prose-neutral dark:prose-invert">
         I&apos;m a{" "}
-        <Link className="underline" href="https://leerob.io/blog/product-engineers?ref=alexkates.dev">
+        <Link href="https://leerob.io/blog/product-engineers" target="_blank">
           product engineer
         </Link>{" "}
         and{" "}
-        <Link className="underline" href="https://ammar-hakim.org/sj/pn/pn0/pn0-minimalism.html?ref=alexkates.dev">
+        <Link href="https://ammar-hakim.org/sj/pn/pn0/pn0-minimalism.html" target="_blank">
           software minimalist
         </Link>{" "}
         currently working at{" "}
-        <Link className="underline" href="https://croissant.com?ref=alexkates.dev">
+        <Link href="https://croissant.com?utm_source=alexkates.dev" target="_blank">
           Croissant
         </Link>{" "}
         as Director of Engineering.

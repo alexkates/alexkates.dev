@@ -7,7 +7,7 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "800px",
+        "2xl": "700px",
       },
     },
     extend: {
@@ -60,12 +60,23 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        wave: {
+          "0%": { transform: "rotate(0.0deg)" },
+          "15%": { transform: "rotate(14.0deg)" },
+          "30%": { transform: "rotate(-8.0deg)" },
+          "40%": { transform: "rotate(14.0deg)" },
+          "50%": { transform: "rotate(-4.0deg)" },
+          "60%": { transform: "rotate(10.0deg)" },
+          "70%": { transform: "rotate(0.0deg)" },
+          "100%": { transform: "rotate(0.0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        wave: "wave 2s ease-in-out infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
