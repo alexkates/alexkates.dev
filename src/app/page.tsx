@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section className="flex flex-col">
-      <h2 className="">About me</h2>
+      <h2>About me</h2>
       <p>
         I&apos;m a{" "}
         <Link className="underline" href="https://leerob.io/blog/product-engineers?ref=alexkates.dev">
