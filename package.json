@@ -50,6 +50,7 @@
     "prettier-plugin-tailwindcss": "^0.5.9",
     "tailwindcss": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-animation-delay": "^1.2.0",
     "typescript": "^5"
   }
 }
