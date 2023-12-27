@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section className="flex flex-col">
-      <div className="flex flex-row items-center text-2xl">
+      <div className="flex flex-row items-center text-2xl animate-in fade-in duration-300 delay-1000">
         <span className="mr-1 animate-wave">👋</span>
         <h1 className="font-medium tracking-tighter">Hi, I&apos;m Alex.</h1>
       </div>
