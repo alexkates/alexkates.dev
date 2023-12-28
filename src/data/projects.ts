@@ -20,8 +20,8 @@ const Projects: Project[] = [
     url: "https://fitgpt.xyz",
     image: {
       src: "/fitgpt.png",
-      width: 876,
-      height: 432,
+      width: 1080,
+      height: 567,
     },
   },
   {
@@ -41,8 +41,8 @@ const Projects: Project[] = [
     description: "Collaborate with your team using ChatGPT. Supercharge your team's ChatGPT experience with TeamGPT.",
     image: {
       src: "/teamgpt.png",
-      width: 876,
-      height: 438,
+      width: 1080,
+      height: 567,
     },
   },
 ];
