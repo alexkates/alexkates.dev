@@ -1,4 +1,4 @@
-export type Project = {
+type Project = {
   name: string;
   description: string;
   url: string;
@@ -9,3 +9,5 @@ export type Project = {
     height: number;
   };
 };
+
+export default Project;

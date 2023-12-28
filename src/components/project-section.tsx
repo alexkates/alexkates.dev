@@ -1,4 +1,5 @@
-import ProjectCarousel from "./project-carousel";
+import projects from "@/data/projects";
+import ProjectList from "./project-list";
 
 function ProjectSection() {
   return (
@@ -6,7 +7,7 @@ function ProjectSection() {
       <div className="flex items-center text-xl w-full">
         <span className="font-medium">Work I&apos;m proud of</span>
       </div>
-      <ProjectCarousel />
+      <ProjectList projects={projects} />
     </div>
   );
 }
