@@ -14,8 +14,7 @@ const Projects: Project[] = [
   },
   {
     name: "FitGPT",
-    description:
-      "Never worry about what workout to do again! Say goodbye to the days of scrolling through Instagram for workout inspiration. FitGPT is your AI-powered fitness coach that will help you achieve your fitness goals",
+    description: "Never worry about what workout to do again! Say goodbye to the days of scrolling through Instagram for workout inspiration.",
 
     url: "https://fitgpt.xyz",
     image: {
