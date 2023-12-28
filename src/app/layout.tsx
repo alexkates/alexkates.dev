@@ -24,7 +24,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <div className={cn("container pt-8", fontSans.variable)}>
+        <div className={cn("container pt-2 ", fontSans.variable)}>
           <Providers>
             <Header />
             <main>{children}</main>
