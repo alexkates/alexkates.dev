@@ -1,17 +1,18 @@
 "use client";
 
-import { Project } from "@/types/Project";
+import Image from "next/image";
 
-type Props = {
-  projects: Project[];
-};
-
-function ProjectList({ projects }: Props) {
+function ProjectList() {
   return (
     <div className="mt-8 flex flex-col">
-      <div className="flex flex-row items-center text-xl">
-        <span className="mr-1 animate-spin">💼</span>
+      <div className="flex items-center text-xl">
         <span className="font-medium">Work I&apos;m proud of</span>
+      </div>
+      <div className="">
+        <Image src="/croissant-share.png" alt="Croissant Chrome Extension" width={1080} height={567} />
+        <Image src="/fitgpt.png" alt="FitGPT" width={876} height={432} />
+        <Image src="/supajournal.png" alt="Supajournal" width={1080} height={567} />
+        <Image src="/teamgpt.png" alt="TeamGPT" width={876} height={438} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <>
-      <div className={"flex flex-row items-center text-2xl"}>
+      <div className={"flex items-center text-xl"}>
         <span className="mr-1 animate-wave animation-delay-1000">👋</span>
         <span className="font-medium">Hi, I&apos;m Alex.</span>
       </div>
