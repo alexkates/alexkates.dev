@@ -7,7 +7,7 @@ type Props = {
 
 function ProjectList({ projects }: Props) {
   return (
-    <ul className="grid gap-4 grid-cols-1 md:grid-cols-2">
+    <ul className="grid gap-8 grid-cols-1 md:grid-cols-2">
       {projects.map((project) => (
         <ProjectItem key={project.name} project={project} />
       ))}

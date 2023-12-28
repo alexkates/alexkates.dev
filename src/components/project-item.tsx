@@ -12,7 +12,7 @@ export default function ProjectItem({ project }: Props) {
 
   return (
     <li className={cn("flex flex-col items-center rounded-lg", fadeIn)}>
-      <div className="transition-transform duration-300 ease-in-out hover:scale-105">
+      <div className="transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col gap-1">
         <Link href={project.url} target="_blank">
           <Image alt={project.name} src={project.image.src} className="rounded-lg" width={1200} height={630} />
         </Link>
