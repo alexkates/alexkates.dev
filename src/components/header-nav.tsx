@@ -20,6 +20,10 @@ export function HeaderNav() {
       href: `/blog?sort=${SortTypes.Date}`,
       label: "blog",
     },
+    {
+      href: "/chess",
+      label: "chess",
+    },
   ];
 
   return (
