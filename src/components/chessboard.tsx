@@ -1,6 +1,5 @@
 "use client";
 
-import { createClient } from "@supabase/supabase-js";
 import { Chess } from "chess.js";
 import dynamic from "next/dynamic";
 import { useState } from "react";
@@ -9,17 +8,9 @@ const ChessboardJSX = dynamic(() => import("chessboardjsx"), {
   ssr: false,
 });
 
-type ChessMove = {
-  from: string;
-  to: string;
-  promotion?: string;
-};
-
 function Chessboard() {
   const [chess] = useState(new Chess("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"));
   const [fen, setFen] = useState(chess.fen());
-
-  const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
 
   const handleMove = (move: { sourceSquare: string; targetSquare: string; piece: string }) => {
     try {
