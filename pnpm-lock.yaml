@@ -20,6 +20,9 @@ dependencies:
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.45)(react@18.2.0)
+  chess.js:
+    specifier: 1.0.0-beta.7
+    version: 1.0.0-beta.7
   chessboardjsx:
     specifier: ^2.4.7
     version: 2.4.7(react-dom@18.2.0)(react@18.2.0)
@@ -85,6 +88,9 @@ devDependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.4.0)
+  '@types/chess.js':
+    specifier: ^0.13.7
+    version: 0.13.7
   '@types/js-cookie':
     specifier: ^3.0.6
     version: 3.0.6
@@ -994,6 +1000,10 @@ packages:
       tailwindcss: 3.4.0
     dev: true
 
+  /@types/chess.js@0.13.7:
+    resolution: {integrity: sha512-o9TeeBdFXelFJXOD9+6sT6bbpBvWG0ZbpOnlIyUNXBjewh7xoFS0+BifGc71T45D5E952io3i8dDsaN6hnLaxw==}
+    dev: true
+
   /@types/debug@4.1.12:
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
     dependencies:
@@ -1440,6 +1450,10 @@ packages:
 
   /character-reference-invalid@2.0.1:
     resolution: {integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==}
+    dev: false
+
+  /chess.js@1.0.0-beta.7:
+    resolution: {integrity: sha512-2qG/f3M9Lil/hBey2uoJy9zhNr1BWIXZngRUJFt7j1QqS5Y5Ywq8Rd3l7ZBCbyJjhsLhxTcVhv6xy7BfjC19Dw==}
     dev: false
 
   /chessboardjsx@2.4.7(react-dom@18.2.0)(react@18.2.0):
