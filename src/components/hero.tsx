@@ -7,7 +7,7 @@ export default function Hero() {
         <span className="mr-1 animate-wave animation-delay-1000">👋</span>
         <span className="font-medium">Hi, I&apos;m Alex.</span>
       </div>
-      <p className="text-gray-700 dark:text-gray-300">
+      <p className="prose prose-neutral dark:prose-invert">
         I&apos;m a{" "}
         <Link href="https://leerob.io/blog/product-engineers" target="_blank" className="underline">
           product engineer
