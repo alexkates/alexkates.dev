@@ -46,18 +46,22 @@ function Auth() {
     setEmail(undefined);
   }
 
-  if (email) {
-    return (
-      <div className="flex items-center text-sm">
-        <span>Welcome, {email}</span>
-        <Button variant={"link"} onClick={signOut}>
-          Sign out
+  return (
+    <div className="flex items-center text-sm">
+      {email ? (
+        <>
+          <span>Welcome, {email}</span>
+          <Button variant={"link"} onClick={signOut}>
+            Sign out
+          </Button>
+        </>
+      ) : (
+        <Button variant={"outline"} onClick={signIn}>
+          Sign in
         </Button>
-      </div>
-    );
-  }
-
-  return <Button onClick={signIn}>Sign in</Button>;
+      )}
+    </div>
+  );
 }
 
 export default Auth;

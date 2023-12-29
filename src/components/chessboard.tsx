@@ -8,12 +8,16 @@ const ChessboardJSX = dynamic(() => import("chessboardjsx"), {
   ssr: false,
 });
 
-function Chessboard() {
+function Chessboard({ userId }: { userId?: string }) {
   const [chess] = useState(new Chess("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"));
   const [fen, setFen] = useState(chess.fen());
 
   const handleMove = (move: { sourceSquare: string; targetSquare: string; piece: string }) => {
     try {
+      if (!userId) {
+        throw new Error("Not logged in");
+      }
+
       if (
         chess.move({
           from: move.sourceSquare,
@@ -24,7 +28,7 @@ function Chessboard() {
         setFen(chess.fen());
       }
     } catch (error) {
-      // If the move is illegal, return the piece to its original square
+      console.log(error);
     }
   };
 
