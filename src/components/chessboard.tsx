@@ -32,7 +32,7 @@ function Chessboard({ userId }: { userId?: string }) {
     }
   };
 
-  const calcWidth = ({ screenWidth, screenHeight }: { screenWidth: number; screenHeight: number }) => Math.min(screenWidth, screenHeight) * 0.8;
+  const calcWidth = ({ screenWidth, screenHeight }: { screenWidth: number; screenHeight: number }) => Math.min(screenWidth, screenHeight) * 0.7;
   return <ChessboardJSX position={fen} calcWidth={calcWidth} onDrop={handleMove} />;
 }
 

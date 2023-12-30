@@ -1,27 +1,38 @@
-"use client";
-
-import { createBrowserClient } from "@supabase/ssr";
-import { useEffect, useState } from "react";
+import { createServerClient } from "@/lib/supabase";
+import { Github } from "lucide-react";
+import { redirect } from "next/navigation";
 import { Button } from "./ui/button";
 
-function Auth() {
-  const [email, setEmail] = useState<string | undefined>();
-  useEffect(() => {
-    async function init() {
-      const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+function Auth({ userId }: { userId?: string }) {
+  async function signOut() {
+    "use server";
+    const supabase = createServerClient();
 
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      setEmail(user?.email);
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      console.log(error);
     }
 
-    init();
-  }, []);
+    return redirect("/chess");
+  }
+
+  if (userId) {
+    return (
+      <form action={signOut}>
+        <Button type="submit" variant={"link"}>
+          Sign out
+        </Button>
+      </form>
+    );
+  }
 
   async function signIn() {
-    const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-    const { error } = await supabase.auth.signInWithOAuth({
+    "use server";
+    console.log("sign in");
+    const supabase = createServerClient();
+
+    const { error, data } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
         redirectTo: "http://localhost:3000/auth/callback?next=/chess",
@@ -29,38 +40,21 @@ function Auth() {
     });
 
     if (error) {
-      console.error(error);
-      return;
-    }
-  }
-
-  async function signOut() {
-    const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-    const { error } = await supabase.auth.signOut();
-
-    if (error) {
-      console.error(error);
-      return;
+      console.log(error);
     }
 
-    setEmail(undefined);
+    console.log(data.url);
+
+    return redirect(data.url!);
   }
 
   return (
-    <div className="flex items-center text-sm">
-      {email ? (
-        <>
-          <span>Welcome, {email}</span>
-          <Button variant={"link"} onClick={signOut}>
-            Sign out
-          </Button>
-        </>
-      ) : (
-        <Button variant={"outline"} onClick={signIn}>
-          Sign in
-        </Button>
-      )}
-    </div>
+    <form action={signIn}>
+      <Button type="submit" variant={"outline"}>
+        <Github className="mr-2 w-4 h-4" />
+        Sign in with GitHub
+      </Button>
+    </form>
   );
 }
 

@@ -1,5 +1,4 @@
 import Auth from "@/components/auth";
-import Chessboard from "@/components/chessboard";
 import { createServerClient } from "@/lib/supabase";
 
 async function Page() {
@@ -11,10 +10,10 @@ async function Page() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex w-full justify-start">
-        <Auth />
-      </div>
-      <Chessboard userId={user?.id} />
+      <Auth userId={user?.id} />
+      {/* <div className="flex w-full justify-center mt-4">
+        <Chessboard userId={user?.id} />
+      </div> */}
     </div>
   );
 }
