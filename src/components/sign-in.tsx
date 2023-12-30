@@ -10,7 +10,7 @@ export default function SignIn() {
     const { error, data } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "http://localhost:3000/auth/callback?next=/chess",
+        redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback?next=/chess`,
       },
     });
 
