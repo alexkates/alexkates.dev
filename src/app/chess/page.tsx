@@ -1,4 +1,6 @@
-import Auth from "@/components/auth";
+import Chessboard from "@/components/chessboard";
+import SignIn from "@/components/sign-in";
+import SignOut from "@/components/sign-out";
 import { createServerClient } from "@/lib/supabase";
 
 async function Page() {
@@ -9,12 +11,16 @@ async function Page() {
   } = await supabase.auth.getUser();
 
   return (
-    <Auth userId={user?.id} />
-    // <div className="flex flex-col items-center">
-    //   <div className="flex w-full justify-center mt-4">
-    //     <Chessboard userId={user?.id} />
-    //   </div>
-    // </div>
+    <div className="flex flex-col items-center">
+      {!user ? (
+        <SignIn />
+      ) : (
+        <>
+          <SignOut />
+          <Chessboard userId={user.id} />
+        </>
+      )}
+    </div>
   );
 }
 
