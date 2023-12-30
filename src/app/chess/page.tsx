@@ -1,7 +1,7 @@
 import Chessboard from "@/components/chessboard";
 import SignIn from "@/components/sign-in";
 import SignOut from "@/components/sign-out";
-import createServerClient from "@/lib/createSupabaseServerClient";
+import { createServerClient } from "@/lib/createSupabaseServerClient";
 
 async function Page() {
   const supabase = createServerClient();
@@ -17,7 +17,7 @@ async function Page() {
       ) : (
         <>
           <SignOut />
-          <Chessboard userId={user.id} />
+          <Chessboard />
         </>
       )}
     </div>
