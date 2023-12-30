@@ -1,11 +1,11 @@
-import createServerClient from "@/lib/createSupabaseServerClient";
+import { createServerActionClient } from "@/lib/createSupabaseServerClient";
 import { redirect } from "next/navigation";
 import { Button } from "./ui/button";
 
 export default function SignIn() {
   async function signIn() {
     "use server";
-    const supabase = createServerClient();
+    const supabase = createServerActionClient();
 
     const { error, data } = await supabase.auth.signInWithOAuth({
       provider: "github",
@@ -17,8 +17,6 @@ export default function SignIn() {
     if (error) {
       console.log(error);
     }
-
-    new Promise((resolve) => setTimeout(resolve, 10000));
 
     redirect(data.url!);
   }

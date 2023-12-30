@@ -1,11 +1,11 @@
-import createServerClient from "@/lib/createSupabaseServerClient";
+import { createServerActionClient } from "@/lib/createSupabaseServerClient";
 import { redirect } from "next/navigation";
 import { Button } from "./ui/button";
 
 export default function SignOut() {
   async function signOut() {
     "use server";
-    const supabase = createServerClient();
+    const supabase = createServerActionClient();
 
     const { error } = await supabase.auth.signOut();
 
