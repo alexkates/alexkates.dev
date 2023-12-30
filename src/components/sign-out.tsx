@@ -13,7 +13,7 @@ export default function SignOut() {
       console.log(error);
     }
 
-    return redirect("/chess");
+    redirect("/chess");
   }
 
   return (

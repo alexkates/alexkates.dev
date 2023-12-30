@@ -36,19 +36,19 @@ export interface Database {
     Tables: {
       ChessGames: {
         Row: {
+          active: boolean
           createdAt: string
           id: string
-          isFinished: boolean
         }
         Insert: {
+          active?: boolean
           createdAt?: string
           id?: string
-          isFinished?: boolean
         }
         Update: {
+          active?: boolean
           createdAt?: string
           id?: string
-          isFinished?: boolean
         }
         Relationships: []
       }
