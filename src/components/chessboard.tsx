@@ -1,5 +1,6 @@
 "use client";
 
+import createBrowserClient from "@/lib/createSupabaseBrowserClient";
 import { Chess } from "chess.js";
 import dynamic from "next/dynamic";
 import { useState } from "react";
@@ -13,6 +14,7 @@ function Chessboard({ userId }: { userId?: string }) {
   const [fen, setFen] = useState(chess.fen());
 
   const handleMove = (move: { sourceSquare: string; targetSquare: string; piece: string }) => {
+    const supabase = createBrowserClient();
     try {
       if (!userId) {
         throw new Error("Not logged in");
