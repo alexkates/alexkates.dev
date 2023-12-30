@@ -1,5 +1,4 @@
 import { createServerClient } from "@/lib/supabase";
-import { Github } from "lucide-react";
 import { redirect } from "next/navigation";
 import { Button } from "./ui/button";
 
@@ -29,7 +28,6 @@ function Auth({ userId }: { userId?: string }) {
 
   async function signIn() {
     "use server";
-    console.log("sign in");
     const supabase = createServerClient();
 
     const { error, data } = await supabase.auth.signInWithOAuth({
@@ -43,17 +41,14 @@ function Auth({ userId }: { userId?: string }) {
       console.log(error);
     }
 
-    console.log(data.url);
+    new Promise((resolve) => setTimeout(resolve, 10000));
 
-    return redirect(data.url!);
+    redirect(data.url!);
   }
 
   return (
     <form action={signIn}>
-      <Button type="submit" variant={"outline"}>
-        <Github className="mr-2 w-4 h-4" />
-        Sign in with GitHub
-      </Button>
+      <button type="submit">Sign in with GitHub</button>
     </form>
   );
 }

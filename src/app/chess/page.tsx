@@ -9,12 +9,12 @@ async function Page() {
   } = await supabase.auth.getUser();
 
   return (
-    <div className="flex flex-col items-center">
-      <Auth userId={user?.id} />
-      {/* <div className="flex w-full justify-center mt-4">
-        <Chessboard userId={user?.id} />
-      </div> */}
-    </div>
+    <Auth userId={user?.id} />
+    // <div className="flex flex-col items-center">
+    //   <div className="flex w-full justify-center mt-4">
+    //     <Chessboard userId={user?.id} />
+    //   </div>
+    // </div>
   );
 }
 
