@@ -1,4 +1,4 @@
-import Project from "@/types/Project";
+import Project from "@/types/project";
 import ProjectItem from "./project-item";
 
 type Props = {

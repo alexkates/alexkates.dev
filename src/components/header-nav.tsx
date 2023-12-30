@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { SortTypes } from "@/types/SortTypes";
+import { SortTypes } from "@/types/sort-types";
 import { usePathname } from "next/navigation";
 
 export function HeaderNav() {

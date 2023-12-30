@@ -1,4 +1,4 @@
-import BlogPost from "@/types/BlogPost";
+import BlogPost from "@/types/blog-post";
 
 export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
   const endpoint = "https://gql.hashnode.com/";

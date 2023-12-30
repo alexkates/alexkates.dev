@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Project from "@/types/Project";
+import Project from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 

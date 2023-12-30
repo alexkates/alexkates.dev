@@ -1,5 +1,5 @@
-import BlogPost from "@/types/BlogPost";
-import { SortTypes } from "@/types/SortTypes";
+import BlogPost from "@/types/blog-post";
+import { SortTypes } from "@/types/sort-types";
 import BlogPostItem from "./blog-post-item";
 
 type Props = {

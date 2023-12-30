@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import BlogPost from "@/types/BlogPost";
+import BlogPost from "@/types/blog-post";
 import Image from "next/image";
 import Link from "next/link";
 
