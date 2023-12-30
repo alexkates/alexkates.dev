@@ -1,7 +1,7 @@
 import Chessboard from "@/components/chessboard";
 import SignIn from "@/components/sign-in";
 import SignOut from "@/components/sign-out";
-import { createServerClient } from "@/lib/supabase";
+import createServerClient from "../../../supabase/createServerClient";
 
 async function Page() {
   const supabase = createServerClient();

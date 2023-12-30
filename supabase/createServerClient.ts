@@ -1,7 +1,7 @@
 import { CookieOptions, createServerClient as ssr } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
-export function createServerClient() {
+export default function createServerClient() {
   const cookieStore = cookies();
 
   const supabase = ssr(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
