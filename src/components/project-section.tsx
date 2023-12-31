@@ -4,7 +4,9 @@ import ProjectList from "./project-list";
 function ProjectSection() {
   return (
     <div className="mt-8 flex flex-col gap-2">
-      <p className="prose prose-neutral dark:prose-invert">Here are some of the projects I&apos;ve worked on.</p>
+      <section className="prose prose-neutral dark:prose-invert">
+        <p>I&apos;m passionate about building new products. Here are a few I&apos;ve been a part of recently.</p>
+      </section>
       <ProjectList projects={projects} />
     </div>
   );

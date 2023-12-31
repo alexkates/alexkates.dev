@@ -14,8 +14,7 @@ const Projects: Project[] = [
   },
   {
     name: "FitGPT",
-    description: "Never worry about what workout to do again! Say goodbye to the days of scrolling through Instagram for workout inspiration.",
-
+    description: "FitGPT is an AI-powered personal trainer that generates custom workout and meal plans.",
     url: "https://fitgpt.xyz",
     image: {
       src: "/fitgpt.png",
@@ -25,8 +24,7 @@ const Projects: Project[] = [
   },
   {
     name: "Supajournal",
-    description:
-      "Build that journaling habit once and for all. Supajournal is a journaling app powered by Supabase and OpenAI that helps you reflect, write, and grow.",
+    description: "Supajournal is a journaling app that uses AI to help you reflect on your day and improve your mental health.",
     url: "https://supajournal.app",
     image: {
       src: "/supajournal.png",
@@ -37,7 +35,7 @@ const Projects: Project[] = [
   {
     name: "TeamGPT",
     url: "https://teamgpt.app",
-    description: "Collaborate with your team using ChatGPT. Supercharge your team's ChatGPT experience with TeamGPT.",
+    description: "TeamGPT is a productivity app that uses AI to help you and your team co-author ChatGPT conversations.",
     image: {
       src: "/teamgpt.png",
       width: 1080,
