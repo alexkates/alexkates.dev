@@ -1,36 +1,35 @@
 import BlogPost from "@/types/blog-post";
 
-export default async function fetchBlogPosts(username = "thealexkates", pageSize = 20, page = 1): Promise<BlogPost[]> {
+export default async function fetchBlogPosts(first = 20, after = ""): Promise<BlogPost[]> {
+  const publicationId = process.env.HASHNODE_PUBLICATION_ID;
   const endpoint = "https://gql.hashnode.com/";
   const query = {
     query: `{
-            user(username: "${username}") {
-                posts(pageSize: ${pageSize}, page: ${page}) {
-                    pageInfo {
-                        hasNextPage
-                        hasPreviousPage
-                        previousPage
-                        nextPage
-                    }
-                    edges {
-                        node {
-                          id
-                          slug
-                          title
-                          subtitle
-                          coverImage {
-                            url
-                          }
-                          publishedAt
-                          views
-                          content {
-                            text
-                          }
-                        }
-                    }
-                }
-            }
-        }`,
+  publication(id: "${publicationId}") {
+    posts(first: ${first}, after: "${after}") {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          id
+          slug
+          title
+          subtitle
+          coverImage {
+            url
+          }
+          publishedAt
+          views
+          content {
+            text
+          }
+        }
+      }
+    }
+  }
+}`,
   };
 
   try {
@@ -43,14 +42,14 @@ export default async function fetchBlogPosts(username = "thealexkates", pageSize
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status} ${await response.text()}`);
     }
 
     const { data } = (await response.json()) as {
       data: FetchBlogPostsData;
     };
 
-    return data.user.posts.edges.map((e) => e.node);
+    return data.publication.posts.edges.map((e) => e.node);
   } catch (error) {
     console.error("Error fetching user posts:", error);
     throw error;
@@ -58,10 +57,10 @@ export default async function fetchBlogPosts(username = "thealexkates", pageSize
 }
 
 type FetchBlogPostsData = {
-  user: User;
+  publication: Publication;
 };
 
-type User = {
+type Publication = {
   posts: Posts;
 };
 
@@ -75,8 +74,6 @@ type Edge = {
 };
 
 type PageInfo = {
-  hasNextPage: boolean;
-  hasPreviousPage: boolean;
-  previousPage?: any;
-  nextPage: number;
+  first: number;
+  after: string;
 };
