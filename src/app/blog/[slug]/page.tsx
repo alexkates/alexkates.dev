@@ -13,8 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const post = await fetchBlogPost(params.slug);
   const title = post.seo?.title || post.title;
   const description = post.seo?.description || post.subtitle || post.title;
-  const siteName = "https://alexkates.dev";
-  const url = `${siteName}/blog/${params.slug}`;
+  const url = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${params.slug}`;
   const images = post.coverImage.url;
 
   const metadata: Metadata = {
@@ -27,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
       title,
       description,
       type: "article",
-      siteName,
+      siteName: "Alex Kates | Blog",
       url,
       images,
     },
