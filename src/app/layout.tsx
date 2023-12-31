@@ -10,11 +10,14 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-export const metadata: Metadata = {
-  title: "Alex Kates",
-  description: "I talk about building things on the web.",
-  metadataBase: new URL("https://alexkates.dev"),
-};
+export async function generateMetadata(): Promise<Metadata> {
+  console.log(process.env.NEXT_PUBLIC_SITE_URL!);
+  return {
+    title: "Alex Kates",
+    description: "Build the thing.",
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+  };
+}
 
 type Props = {
   children: React.ReactNode;

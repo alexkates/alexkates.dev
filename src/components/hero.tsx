@@ -12,10 +12,6 @@ export default function Hero() {
         <Link href="https://leerob.io/blog/product-engineers" target="_blank" className="underline">
           product engineer
         </Link>{" "}
-        and{" "}
-        <Link href="https://ammar-hakim.org/sj/pn/pn0/pn0-minimalism.html" target="_blank" className="underline">
-          software minimalist
-        </Link>{" "}
         currently working at{" "}
         <Link href="https://croissant.com?utm_source=alexkates.dev" target="_blank" className="underline">
           Croissant
