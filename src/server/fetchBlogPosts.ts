@@ -1,6 +1,13 @@
 import BlogPost from "@/types/blog-post";
+import BlogPostsPage from "@/types/blog-posts-page";
+import PageInfo from "@/types/page-info";
 
-export default async function fetchBlogPosts(first = 20, after = ""): Promise<BlogPost[]> {
+type Props = {
+  first?: number;
+  after?: string;
+};
+
+export default async function fetchBlogPosts({ first = 20, after = "" }: Props = {}): Promise<BlogPostsPage> {
   const publicationId = process.env.HASHNODE_PUBLICATION_ID;
   const endpoint = "https://gql.hashnode.com/";
   const query = {
@@ -49,7 +56,10 @@ export default async function fetchBlogPosts(first = 20, after = ""): Promise<Bl
       data: FetchBlogPostsData;
     };
 
-    return data.publication.posts.edges.map((e) => e.node);
+    return {
+      blogPosts: data.publication.posts.edges.map((e) => e.node),
+      pageInfo: data.publication.posts.pageInfo,
+    };
   } catch (error) {
     console.error("Error fetching user posts:", error);
     throw error;
@@ -71,9 +81,4 @@ type Posts = {
 
 type Edge = {
   node: BlogPost;
-};
-
-type PageInfo = {
-  first: number;
-  after: string;
 };

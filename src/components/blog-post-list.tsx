@@ -20,7 +20,7 @@ function BlogPostList({ posts, query, sort }: Props) {
   });
 
   return (
-    <ul className="grid gap-4 grid-cols-2 md:grid-cols-3">
+    <ul className="grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grd-cols-3">
       {sortedPosts
         .filter((post) => post.content.text?.toLowerCase().includes(query?.toLowerCase()))
         .map((post) => (
