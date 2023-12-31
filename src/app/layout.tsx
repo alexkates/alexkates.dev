@@ -11,7 +11,6 @@ const fontSans = FontSans({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  console.log(process.env.NEXT_PUBLIC_SITE_URL!);
   return {
     title: "Alex Kates",
     description: "Build the thing.",
