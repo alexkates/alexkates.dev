@@ -15,6 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Alex Kates",
     description: "Build the thing.",
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+    openGraph: {
+      url: process.env.NEXT_PUBLIC_SITE_URL,
+    },
   };
 }
 
