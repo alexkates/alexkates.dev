@@ -13,6 +13,17 @@ const Projects: Project[] = [
     },
   },
   {
+    name: "Croissant iOS App",
+    description:
+      "The Croissant iOS App is your hub for Guaranteed Buybacks™. It's like a savings account, for your physical goods. Keep track of your Collection value and collect cash on the spot.",
+    url: "https://apps.apple.com/us/app/croissant/id1662287582",
+    image: {
+      src: "/croissant-ios-app.png",
+      width: 1080,
+      height: 567,
+    },
+  },
+  {
     name: "FitGPT",
     description: "FitGPT is an AI-powered personal trainer that generates custom workout and meal plans.",
     url: "https://fitgpt.xyz",
