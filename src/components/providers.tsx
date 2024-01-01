@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./theme-provider";
 
 type Props = {
@@ -8,6 +9,7 @@ function Providers({ children }: Props) {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
       {children}
+      <Analytics />
     </ThemeProvider>
   );
 }
