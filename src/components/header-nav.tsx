@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 export function HeaderNav() {
   const pathname = usePathname();
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname === path.split("?")[0];
 
   const navs = [
     {

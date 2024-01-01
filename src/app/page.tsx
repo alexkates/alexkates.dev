@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import ProjectSection from "@/components/project-section";
-import TopBlogPostsSection from "@/components/top-blog-posts-section";
+import { TopBlogPostsSection } from "@/components/top-blog-posts-section";
 import { cn } from "@/lib/utils";
 
 export default function Home() {

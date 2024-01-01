@@ -3,8 +3,7 @@ import Project from "@/types/project";
 const Projects: Project[] = [
   {
     name: "Croissant Chrome Extension",
-    description:
-      "The Croissant Chrome extension offers Guaranteed Buyback™ options for up to 1 year when you shop at your favorite brands and retailers for free.",
+    description: "Get Guaranteed Buyback™ options for 1 year when you shop at favorite brands and retailers.",
     url: "https://croissant.com/chrome-extension?utm_source=alexkates.dev",
     image: {
       src: "/croissant-share.png",
@@ -14,8 +13,7 @@ const Projects: Project[] = [
   },
   {
     name: "Croissant iOS App",
-    description:
-      "The Croissant iOS App is your hub for Guaranteed Buybacks™. It's like a savings account, for your physical goods. Keep track of your Collection value and collect cash on the spot.",
+    description: "Track Collection value and collect cash on the spot with Croissant iOS App.",
     url: "https://apps.apple.com/us/app/croissant/id1662287582",
     image: {
       src: "/croissant-ios-app.png",
@@ -25,7 +23,7 @@ const Projects: Project[] = [
   },
   {
     name: "FitGPT",
-    description: "FitGPT is an AI-powered personal trainer that generates custom workout and meal plans.",
+    description: "FitGPT generates custom workout and meal plans with AI power.",
     url: "https://fitgpt.xyz",
     image: {
       src: "/fitgpt.png",
@@ -35,7 +33,7 @@ const Projects: Project[] = [
   },
   {
     name: "Supajournal",
-    description: "Supajournal is a journaling app that uses AI to help you reflect on your day and improve your mental health.",
+    description: "Supajournal uses AI for daily reflections and improved mental health.",
     url: "https://supajournal.app",
     image: {
       src: "/supajournal.png",
@@ -46,7 +44,7 @@ const Projects: Project[] = [
   {
     name: "TeamGPT",
     url: "https://teamgpt.app",
-    description: "TeamGPT is a productivity app that uses AI to help you and your team co-author ChatGPT conversations.",
+    description: "TeamGPT aids co-authoring ChatGPT conversations for productivity.",
     image: {
       src: "/teamgpt.png",
       width: 1080,
