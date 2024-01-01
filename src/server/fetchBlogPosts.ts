@@ -32,6 +32,9 @@ export default async function fetchBlogPosts({ first = 20, after = "" }: Props =
           content {
             text
           }
+          tags {
+            name
+          }
         }
       }
     }

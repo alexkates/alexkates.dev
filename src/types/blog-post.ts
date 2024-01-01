@@ -20,6 +20,9 @@ type BlogPost = {
   publication: {
     id: string;
   };
+  tags?: {
+    name: string;
+  }[];
 };
 
 export default BlogPost;
