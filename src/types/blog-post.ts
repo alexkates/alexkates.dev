@@ -20,8 +20,9 @@ type BlogPost = {
   publication: {
     id: string;
   };
-  tags?: {
+  tags: {
     name: string;
+    postsCount: number;
   }[];
 };
 

@@ -32,8 +32,11 @@ function Sort() {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuRadioGroup value={searchParams.get("sort")?.toString()} onValueChange={handleSort}>
-          <DropdownMenuRadioItem value={SortTypes.Date}>Date</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value={SortTypes.Views}>Views</DropdownMenuRadioItem>
+          {Object.values(SortTypes).map((sortType) => (
+            <DropdownMenuRadioItem key={sortType} value={sortType} onSelect={(e) => e.preventDefault()}>
+              {sortType}
+            </DropdownMenuRadioItem>
+          ))}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

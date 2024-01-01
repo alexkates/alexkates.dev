@@ -34,6 +34,7 @@ export default async function fetchBlogPosts({ first = 20, after = "" }: Props =
           }
           tags {
             name
+            postsCount
           }
         }
       }
