@@ -5,11 +5,11 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/hashnode/data-event",
+        source: '/ping/data-event',
         destination: `${HASHNODE_ANALYTICS_BASE_URL}/api/data-event`,
       },
       {
-        source: "/hashnode/view-event",
+        source: '/ping/view',
         destination: `${HASHNODE_ANALYTICS_BASE_URL}/api/view`,
       },
     ];

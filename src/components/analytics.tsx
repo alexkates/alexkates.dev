@@ -2,16 +2,20 @@
 
 import Cookies from "js-cookie";
 import { useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { v4 } from "uuid";
 
 type Props = {
   publicationId: string;
   postId: string;
 };
 
+const GA_TRACKING_ID = "G-72XG3F8LNJ"; // This is Hashnode's GA tracking ID
+
 export default function Analytics({ publicationId, postId }: Props) {
   useEffect(() => {
-    const sendViewsToHashnodeInternalAnalytics = async () => {
+    if (!publicationId || !postId) return;
+
+    const _sendViewsToHashnodeInternalAnalytics = async () => {
       // Send to Hashnode's own internal analytics
       const event: Record<string, string | number | object> = {
         event_type: "pageview",
@@ -20,7 +24,7 @@ export default function Analytics({ publicationId, postId }: Props) {
           hostname: window.location.hostname,
           url: window.location.pathname,
           eventType: "pageview",
-          publicationId,
+          publicationId: publicationId,
           dateAdded: new Date().getTime(),
           referrer: window.document.referrer,
         },
@@ -28,7 +32,7 @@ export default function Analytics({ publicationId, postId }: Props) {
 
       let deviceId = Cookies.get("__amplitudeDeviceID");
       if (!deviceId) {
-        deviceId = uuidv4();
+        deviceId = v4();
         Cookies.set("__amplitudeDeviceID", deviceId, {
           expires: 365 * 2,
         }); // expire after two years
@@ -36,7 +40,7 @@ export default function Analytics({ publicationId, postId }: Props) {
 
       event["device_id"] = deviceId;
 
-      const res = await fetch(`/hashnode/data-event`, {
+      await fetch(`/ping/data-event`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +49,7 @@ export default function Analytics({ publicationId, postId }: Props) {
       });
     };
 
-    const sendViewsToHashnodeAnalyticsDashboard = async () => {
+    const _sendViewsToHashnodeAnalyticsDashboard = async () => {
       const LOCATION = window.location;
       const NAVIGATOR = window.navigator;
       const currentFullURL = LOCATION.protocol + "//" + LOCATION.hostname + LOCATION.pathname + LOCATION.search + LOCATION.hash;
@@ -85,7 +89,7 @@ export default function Analytics({ publicationId, postId }: Props) {
       };
 
       // For Hashnode Blog Dashboard Analytics
-      fetch(`/hashnode/view-event`, {
+      fetch(`/ping/view`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -94,11 +98,31 @@ export default function Analytics({ publicationId, postId }: Props) {
       });
     };
 
-    if (!publicationId || !postId) return;
+    const _sendPageViewsToHashnodeGoogleAnalytics = () => {
+      // @ts-ignore
+      window.gtag("config", GA_TRACKING_ID, {
+        transport_url: "https://ping.hashnode.com",
+        first_party_collection: true,
+      });
+    };
 
-    sendViewsToHashnodeInternalAnalytics();
-    sendViewsToHashnodeAnalyticsDashboard();
+    _sendPageViewsToHashnodeGoogleAnalytics();
+    _sendViewsToHashnodeInternalAnalytics();
+    _sendViewsToHashnodeAnalyticsDashboard();
   }, [postId, publicationId]);
 
   return null;
 }
+
+export const Scripts = () => {
+  const googleAnalytics = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());`;
+  return (
+    <>
+      <script async src={`https://ping.hashnode.com/gtag/js?id=G-72XG3F8LNJ`} />
+      <script dangerouslySetInnerHTML={{ __html: googleAnalytics }} />
+    </>
+  );
+};

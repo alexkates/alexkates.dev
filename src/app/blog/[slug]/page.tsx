@@ -1,4 +1,4 @@
-import Analytics from "@/components/analytics";
+import Analytics, { Scripts } from "@/components/analytics";
 import { Mdx } from "@/components/mdx";
 import fetchBlogPost from "@/server/fetchBlogPost";
 import { Metadata } from "next/types";
@@ -64,6 +64,7 @@ export default async function Page({ params }: Props) {
       <article>
         <Mdx code={markdown} />
       </article>
+      <Scripts />
       <Analytics postId={postId} publicationId={publicationId} />
     </section>
   );
