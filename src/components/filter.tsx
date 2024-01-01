@@ -55,6 +55,14 @@ function Filter({ tags }: Props) {
     replace(`${pathname}?${params.toString()}`);
   }
 
+  const tagsByCount = tags.reduce(
+    (acc, tag) => {
+      acc[tag.toLocaleLowerCase()] = (acc[tag.toLocaleLowerCase()] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -71,16 +79,18 @@ function Filter({ tags }: Props) {
             </Button>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {tags.map((tag) => (
-            <DropdownMenuCheckboxItem
-              key={tag}
-              checked={searchParams.get("tags")?.includes(tag)}
-              onCheckedChange={(checked) => onCheckedChanged(checked, tag)}
-              onSelect={(e) => e.preventDefault()}
-            >
-              {tag}
-            </DropdownMenuCheckboxItem>
-          ))}
+          {Object.entries(tagsByCount)
+            .sort((a, b) => b[1] - a[1])
+            .map(([tag, count]) => (
+              <DropdownMenuCheckboxItem
+                key={tag}
+                checked={searchParams.get("tags")?.includes(tag)}
+                onCheckedChange={(checked) => onCheckedChanged(checked, tag)}
+                onSelect={(e) => e.preventDefault()}
+              >
+                {tag} ({count})
+              </DropdownMenuCheckboxItem>
+            ))}
         </ScrollArea>
       </DropdownMenuContent>
     </DropdownMenu>

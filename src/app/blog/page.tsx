@@ -31,14 +31,14 @@ export default async function Page({
   }
 
   const posts = pages.flatMap((p) => p.blogPosts);
-  const distinctTags = Array.from(new Set(posts.flatMap((p) => p.tags.map((t) => t.name.toLowerCase())))).sort();
+  const allTags = posts.flatMap((p) => p.tags.map((t) => t.name));
 
   return (
     <main className="flex flex-col gap-y-4 mb-8">
       <section className="flex gap-x-2">
         <Search placeholder="Search blog posts..." />
         <Sort />
-        <Filter tags={distinctTags} />
+        <Filter tags={allTags} />
       </section>
       <section>
         <Suspense key={query} fallback={"Loading..."}>
