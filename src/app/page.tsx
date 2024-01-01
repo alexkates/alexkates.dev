@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import ProjectSection from "@/components/project-section";
+import TopBlogPostsSection from "@/components/top-blog-posts-section";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
@@ -13,6 +14,10 @@ export default function Home() {
 
       <section className={cn(fadeIn, "animation-delay-300")}>
         <ProjectSection />
+      </section>
+
+      <section className={cn(fadeIn, "animation-delay-500")}>
+        <TopBlogPostsSection />
       </section>
     </article>
   );

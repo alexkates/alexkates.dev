@@ -9,6 +9,7 @@ export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
       publication(id: "${publicationId}") {
         post(slug: "${slug}") {
           id
+          slug
           title
           subtitle
           publishedAt
@@ -16,18 +17,24 @@ export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
           views
           content {
             markdown
+            text
           }
           seo {
             title
             description
           }
-          coverImage{
+          coverImage {
             url
           }
           publication {
             id
           }
+          tags {
+            name
+            postsCount
+          }
         }
+
       }
     }`,
   };

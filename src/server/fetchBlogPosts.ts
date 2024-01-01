@@ -24,13 +24,22 @@ export default async function fetchBlogPosts({ first = 20, after = "" }: Props =
           slug
           title
           subtitle
+          publishedAt
+          readTimeInMinutes
+          views
+          content {
+            markdown
+            text
+          }
+          seo {
+            title
+            description
+          }
           coverImage {
             url
           }
-          publishedAt
-          views
-          content {
-            text
+          publication {
+            id
           }
           tags {
             name
