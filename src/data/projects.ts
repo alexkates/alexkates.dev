@@ -5,7 +5,7 @@ const Projects: Project[] = [
     name: "Croissant Chrome Extension",
     description:
       "The Croissant Chrome extension offers Guaranteed Buyback™ options for up to 1 year when you shop at your favorite brands and retailers for free.",
-    url: "https://croissant.com/chrome-extension",
+    url: "https://croissant.com/chrome-extension?utm_source=alexkates.dev",
     image: {
       src: "/croissant-share.png",
       width: 1080,
