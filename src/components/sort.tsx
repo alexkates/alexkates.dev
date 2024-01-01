@@ -10,7 +10,7 @@ function Sort() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const handleSortType = (sort: string) => {
+  function handleSort(sort: string) {
     const params = new URLSearchParams(searchParams);
 
     if (sort) {
@@ -20,7 +20,7 @@ function Sort() {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  };
+  }
 
   return (
     <DropdownMenu>
@@ -28,7 +28,7 @@ function Sort() {
         <Button variant={"link"}>Sort by</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuRadioGroup value={searchParams.get("sort")?.toString()} onValueChange={handleSortType}>
+        <DropdownMenuRadioGroup value={searchParams.get("sort")?.toString()} onValueChange={handleSort}>
           <DropdownMenuRadioItem value={SortTypes.Date}>Date</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value={SortTypes.Views}>Views</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
