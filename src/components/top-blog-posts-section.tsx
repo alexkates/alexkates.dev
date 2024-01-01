@@ -6,8 +6,6 @@ import BlogPostList from "./blog-post-list";
 export async function TopBlogPostsSection() {
   const posts = await Promise.all(TopBlogPosts.map(fetchBlogPost));
 
-  console.log({ posts });
-
   return (
     <div className="mt-8 flex flex-col gap-2">
       <section className="prose prose-neutral dark:prose-invert">
