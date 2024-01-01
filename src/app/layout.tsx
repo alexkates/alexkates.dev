@@ -1,3 +1,4 @@
+import { Scripts } from "@/components/analytics";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: Props) {
       <body>
         <div className={cn("container pt-2 ", fontSans.variable)}>
           <Providers>
+            <Scripts />
             <Header />
             <main>{children}</main>
           </Providers>
