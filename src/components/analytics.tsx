@@ -16,7 +16,6 @@ export default function Analytics({ publicationId, postId }: Props) {
     if (!publicationId || !postId) return;
 
     const _sendViewsToHashnodeInternalAnalytics = async () => {
-      // Send to Hashnode's own internal analytics
       const event: Record<string, string | number | object> = {
         event_type: "pageview",
         time: new Date().getTime(),
@@ -35,7 +34,7 @@ export default function Analytics({ publicationId, postId }: Props) {
         deviceId = v4();
         Cookies.set("__amplitudeDeviceID", deviceId, {
           expires: 365 * 2,
-        }); // expire after two years
+        });
       }
 
       event["device_id"] = deviceId;
@@ -88,7 +87,6 @@ export default function Analytics({ publicationId, postId }: Props) {
         utm_content,
       };
 
-      // For Hashnode Blog Dashboard Analytics
       fetch(`/ping/view`, {
         method: "POST",
         headers: {
@@ -113,16 +111,3 @@ export default function Analytics({ publicationId, postId }: Props) {
 
   return null;
 }
-
-export const Scripts = () => {
-  const googleAnalytics = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());`;
-  return (
-    <>
-      <script async src={`https://ping.hashnode.com/gtag/js?id=G-72XG3F8LNJ`} />
-      <script dangerouslySetInnerHTML={{ __html: googleAnalytics }} />
-    </>
-  );
-};

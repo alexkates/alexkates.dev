@@ -1,6 +1,6 @@
-import { Scripts } from "@/components/analytics";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
+import { Scripts } from "@/components/scripts";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
