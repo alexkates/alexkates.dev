@@ -11,11 +11,10 @@ type Props = {
 
 export default function BlogPostItem({ post }: Props) {
   const fadeIn = "animate-in fade-in duration-1000 fill-mode-both";
-
   return (
-    <li className={cn("flex flex-col items-center rounded-lg", fadeIn)}>
-      <Link href={`/blog/${post.slug}`} className="transition-transform duration-300 ease-in-out hover:scale-[1.025]">
-        <Card>
+    <li className={cn("flex flex-col items-center", fadeIn)}>
+      <Link href={`/blog/${post.slug}`}>
+        <Card className="transition-transform duration-300 ease-in-out hover:scale-[1.025]">
           <CardHeader>
             <Image width={500} height={150} alt={post.title} src={post.coverImage.url} className="rounded-lg" />
           </CardHeader>
