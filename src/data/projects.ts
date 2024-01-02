@@ -3,7 +3,7 @@ import Project from "@/types/project";
 const Projects: Project[] = [
   {
     name: "Croissant Chrome Extension",
-    description: "Get Guaranteed Buyback™ options for 1 year when you shop at favorite brands and retailers.",
+    description: "Get Guaranteed Buybacks for 1 year when you shop at favorite brands.",
     url: "https://croissant.com/chrome-extension?utm_source=alexkates.dev",
     image: {
       src: "/croissant-share.png",
@@ -13,7 +13,7 @@ const Projects: Project[] = [
   },
   {
     name: "Croissant iOS App",
-    description: "Track Collection value and collect cash on the spot with Croissant iOS App.",
+    description: "Track and claim Guaranteed Buybacks with Croissant iOS App.",
     url: "https://apps.apple.com/us/app/croissant/id1662287582",
     image: {
       src: "/croissant-ios-app.png",
