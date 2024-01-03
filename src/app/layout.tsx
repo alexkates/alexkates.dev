@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
 import { Scripts } from "@/components/scripts";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: Props) {
             <Scripts />
             <Header />
             <main>{children}</main>
+            <Footer />
           </Providers>
         </div>
       </body>
