@@ -19,6 +19,7 @@ function Footer() {
           {index < links.length - 1 ? index === links.length - 2 ? <span>&nbsp;and&nbsp;</span> : <span>,&nbsp;</span> : null}
         </React.Fragment>
       ))}
+      .
     </footer>
   );
 }
