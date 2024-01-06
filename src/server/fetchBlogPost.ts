@@ -46,6 +46,7 @@ export default async function fetchBlogPost(slug: string): Promise<BlogPost> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(query),
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {
