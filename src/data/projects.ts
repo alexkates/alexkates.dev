@@ -13,7 +13,7 @@ const Projects: Project[] = [
   },
   {
     name: "Croissant iOS App",
-    description: "Track and claim Guaranteed Buybacks with Croissant iOS App.",
+    description: "Track and claim Guaranteed Buybacks with the Croissant iOS App.",
     url: "https://apps.apple.com/us/app/croissant/id1662287582",
     image: {
       src: "/croissant-ios-app.png",
