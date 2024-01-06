@@ -23,7 +23,7 @@ const Projects: Project[] = [
   },
   {
     name: "OG Tester",
-    description: "Trust your Open Graph tags.",
+    description: "Trust your Open Graph tags. OG Tester helps you preview your Open Graph tags and images.",
     url: "https://ogtester.app",
     image: {
       src: "/ogtester.png",
