@@ -15,8 +15,26 @@ const fontSans = FontSans({
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Alex Kates",
-    description: "Build the thing.",
+    description:
+      "Hi, I'm Alex Kates! Welcome to my little corner of the internet. I'm a software engineer currently working as Director of Engineering at a startup called croissant.com. I'm passionate about building great products and teams, especially from zero to one.",
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+    keywords: [
+      "alex",
+      "kates",
+      "alex kates",
+      "philadelphia",
+      "software",
+      "engineer",
+      "engineering",
+      "developer",
+      "programming",
+      "javascript",
+      "typescript",
+      "react",
+      "nextjs",
+      "node",
+      "nodejs",
+    ],
     openGraph: {
       url: process.env.NEXT_PUBLIC_SITE_URL,
     },
