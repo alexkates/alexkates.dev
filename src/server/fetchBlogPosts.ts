@@ -59,6 +59,7 @@ export default async function fetchBlogPosts({ first = 20, after = "" }: Props =
         "Content-Type": "application/json",
       },
       body: JSON.stringify(query),
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {
