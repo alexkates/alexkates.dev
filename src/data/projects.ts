@@ -22,6 +22,16 @@ const Projects: Project[] = [
     },
   },
   {
+    name: "OG Tester",
+    description: "Trust your Open Graph tags.",
+    url: "https://ogtester.app",
+    image: {
+      src: "/ogtester.png",
+      width: 1080,
+      height: 567,
+    },
+  },
+  {
     name: "FitGPT",
     description: "FitGPT generates custom workout and meal plans with AI power.",
     url: "https://fitgpt.xyz",
