@@ -69,8 +69,10 @@ const components: Components = {
     if (props.node?.properties.dataNodeType === "callout-text")
       return (
         <Alert className="my-8">
-          <Lightbulb />
-          <AlertDescription>{props.children}</AlertDescription>
+          <AlertDescription className="flex items-center">
+            <Lightbulb className="mr-1 w-5 h-5" />
+            {props.children}
+          </AlertDescription>
         </Alert>
       );
 
