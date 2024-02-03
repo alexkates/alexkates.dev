@@ -1,9 +1,9 @@
 import NewQuoteButton from "@/components/new-quote-button";
-import Quote from "@/components/quote";
+import ParagraphSkeleton from "@/components/paragraph-skeleton";
 import QuoteLimitInput from "@/components/quote-limit-input";
+import QuoteList from "@/components/quote-list";
 import QuoteTagsFilter from "@/components/quote-tags-filter";
 import { cn } from "@/lib/utils";
-import fetchRandomQuotes from "@/server/get-random-quotes";
 import { Suspense } from "react";
 
 export const revalidate = 86400; // 24 hours
@@ -18,11 +18,7 @@ export default async function Page({
 }) {
   const fadeIn = "animate-in fade-in duration-1000 fill-mode-both";
   const limit = searchParams?.limit ?? 1;
-
-  const quotes = await fetchRandomQuotes({
-    tags: searchParams?.tags,
-    limit,
-  });
+  const tags = searchParams?.tags ?? "";
 
   return (
     <main className="mb-8 flex flex-col gap-4">
@@ -34,14 +30,8 @@ export default async function Page({
         <NewQuoteButton />
       </section>
       <section className={cn(fadeIn, "animation-delay-400")}>
-        <Suspense fallback={"Loading..."}>
-          <ul className="flex flex-col gap-8">
-            {quotes?.map((quote) => (
-              <li key={quote._id}>
-                <Quote quote={quote} />
-              </li>
-            ))}
-          </ul>
+        <Suspense fallback={<ParagraphSkeleton />}>
+          <QuoteList tags={tags} limit={limit} />
         </Suspense>
       </section>
     </main>

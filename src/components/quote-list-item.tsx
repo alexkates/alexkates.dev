@@ -1,6 +1,6 @@
 import Quote from "@/types/quote";
 
-function Quote({ quote }: { quote?: Quote }) {
+function QuoteListItem({ quote }: { quote?: Quote }) {
   if (!quote)
     return (
       <div className="prose prose-neutral dark:prose-invert">
@@ -18,4 +18,4 @@ function Quote({ quote }: { quote?: Quote }) {
   );
 }
 
-export default Quote;
+export default QuoteListItem;
