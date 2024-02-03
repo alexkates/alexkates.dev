@@ -11,7 +11,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata() {
-  const title = "";
+  const title = "Hi, I'm Alex Kates 👋";
   const description =
     "Hi, I'm Alex Kates! I'm a product engineer currently working as Director of Engineering at https://croissant.com. I'm passionate about building great products and teams, especially from zero to one.";
 
