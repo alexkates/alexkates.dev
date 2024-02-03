@@ -1,6 +1,6 @@
 import QuoteTag from "@/types/quote-tag";
 
-export default async function fetchQuoteTags() {
+export default async function getAllQuoteTags() {
   const endpoint = `https://api.quotable.io/tags`;
 
   const response = await fetch(endpoint);

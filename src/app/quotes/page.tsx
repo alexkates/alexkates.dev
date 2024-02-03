@@ -1,9 +1,8 @@
-import Filter from "@/components/filter";
 import NewQuoteButton from "@/components/new-quote-button";
 import Quote from "@/components/quote";
 import QuoteLimitInput from "@/components/quote-limit-input";
+import QuoteTagsFilter from "@/components/quote-tags-filter";
 import { cn } from "@/lib/utils";
-import getQuoteTags from "@/server/get-quote-tags";
 import fetchRandomQuotes from "@/server/get-random-quotes";
 import { Suspense } from "react";
 
@@ -25,13 +24,13 @@ export default async function Page({
     limit,
   });
 
-  const allTags = await getQuoteTags();
-
   return (
     <main className="mb-8 flex flex-col gap-4">
       <section className={cn(fadeIn, "flex items-center justify-between gap-2 animation-delay-200")}>
         <QuoteLimitInput />
-        <Filter tags={allTags.map((tag) => ({ postsCount: tag.count, name: tag.name }))} />
+        <Suspense fallback={null}>
+          <QuoteTagsFilter />
+        </Suspense>
         <NewQuoteButton />
       </section>
       <section className={cn(fadeIn, "animation-delay-400")}>
