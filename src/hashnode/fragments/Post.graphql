@@ -1,0 +1,37 @@
+fragment Post on Post {
+  id
+  title
+  subtitle
+  seo {
+    title
+    description
+  }
+  publication {
+    id
+  }
+  url
+  author {
+    name
+    profilePicture
+  }
+  coverImage {
+    url
+  }
+  publishedAt
+  slug
+  brief
+  comments(first: 0) {
+    totalDocuments
+  }
+  views
+  readTimeInMinutes
+  content {
+    markdown
+    text
+  }
+  tags {
+    name
+    postsCount
+  }
+  reactionCount
+}
