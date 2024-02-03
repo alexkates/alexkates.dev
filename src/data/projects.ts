@@ -22,6 +22,16 @@ const Projects: Project[] = [
     },
   },
   {
+    name: "Hashnode Next",
+    description: "The fastest way to go headless with Hashnode.",
+    url: "https://hashnode-next.dev",
+    image: {
+      src: "/hashnode-next.png",
+      width: 1080,
+      height: 567,
+    },
+  },
+  {
     name: "OG Tester",
     description: "Trust your Open Graph tags. OG Tester helps you preview your site's meta tags.",
     url: "https://ogtester.app",
