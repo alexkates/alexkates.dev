@@ -1,13 +1,14 @@
-<div align="center">
-    <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Falexkates%2Fhashnode-next&env=HASHNODE_HOST&envLink=https%3A%2F%2Fapidocs.hashnode.com&project-name=blog&repository-name=blog&demo-title=hashnode-next&demo-description=The%20fastest%20way%20to%20go%20headless%20with%20Hashnode&demo-url=https%3A%2F%2Fhashnode-next.dev%2Fblog&demo-image=https%3A%2F%2Fhashnode-next.dev%2Fdemo.png">
-      <img src="public/opengraph-image.png" />
-    </a>
-    <br />
-    <a href="https://hashnode-next.vercel.app">View Demo</a>
-    ·
-    <a href="https://github.com/alexkates/hashnode-next/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/alexkates/hashnode-next/issues">Request Feature</a>
+`<div align="center">
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Falexkates%2Fhashnode-next&env=HASHNODE_HOST&envLink=https%3A%2F%2Fapidocs.hashnode.com&project-name=blog&repository-name=blog&demo-title=hashnode-next&demo-description=The%20fastest%20way%20to%20go%20headless%20with%20Hashnode&demo-url=https%3A%2F%2Fhashnode-next.dev%2Fblog&demo-image=https%3A%2F%2Fhashnode-next.dev%2Fdemo.png">
+<img src="public/opengraph-image.png" />
+</a>
+<br />
+<a href="https://hashnode-next.vercel.app">View Demo</a>
+·
+<a href="https://github.com/alexkates/hashnode-next/issues">Report Bug</a>
+·
+<a href="https://github.com/alexkates/hashnode-next/issues">Request Feature</a>
+
   </p>
 </div>
 
