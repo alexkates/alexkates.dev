@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 export async function generateMetadata() {
   const title = "Hi, I'm Alex Kates 👋";
   const description =
-    "Hi, I'm Alex Kates! I'm a product engineer currently working as Director of Engineering at https://croissant.com. I'm passionate about building great products and teams, especially from zero to one.";
+    "I'm a product engineer currently working as Director of Engineering at https://croissant.com. I'm passionate about building great products and teams, especially from zero to one.";
 
   const images = "https://alexkates.dev/opengraph-image.png";
   const url = "https://alexkates.dev";
