@@ -28,6 +28,14 @@ export function HeaderNav() {
       label: "blog",
     },
     {
+      href: "/projects",
+      label: "projects",
+    },
+    {
+      href: `/quotes?${qotdSearchParams.toString()}`,
+      label: "quotes",
+    },
+    {
       href: "/about",
       label: "about",
     },
