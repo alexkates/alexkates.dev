@@ -6,7 +6,7 @@ export default function GuestbookForm() {
   return (
     <form action={submitGuestbookMessage} className="flex flex-col gap-4">
       <div className="flex gap-2 items-center">
-        <Input id="message" name="message" required placeholder="Press enter to submit." />
+        <Input className="max-w-sm" id="message" name="message" required placeholder="Press enter to submit." />
         <SubmitGuestbookMessageButton />
       </div>
     </form>

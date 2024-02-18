@@ -1,6 +1,7 @@
 "use client";
 
-import { createClient } from "../../supabase/client";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { createClient } from "../supabase/client";
 import { Button } from "./ui/button";
 
 export default function SignInWithGitHub() {
@@ -14,5 +15,10 @@ export default function SignInWithGitHub() {
     });
   }
 
-  return <Button onClick={signInWithGitHub}>Sign in with GitHub</Button>;
+  return (
+    <Button onClick={signInWithGitHub}>
+      <GitHubLogoIcon className="mr-2" />
+      Sign in with GitHub
+    </Button>
+  );
 }

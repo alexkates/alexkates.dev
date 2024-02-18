@@ -10,7 +10,7 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "hashnode-codegen": "graphql-codegen --config codegen.yml",
-    "supabase-codegen": "supabase gen types typescript --project-id yvdsamdilcryjhsvbsct --schema public > supabase/types.ts"
+    "supabase-codegen": "supabase gen types typescript --project-id yvdsamdilcryjhsvbsct --schema public > src/supabase/types.ts"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
