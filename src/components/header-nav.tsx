@@ -31,9 +31,10 @@ export function HeaderNav() {
       href: "/projects",
       label: "projects",
     },
+
     {
-      href: `/quotes?${qotdSearchParams.toString()}`,
-      label: "quotes",
+      href: "/guestbook",
+      label: "guestbook",
     },
     {
       href: "/about",
@@ -43,7 +44,7 @@ export function HeaderNav() {
 
   return (
     <NavigationMenu>
-      <NavigationMenuList className="gap-4">
+      <NavigationMenuList className="sm:gap-4 gap-2">
         {navs.map((nav) => (
           <NavigationMenuItem key={nav.href}>
             <Link href={nav.href} className={cn(isActive(nav.href) && "underline")}>
