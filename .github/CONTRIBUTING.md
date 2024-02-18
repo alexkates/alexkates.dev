@@ -41,7 +41,7 @@ pnpm install
 If you need to add or update the Hashnode GQL schema, run the following command to generate types and gql documents.
 
 ```bash
-pnpm codegen
+pnpm hashnode-codegen
 ```
 
 ## Building

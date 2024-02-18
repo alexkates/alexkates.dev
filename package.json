@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -k -p \"[{name}]\" -n \"codegen,next\" -c \"bgBlue.bold,bgMagenta.bold\" \"pnpm codegen --watch\" \"next dev\"",
-    "prebuild": "pnpm codegen",
+    "dev": "next dev",
+    "prebuild": "pnpm hashnode-codegen && pnpm supabase-codegen",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "hashnode-codegen": "graphql-codegen --config codegen.yml",
+    "supabase-codegen": "supabase gen types typescript --project-id yvdsamdilcryjhsvbsct --schema public > supabase/types.ts"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
@@ -94,6 +95,7 @@
     "postcss": "^8",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "supabase": "^1.142.2",
     "tailwindcss": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-animation-delay": "^1.2.0",

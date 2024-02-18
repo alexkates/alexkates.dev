@@ -2,8 +2,8 @@ import Guestbook from "@/components/guestbook";
 import SignInWithGitHub from "@/components/sign-in-with-github";
 import SignOut from "@/components/sign-out";
 import { cn, fadeIn } from "@/lib/utils";
-import { createClient } from "@/supabase/server";
 import { cookies } from "next/headers";
+import { createClient } from "../../../supabase/server";
 
 export default async function Home() {
   const supabaseClient = createClient(cookies());
