@@ -5,46 +5,33 @@ import { cn, fadeIn } from "@/lib/utils";
 import { createClient } from "@/supabase/server";
 import { cookies } from "next/headers";
 
-type Props = {
-  searchParams: { message: string };
-};
-
-export default async function Home({ searchParams }: Props) {
+export default async function Home() {
   const supabaseClient = createClient(cookies());
   const {
     data: { user },
-    error,
   } = await supabaseClient.auth.getUser();
-
-  // if (error)
-  //   return (
-  //     <section className={cn(fadeIn, "animation-delay-200 flex gap-4")}>
-  //       <div>Could not authenticate user</div>
-  //       <pre>{error.message}</pre>
-  //     </section>
-  //   );
-
-  if (searchParams.message)
-    return (
-      <section className={cn(fadeIn, "animation-delay-200 flex gap-4")}>
-        <div>{searchParams.message}</div>
-      </section>
-    );
 
   if (!user)
     return (
       <main className="flex flex-col gap-4">
-        <section className={cn(fadeIn, "animation-delay-200 flex gap-4")}>
+        <section className={cn(fadeIn, "animation-delay-200")}>Welcome to my guestbook!</section>
+        <section className={cn(fadeIn, "animation-delay-400")}>
           <SignInWithGitHub />
         </section>
       </main>
     );
 
   return (
-    <section className={cn(fadeIn, "animation-delay-200 flex flex-col gap-4")}>
-      Welcome, {user.email}
-      <SignOut />
-      <Guestbook />
-    </section>
+    <main className="flex flex-col gap-4">
+      <section className={cn(fadeIn, "animation-delay-200")}>
+        <div className="flex items-center gap-2">
+          Hi, {user.user_metadata.name}!<div className="animate-wave animation-delay-1000">👋</div>
+        </div>
+        <SignOut />
+      </section>
+      <section className={cn(fadeIn, "animation-delay-400")}>
+        <Guestbook />
+      </section>
+    </main>
   );
 }
