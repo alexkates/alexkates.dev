@@ -24,10 +24,10 @@ export default async function Home() {
   return (
     <main className="flex flex-col gap-4">
       <section className={cn(fadeIn, "animation-delay-200")}>
-        <div className="flex items-center gap-2">
-          Hi, {user.user_metadata.name}!<div className="animate-wave animation-delay-1000">👋</div>
+        <div className="flex items-center gap-1">
+          Hi, {user.user_metadata.name}!<div className="animate animate-wave animation-delay-1000">👋</div>
+          <SignOut />
         </div>
-        <SignOut />
       </section>
       <section className={cn(fadeIn, "animation-delay-400")}>
         <Guestbook />
