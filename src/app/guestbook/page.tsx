@@ -24,8 +24,9 @@ export default async function Home() {
   return (
     <main className="flex flex-col gap-4">
       <section className={cn(fadeIn, "animation-delay-200")}>
+        <pre>{JSON.stringify(user, null, 2)}</pre>
         <div className="flex items-center gap-1">
-          Hi, {user.user_metadata.name}!<div className="animate animate-wave animation-delay-1000">👋</div>
+          Hi, {user.user_metadata.user_name}!<div className="animate animate-wave animation-delay-1000">👋</div>
           <SignOut />
         </div>
       </section>
