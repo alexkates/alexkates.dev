@@ -15,6 +15,7 @@
 
 # production
 /build
+/src/app/hashnode/generated
 
 # misc
 .DS_Store
