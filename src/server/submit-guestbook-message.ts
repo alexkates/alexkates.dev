@@ -32,5 +32,5 @@ export default async function submitGuestbookMessage(formData: FormData) {
   console.log({ error, status, statusText });
 
   revalidatePath("/guestbook");
-  redirect("/guestbook");
+  redirect("/guestbook?submitted=true");
 }

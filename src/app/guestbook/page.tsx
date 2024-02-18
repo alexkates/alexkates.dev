@@ -8,7 +8,13 @@ import { createClient } from "@/supabase/server";
 import { cookies } from "next/headers";
 import { Suspense } from "react";
 
-export default async function Home() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    submitted?: boolean;
+  };
+}) {
   const supabaseClient = createClient(cookies());
   const {
     data: { user },
@@ -38,7 +44,7 @@ export default async function Home() {
           Hi, {user.user_metadata.user_name}!<div className="animate animate-wave animation-delay-1000">👋</div>
           <SignOut />
         </div>
-        <GuestbookForm />
+        {searchParams?.submitted ? <span>Your message has been submitted! Thanks for signing my guestbook.</span> : <GuestbookForm />}
       </section>
       <section className={cn(fadeIn, "animation-delay-600")}>
         <Suspense fallback={<ParagraphSkeleton />}>
