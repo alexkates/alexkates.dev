@@ -6,13 +6,11 @@ import { Button } from "./ui/button";
 
 export default function SignInWithGitHub() {
   async function signInWithGitHub() {
-    const redirectTo = `${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback`;
-    alert(redirectTo);
     const supabase = createClient();
-    await supabase.auth.signInWithOAuth({
+    supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo,
+        redirectTo: `${window.location.origin}/auth/callback`,
       },
     });
   }
