@@ -38,7 +38,7 @@ export default function MainNav() {
   const isActive = (path: string) => pathname === path.split("?")[0];
 
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden md:flex">
       <NavigationMenuList className="sm:gap-4 gap-2">
         {navLinks.map((nav) => (
           <NavigationMenuItem key={nav.href}>
