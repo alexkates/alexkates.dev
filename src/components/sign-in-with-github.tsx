@@ -9,7 +9,7 @@ export default function SignInWithGitHub() {
     const redirectTo = `${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback`;
     alert(redirectTo);
     const supabase = createClient();
-    supabase.auth.signInWithOAuth({
+    await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
         redirectTo,
