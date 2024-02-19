@@ -6,9 +6,8 @@ import { Button } from "./ui/button";
 
 export default function SignInWithGitHub() {
   async function signInWithGitHub() {
+    const redirectTo = `${process.env.VERCEL_URL}/auth/callback`;
     const supabase = createClient();
-    const redirectTo = `${process.env.VERCEL_URL}/auth/callback?next=/guestbook`;
-    console.log(`Redirecting to ${redirectTo}`);
     supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
