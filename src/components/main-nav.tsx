@@ -7,45 +7,40 @@ import { cn } from "@/lib/utils";
 import { SortTypes } from "@/types/sort-types";
 import { usePathname } from "next/navigation";
 
+export const navLinks = [
+  {
+    href: "/",
+    label: "home",
+  },
+  {
+    href: `/blog?${new URLSearchParams({
+      sort: SortTypes.Date,
+    }).toString()}`,
+    label: "blog",
+  },
+  {
+    href: "/projects",
+    label: "projects",
+  },
+
+  {
+    href: "/guestbook",
+    label: "guestbook",
+  },
+  {
+    href: "/about",
+    label: "about",
+  },
+] as const;
+
 export default function MainNav() {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path.split("?")[0];
 
-  const blogSearchParams = new URLSearchParams();
-  blogSearchParams.set("sort", SortTypes.Date);
-
-  const qotdSearchParams = new URLSearchParams();
-  qotdSearchParams.set("tags", "inspirational,famous-quotes");
-  qotdSearchParams.set("limit", "1");
-
-  const navs = [
-    {
-      href: "/",
-      label: "home",
-    },
-    {
-      href: `/blog?${blogSearchParams.toString()}`,
-      label: "blog",
-    },
-    {
-      href: "/projects",
-      label: "projects",
-    },
-
-    {
-      href: "/guestbook",
-      label: "guestbook",
-    },
-    {
-      href: "/about",
-      label: "about",
-    },
-  ];
-
   return (
     <NavigationMenu>
       <NavigationMenuList className="sm:gap-4 gap-2">
-        {navs.map((nav) => (
+        {navLinks.map((nav) => (
           <NavigationMenuItem key={nav.href}>
             <Link href={nav.href} className={cn(isActive(nav.href) && "underline")}>
               {nav.label}
