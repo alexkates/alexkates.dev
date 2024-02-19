@@ -7,10 +7,12 @@ import { Button } from "./ui/button";
 export default function SignInWithGitHub() {
   async function signInWithGitHub() {
     const supabase = createClient();
+    const redirectTo = `${window.location.origin}/auth/callback?next=/guestbook`;
+    console.log(`Redirecting to ${redirectTo}`);
     supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=/guestbook`,
+        redirectTo,
       },
     });
   }
