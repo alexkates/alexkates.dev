@@ -1,9 +1,9 @@
 "use server";
 
+import { createClient } from "@/supabase/server";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { createClient } from "../supabase/server";
 
 export default async function submitGuestbookMessage(formData: FormData) {
   const supabaseClient = createClient(cookies());
