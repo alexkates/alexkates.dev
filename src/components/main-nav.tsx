@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { SortTypes } from "@/types/sort-types";
 import { usePathname } from "next/navigation";
 
-export function HeaderNav() {
+export default function MainNav() {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path.split("?")[0];
 
