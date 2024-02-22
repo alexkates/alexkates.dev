@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export default async function GuestbookList() {
   const supabaseClient = createClient(cookies());
-  const { data, error } = await supabaseClient.from("guestbook").select("*");
+  const { data } = await supabaseClient.from("guestbook").select("*");
 
   return (
     <ul className="flex flex-col gap-6">
