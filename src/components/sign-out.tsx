@@ -14,7 +14,7 @@ export default function SignOut() {
   }
 
   return (
-    <Button onClick={signOut} size={"sm"} variant={"link"} className="p-0 text-muted-foreground">
+    <Button onClick={signOut} size="sm" variant="link" className="p-0 text-muted-foreground">
       Sign Out
     </Button>
   );
