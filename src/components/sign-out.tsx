@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 
 export default function SignOut() {
   const router = useRouter();
+
   async function signOut() {
     const supabase = createClient();
     await supabase.auth.signOut();
