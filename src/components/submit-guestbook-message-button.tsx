@@ -8,7 +8,7 @@ function SubmitGuestbookMessageButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button variant={"default"} disabled={pending} size={"icon"}>
+    <Button variant="default" disabled={pending} size="icon">
       {!pending ? <PaperPlaneIcon className="pl-1 h-5 w-5" /> : <ReloadIcon className="pl-1 h-5 w-5 animate-spin" />}
     </Button>
   );
