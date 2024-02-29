@@ -7,7 +7,7 @@ import { cn, fadeIn } from "@/lib/utils";
 import Image from "next/image";
 import { Suspense } from "react";
 
-export default async function Home() {
+export default async function Page() {
   return (
     <main className="flex flex-col gap-4">
       <section className={cn(fadeIn, "animation-delay-200 flex gap-4")}>
