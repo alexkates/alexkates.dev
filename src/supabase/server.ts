@@ -3,9 +3,7 @@ import { type cookies } from "next/headers";
 import { Database } from "./types";
 
 export function createClient(cookieStore: ReturnType<typeof cookies>) {
-  const { NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY } = process.env;
-
-  return createServerClient<Database>(NEXT_PUBLIC_SUPABASE_URL!, NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
+  return createServerClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     cookies: {
       get(name: string) {
         return cookieStore.get(name)?.value;
