@@ -20,7 +20,7 @@ export default function ProjectItem({ project }: Props) {
             <CardDescription>{project.description}</CardDescription>
           </CardHeader>
           <CardFooter>
-            <Image alt={project.name} src={project.image.src} className="rounded-md" width={1200} height={630} />
+            <Image alt={project.name} src={project.image.src} className="rounded-md" width={1200} height={630} priority={true} />
           </CardFooter>
         </Card>
       </Link>
