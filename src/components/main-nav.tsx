@@ -42,7 +42,7 @@ export default function MainNav() {
       <NavigationMenuList className="sm:gap-4 gap-2">
         {navLinks.map((nav) => (
           <NavigationMenuItem key={nav.href}>
-            <Link href={nav.href} className={cn(isActive(nav.href) && "underline")}>
+            <Link href={nav.href} className={cn(isActive(nav.href) && "underline", "hover:underline")}>
               {nav.label}
             </Link>
           </NavigationMenuItem>

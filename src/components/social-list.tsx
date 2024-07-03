@@ -1,5 +1,5 @@
 import getUser from "@/server/get-user";
-import { GitHubLogoIcon, LinkedInLogoIcon, Pencil1Icon, StackIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon, IdCardIcon, LinkedInLogoIcon, Pencil1Icon, StackIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import SocialListItem from "./social-list-item";
 
@@ -36,6 +36,12 @@ async function SocialList() {
         <Pencil1Icon />
         <Link href="https://blog.alexkates.dev/" target="_blank">
           hashnode
+        </Link>
+      </SocialListItem>
+      <SocialListItem>
+        <IdCardIcon />
+        <Link href="/resume.pdf" target="_blank">
+          resume
         </Link>
       </SocialListItem>
     </ul>
