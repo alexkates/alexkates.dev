@@ -22,6 +22,16 @@ const Projects: Project[] = [
     },
   },
   {
+    name: "CongressGPT",
+    description: "Finally understand what Congress is actually doing.",
+    image: {
+      src: "/congressgpt.png",
+      width: 1080,
+      height: 567,
+    },
+    url: "https://congressgpt.app",
+  },
+  {
     name: "Hashnode Next",
     description: "The fastest way to go headless with Hashnode.",
     url: "https://hashnode-next.dev",
@@ -64,7 +74,7 @@ const Projects: Project[] = [
   {
     name: "TeamGPT",
     url: "https://teamgpt.app",
-    description: "TeamGPT aids co-authoring ChatGPT conversations for productivity.",
+    description: "TeamGPT adds co-authoring ChatGPT conversations for productivity.",
     image: {
       src: "/teamgpt.png",
       width: 1080,
