@@ -24,7 +24,7 @@ function Filter({ tags }: Props) {
   const searchParams = useSearchParams();
 
   function onCheckedChanged(checked: boolean, tag: string) {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
 
     if (checked) {
       const existingTags = params.get("tags") || "";
@@ -51,7 +51,7 @@ function Filter({ tags }: Props) {
   }
 
   function clear() {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
     params.delete("tags");
     replace(`${pathname}?${params.toString()}`);
   }
