@@ -10,7 +10,7 @@ const QuoteLimitInput = () => {
   const searchParams = useSearchParams();
 
   function onChange(event: ChangeEvent<HTMLInputElement>) {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
 
     params.set("limit", event.target.value);
 

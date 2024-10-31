@@ -12,7 +12,7 @@ function Sort() {
   const searchParams = useSearchParams();
 
   function handleSort(sort: string) {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
 
     if (sort) {
       params.set("sort", sort);
