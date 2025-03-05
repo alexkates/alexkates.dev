@@ -9,7 +9,7 @@ export default function Hero() {
       </div>
       <p className="prose prose-neutral dark:prose-invert">
         I&apos;m a{" "}
-        <Link href="https://leerob.io/blog/product-engineers" target="_blank" className="underline">
+        <Link href="https://chatgpt.com/share/67c79933-ba9c-8010-8fdc-e18b3d071a64" target="_blank" className="underline">
           product engineer
         </Link>{" "}
         currently working at{" "}
