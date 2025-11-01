@@ -6,6 +6,9 @@
 .pnp.js
 .yarn/install-state.gz
 
+# bun
+.bun
+
 # testing
 /coverage
 
@@ -25,6 +28,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+bun-debug.log*
 
 # local env files
 .env*.local

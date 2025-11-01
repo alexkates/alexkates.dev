@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "pnpm install && pnpm hashnode-codegen && pnpm supabase-codegen",
+    "predev": "bun install && bun hashnode-codegen && bun supabase-codegen",
     "dev": "next dev --turbo",
-    "prebuild": "pnpm hashnode-codegen && pnpm supabase-codegen",
+    "prebuild": "bun hashnode-codegen && bun supabase-codegen",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
