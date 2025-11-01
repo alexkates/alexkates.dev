@@ -6,15 +6,16 @@ import Sort from "@/components/sort";
 import { cn, fadeIn } from "@/lib/utils";
 import { Suspense } from "react";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams?: {
-    query?: string;
-    sort?: string;
-    tags?: string;
-  };
-}) {
+export default async function Page(
+  props: {
+    searchParams?: Promise<{
+      query?: string;
+      sort?: string;
+      tags?: string;
+    }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const query = searchParams?.query || "";
   const sort = searchParams?.sort || "date";
   const tags = searchParams?.tags || "";

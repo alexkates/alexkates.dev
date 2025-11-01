@@ -7,12 +7,13 @@ import getPublication from "@/server/get-publication";
 import { Metadata } from "next/types";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
   const post = await getBlogPost(params);
 
   const title = post?.seo?.title || post?.title;
@@ -41,7 +42,8 @@ export async function generateMetadata({ params }: Props) {
   return metadata;
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const post = await getBlogPost(params);
   const publication = await getPublication();
 
