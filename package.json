@@ -3,15 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "bun install && bun hashnode-codegen && bun supabase-codegen",
+    "predev": "bun install && bun hashnode-codegen",
     "dev": "next dev --turbo",
-    "prebuild": "bun hashnode-codegen && bun supabase-codegen",
+    "prebuild": "bun hashnode-codegen",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "hashnode-codegen": "graphql-codegen --config codegen.yml",
-    "supabase-codegen": "supabase gen types typescript --project-id yvdsamdilcryjhsvbsct --schema public > src/supabase/types.ts"
+    "hashnode-codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
@@ -44,7 +43,6 @@
     "@radix-ui/react-toggle": "^1.1.0",
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.3",
-    "@supabase/ssr": "^0.1.0",
     "@vercel/analytics": "^1.3.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -97,7 +95,6 @@
     "postcss": "^8.4.47",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "supabase": "^1.207.9",
     "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-animation-delay": "^1.2.0",

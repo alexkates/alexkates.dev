@@ -22,11 +22,6 @@ export const navLinks = [
     href: "/projects",
     label: "projects",
   },
-
-  {
-    href: "/guestbook",
-    label: "guestbook",
-  },
   {
     href: "/about",
     label: "about",
