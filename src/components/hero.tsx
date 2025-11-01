@@ -16,7 +16,7 @@ export default function Hero() {
         <Link href="https://croissant.com?utm_source=alexkates.dev" target="_blank" className="underline">
           Croissant
         </Link>{" "}
-        as Director of Engineering.
+        as a founding engineer.
       </p>
     </>
   );
