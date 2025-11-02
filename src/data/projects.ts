@@ -2,16 +2,6 @@ import Project from "@/types/project";
 
 const Projects: Project[] = [
   {
-    name: "Croissant Chrome Extension",
-    description: "Get Guaranteed Buybacks for 1 year when you shop at favorite brands.",
-    url: "https://croissant.com/chrome-extension?utm_source=alexkates.dev",
-    image: {
-      src: "/croissant-share.png",
-      width: 1080,
-      height: 567,
-    },
-  },
-  {
     name: "Croissant iOS App",
     description: "Track and claim Guaranteed Buybacks with the Croissant iOS App.",
     url: "https://apps.apple.com/us/app/croissant/id1662287582",
@@ -22,15 +12,26 @@ const Projects: Project[] = [
     },
   },
   {
-    name: "CongressGPT",
-    description: "Finally understand what Congress is actually doing.",
+    name: "Croissant Chrome Extension",
+    description: "Get Guaranteed Buybacks for 1 year when you shop at favorite brands.",
+    url: "https://croissant.com/chrome-extension?utm_source=alexkates.dev",
     image: {
-      src: "/congressgpt.png",
+      src: "/croissant-share.png",
       width: 1080,
       height: 567,
     },
-    url: "https://congressgpt.app",
   },
+  {
+    name: "HelloNature",
+    url: "https://hellonature.app",
+    description: "See nature through a new lens. Discover and share wildlife with fellow naturalists.",
+    image: {
+      src: "/hellonature.png",
+      width: 1080,
+      height: 567,
+    },
+  },
+
   {
     name: "Hashnode Next",
     description: "The fastest way to go headless with Hashnode.",
@@ -72,14 +73,14 @@ const Projects: Project[] = [
     },
   },
   {
-    name: "TeamGPT",
-    url: "https://teamgpt.app",
-    description: "TeamGPT adds co-authoring ChatGPT conversations for productivity.",
+    name: "CongressGPT",
+    description: "Finally understand what Congress is actually doing.",
     image: {
-      src: "/teamgpt.png",
+      src: "/congressgpt.png",
       width: 1080,
       height: 567,
     },
+    url: "https://congressgpt.app",
   },
 ];
 
