@@ -62,26 +62,6 @@ const Projects: Project[] = [
       height: 567,
     },
   },
-  {
-    name: "Supajournal",
-    description: "Supajournal uses AI for daily reflections and improved mental health.",
-    url: "https://supajournal.app",
-    image: {
-      src: "/supajournal.png",
-      width: 1080,
-      height: 567,
-    },
-  },
-  {
-    name: "CongressGPT",
-    description: "Finally understand what Congress is actually doing.",
-    image: {
-      src: "/congressgpt.png",
-      width: 1080,
-      height: 567,
-    },
-    url: "https://congressgpt.app",
-  },
 ];
 
 export default Projects;
