@@ -43,9 +43,7 @@ async function SocialList() {
       </SocialListItem>
       <SocialListItem>
         <FileTextIcon {...iconDimensions} />
-        <Link href="https://docs.google.com/document/d/1zRtDKBeNCC8cgrKSRwdsT3CNisbz6oaVNX_QA4F9e2o/" target="_blank">
-          resume
-        </Link>
+        <Link href="/resume">resume</Link>
       </SocialListItem>
     </ul>
   );

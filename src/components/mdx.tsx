@@ -12,12 +12,12 @@ import remarkGfm from "remark-gfm";
 import { Alert, AlertDescription } from "./ui/alert";
 
 const components: Components = {
-  h1: ({ className, node: _n, ...props }) => <h1 className={cn("mb-4 mt-6 text-3xl font-bold", className)} {...props} />,
-  h2: ({ className, node: _n, ...props }) => <h2 className={cn("mb-4 mt-6 text-2xl font-semibold", className)} {...props} />,
-  h3: ({ className, node: _n, ...props }) => <h3 className={cn("mb-4 mt-6 text-xl font-semibold", className)} {...props} />,
-  h4: ({ className, node: _n, ...props }) => <h4 className={cn("text-lg font-semibold", className)} {...props} />,
-  h5: ({ className, node: _n, ...props }) => <h5 className={cn("text-sm font-semibold", className)} {...props} />,
-  h6: ({ className, node: _n, ...props }) => <h6 className={cn("text-base font-semibold", className)} {...props} />,
+  h1: ({ className, node: _n, ...props }) => <h1 className={cn("mb-4 mt-8 text-4xl font-semibold", className)} {...props} />,
+  h2: ({ className, node: _n, ...props }) => <h2 className={cn("mb-3 mt-6 text-3xl font-semibold", className)} {...props} />,
+  h3: ({ className, node: _n, ...props }) => <h3 className={cn("mb-2 mt-4 text-2xl font-medium", className)} {...props} />,
+  h4: ({ className, node: _n, ...props }) => <h4 className={cn("mb-1 mt-2 text-xl font-medium", className)} {...props} />,
+  h5: ({ className, node: _n, ...props }) => <h5 className={cn("mb-0.5 mt-1 text-lg font-normal", className)} {...props} />,
+  h6: ({ className, node: _n, ...props }) => <h6 className={cn("mb-[1px] mt-0.5 text-md font-normal", className)} {...props} />,
   a: ({ className, href, node, target, ref, ...props }) => {
     const tweetMatch = (node?.properties?.href as string)?.match(/twitter\.com\/\w+\/status\/(\d+)/);
 
@@ -39,10 +39,11 @@ const components: Components = {
 
     return <Link className={cn("underline underline-offset-2", className)} href={href ?? ""} target={target ?? "_blank"} {...props} />;
   },
-  strong: ({ className, node: _n, ...props }) => <strong className={cn("font-bold", className)} {...props} />,
-  p: (props) => <p className={cn("my-4", props.className)} {...props} />,
-  ul: ({ className, node: _n, ...props }) => <ul className={cn("ml-6 list-disc", className)} {...props} />,
-  ol: ({ className, node: _n, ...props }) => <ol className={cn("ml-6 list-decimal", className)} {...props} />,
+  strong: ({ className, node: _n, ...props }) => <strong className={cn("font-normal", className)} {...props} />,
+  em: ({ className, node: _n, ...props }) => <em className={cn("text-sm text-muted-foreground not-italic", className)} {...props} />,
+  p: (props) => <p className={cn("mb-2 tracking-tight", props.className)} {...props} />,
+  ul: ({ className, node: _n, ...props }) => <ul className={cn("ml-6 list-disc space-y-2", className)} {...props} />,
+  ol: ({ className, node: _n, ...props }) => <ol className={cn("ml-6 list-decimal space-y-2", className)} {...props} />,
   li: (props) => <li className={cn("mt-2", props.className)} {...props} />,
   blockquote: ({ className, node: _n, ...props }) => <blockquote className={cn("my-3 border-l-2 pl-6 italic", className)} {...props} />,
   img: ({ className, alt, ...props }) => (

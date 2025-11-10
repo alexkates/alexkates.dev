@@ -26,6 +26,10 @@ export const navLinks = [
     href: "/about",
     label: "about",
   },
+  {
+    href: "/resume",
+    label: "resume",
+  },
 ] as const;
 
 export default function MainNav() {
