@@ -18,19 +18,18 @@ TypeScript, React, React Native, Next.js, Expo, Plasmo, shadcn/ui, Tailwind, Nat
 Jun 2022 – Present  
 Croissant helps shoppers get more value from their purchases through Guaranteed Buybacks and Cashback rewards.
 
-- Built Croissant’s Chrome extension, iOS app, and website using Next.js, Expo, Plasmo, React, and React Native — supporting thousands of resale orders and shopping sessions each month.
-- Built the backend with AWS Serverless (Lambda, API Gateway, AppSync, DynamoDB, EventBridge, SQS, S3) and integrated Stripe, PayPal, Venmo, EasyPost, and Shopify.
-- Created an internal Resale Ops tool in Retool that helps three warehouses manage millions in annual GMV.
+- Built Croissant’s Chrome extension, iOS app, and website using Next.js, Expo, Plasmo, React, and React Native supporting thousands of resale orders and shopping sessions each month.
+- Maintained Croissant’s API and database systems using AWS Serverless (Lambda, API Gateway, AppSync, DynamoDB, EventBridge, SQS, S3) and integrated Stripe, PayPal, Venmo, EasyPost, and Shopify.
+- Created an internal Resale Ops platform in Retool that helps three warehouses and 10+ resellers inbound, quality review, and list products valued at millions in annual GMV.
 - Integrated PostHog analytics to track user behavior, funnels, and conversion rates to support customer service and inform product decisions.
-- Hired and mentored six engineers, helping them adopt shared React patterns and deployment workflows.
 
 ### Founding Engineer @ [Credit Genie](https://www.creditgenie.com)
 
 Dec 2019 – Mar 2022  
 Credit Genie helps consumers reduce credit-card debt, manage expenses, and build credit.
 
-- Built and maintained the mobile and web apps with Next.js, Expo, React, and React Native.
-- Developed the serverless backend on AWS (AppSync, Lambda, API Gateway, DynamoDB, S3) and integrated Plaid and TransUnion for financial data.
+- Built Credit Genie's mobile and web apps with Next.js, Expo, React, and React Native supporting thousands of users managing their credit and finances.
+- Built Credit Genie's serverless backend on AWS (AppSync, Lambda, API Gateway, DynamoDB, S3) and integrated Plaid and TransUnion for financial data.
 - Created an ACH processing system that handled millions in transactions each year.
 
 ### Senior Software Engineer @ [LoanBuilder](https://www.loanbuilder.com)
