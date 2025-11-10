@@ -5,7 +5,7 @@ Full-Stack Engineer | TypeScript, Next.js, Expo, AWS, Supabase
 
 ## Profile
 
-Full-stack engineer with 15 years of experience building products for fintech and e-commerce startups. Founding engineer at [Croissant](https://www.croissant.com), [Credit Genie](https://www.creditgenie.com), and [Swift Capital](https://www.loanbuilder.com) (acquired by PayPal). I design and build reliable applications across web, mobile, and browser extensions using TypeScript, React, Next.js, React Native, Expo, Plasmo, and AWS Serverless and Supabase. I regularly use AI coding agents such as GitHub Copilot and Claude to move faster, improve code quality, and focus on product outcomes.
+Full-Stack Engineer with 15 years of experience building products for fintech and e-commerce startups. Founding engineer at [Croissant](https://www.croissant.com), [Credit Genie](https://www.creditgenie.com), and [Swift Capital](https://www.loanbuilder.com) (acquired by PayPal). I design and build reliable applications across web, mobile, and browser extensions using TypeScript, React, Next.js, React Native, Expo, Plasmo, and AWS Serverless and Supabase. I regularly use AI coding agents such as GitHub Copilot and Claude to move faster, improve code quality, and focus on product outcomes.
 
 ## Skills
 
