@@ -37,7 +37,7 @@ const components: Components = {
       return <iframe src={`https://www.youtube.com/embed/${youtubeId}`} allowFullScreen className="h-96 w-full" />;
     }
 
-    return <Link className={cn("underline underline-offset-2", className)} href={href ?? ""} target={target ?? "_blank"} {...props} />;
+    return <Link className={cn("underline underline-offset-1", className)} href={href ?? ""} target={target ?? "_blank"} {...props} />;
   },
   strong: ({ className, node: _n, ...props }) => <strong className={cn("font-normal", className)} {...props} />,
   em: ({ className, node: _n, ...props }) => <em className={cn("text-sm text-muted-foreground not-italic", className)} {...props} />,

@@ -9,7 +9,7 @@ Full-stack engineer with 15 years of experience building products for fintech an
 
 ## Skills
 
-TypeScript, React, React Native, Next.js, Expo, Plasmo, Tailwind, React Query, Zustand, Zod, Reanimated, AWS Lambda, API Gateway, AppSync, DynamoDB, EventBridge, SQS, S3, Supabase, GitHub Copilot, Claude, ChatGPT, VS Code, AWS CDK
+TypeScript, React, React Native, Next.js, Expo, Plasmo, shadcn/ui, Tailwind, Nativewind, Unistyles, Framer Motion, React Query, Zustand, Zod, Reanimated, AWS Lambda, API Gateway, AppSync, DynamoDB, EventBridge, SQS, S3, Supabase, GitHub Copilot, Claude, ChatGPT, VS Code, AWS CDK
 
 ## Experience
 
@@ -21,8 +21,8 @@ Croissant helps shoppers get more value from their purchases through Guaranteed 
 - Built Croissant’s Chrome extension, iOS app, and website using Next.js, Expo, Plasmo, React, and React Native — supporting thousands of resale orders and shopping sessions each month.
 - Built the backend with AWS Serverless (Lambda, API Gateway, AppSync, DynamoDB, EventBridge, SQS, S3) and integrated Stripe, PayPal, Venmo, EasyPost, and Shopify.
 - Created an internal Resale Ops tool in Retool that helps three warehouses manage millions in annual GMV.
+- Integrated PostHog analytics to track user behavior, funnels, and conversion rates to support customer service and inform product decisions.
 - Hired and mentored six engineers, helping them adopt shared React patterns and deployment workflows.
-- Added PostHog tracking across apps to measure usage and improve features based on real data.
 
 ### Founding Engineer @ [Credit Genie](https://www.creditgenie.com)
 
@@ -32,12 +32,11 @@ Credit Genie helps consumers reduce credit-card debt, manage expenses, and build
 - Built and maintained the mobile and web apps with Next.js, Expo, React, and React Native.
 - Developed the serverless backend on AWS (AppSync, Lambda, API Gateway, DynamoDB, S3) and integrated Plaid and TransUnion for financial data.
 - Created an ACH processing system that handled millions in transactions each year.
-- Set up the project’s infrastructure as code and deployment pipelines used by the entire team.
 
-### Senior Software Engineer @ [LoanBuilder (acquired by PayPal)](https://www.loanbuilder.com)
+### Senior Software Engineer @ [LoanBuilder](https://www.loanbuilder.com)
 
 Mar 2016 – Dec 2019  
-LoanBuilder helped small business owners access working capital online and was later acquired by PayPal to power its Business Lending platform.
+LoanBuilder helped small business owners access working capital online and was later [acquired by PayPal in 2017](https://newsroom.paypal-corp.com/PayPal-to-Acquire-Swift-Financial) to power its Business Lending platform.
 
 - Built and maintained the LoanBuilder.com application using AngularJS and ASP.NET WebAPI, enabling customers to apply for and manage loans entirely online.
 - Scaled the product to support hundreds of millions of dollars in funding across thousands of small business loans.
