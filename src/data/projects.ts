@@ -43,6 +43,16 @@ const Projects: Project[] = [
     },
   },
   {
+    name: "DynamoDB Extended",
+    description: "Query history, favorites, and better defaults for AWS DynamoDB Console.",
+    url: "https://dynamodb-extended.app",
+    image: {
+      src: "/dynamodb-extended.png",
+      width: 1200,
+      height: 630,
+    },
+  },
+  {
     name: "OG Tester",
     description: "Trust your Open Graph tags. OG Tester helps you preview your site's meta tags.",
     url: "https://ogtester.app",
