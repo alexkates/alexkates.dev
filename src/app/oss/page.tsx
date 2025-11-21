@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <article className="flex flex-col gap-2">
       <section className={cn(fadeIn, "prose prose-neutral animation-delay-200 dark:prose-invert")}>
-        <p>I maintain a few open source tools that have helped me solve some problems I&apos;ve encountered.</p>
+        <p>Here are a few oss projects I maintain that I hope you find useful.</p>
       </section>
       <section className={cn(fadeIn, "animation-delay-400")}>
         <ProjectList projects={OSSProjects} />

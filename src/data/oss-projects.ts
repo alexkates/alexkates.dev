@@ -51,16 +51,6 @@ const OSSProjects: Project[] = [
       height: 630,
     },
   },
-  {
-    name: "FitGPT",
-    description: "FitGPT generates custom workout and meal plans with AI power.",
-    url: "https://fitgpt.xyz",
-    image: {
-      src: "/fitgpt.png",
-      width: 1080,
-      height: 567,
-    },
-  },
 ];
 
 export default OSSProjects;
