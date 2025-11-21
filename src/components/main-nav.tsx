@@ -23,6 +23,10 @@ export const navLinks = [
     label: "projects",
   },
   {
+    href: "/oss",
+    label: "oss",
+  },
+  {
     href: "/about",
     label: "about",
   },

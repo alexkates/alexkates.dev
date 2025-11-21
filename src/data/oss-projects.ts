@@ -1,26 +1,6 @@
 import Project from "@/types/project";
 
-const Projects: Project[] = [
-  {
-    name: "Croissant iOS App",
-    description: "Track and claim Guaranteed Buybacks with the Croissant iOS App.",
-    url: "https://apps.apple.com/us/app/croissant/id1662287582",
-    image: {
-      src: "/croissant-ios-app.png",
-      width: 1080,
-      height: 567,
-    },
-  },
-  {
-    name: "Croissant Chrome Extension",
-    description: "Get Guaranteed Buybacks for 1 year when you shop at favorite brands.",
-    url: "https://croissant.com/chrome-extension?utm_source=alexkates.dev",
-    image: {
-      src: "/croissant-share.png",
-      width: 1080,
-      height: 567,
-    },
-  },
+const OSSProjects: Project[] = [
   {
     name: "HelloNature",
     url: "https://hellonature.app",
@@ -31,7 +11,6 @@ const Projects: Project[] = [
       height: 567,
     },
   },
-
   {
     name: "Hashnode Next",
     description: "The fastest way to go headless with Hashnode.",
@@ -74,4 +53,4 @@ const Projects: Project[] = [
   },
 ];
 
-export default Projects;
+export default OSSProjects;
