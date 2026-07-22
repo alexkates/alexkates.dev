@@ -1,41 +1,29 @@
 import profile from "@/data/profile";
-import { GitHubLogoIcon, LinkedInLogoIcon, StackIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon, LinkedInLogoIcon, StackIcon } from "@radix-ui/react-icons";
 import { FileTextIcon } from "lucide-react";
-import Link from "next/link";
 import SocialListItem from "./social-list-item";
 
-const iconDimensions = { width: 14, height: 14 };
+const iconDimensions = { width: 16, height: 16 };
 
 function SocialList() {
   return (
-    <ul className="flex flex-col justify-evenly">
-      <SocialListItem>
-        <TwitterLogoIcon {...iconDimensions} />
-        <Link href={profile.links.twitter} target="_blank">
-          twitter
-        </Link>
+    <ul className="flex flex-wrap gap-2">
+      <SocialListItem href={profile.links.twitter} label="X" external>
+        <span aria-hidden className="w-4 text-center font-semibold">
+          𝕏
+        </span>
       </SocialListItem>
-      <SocialListItem>
+      <SocialListItem href={profile.links.github} label="GitHub" external>
         <GitHubLogoIcon {...iconDimensions} />
-        <Link href={profile.links.github} target="_blank">
-          github
-        </Link>
       </SocialListItem>
-      <SocialListItem>
+      <SocialListItem href={profile.links.stackoverflow} label="Stack Overflow" external>
         <StackIcon {...iconDimensions} />
-        <Link href={profile.links.stackoverflow} target="_blank">
-          stackoverflow
-        </Link>
       </SocialListItem>
-      <SocialListItem>
+      <SocialListItem href={profile.links.linkedin} label="LinkedIn" external>
         <LinkedInLogoIcon {...iconDimensions} />
-        <Link href={profile.links.linkedin} target="_blank">
-          linkedin
-        </Link>
       </SocialListItem>
-      <SocialListItem>
+      <SocialListItem href="/resume" label="Resume">
         <FileTextIcon {...iconDimensions} />
-        <Link href="/resume">resume</Link>
       </SocialListItem>
     </ul>
   );

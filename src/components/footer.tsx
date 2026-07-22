@@ -24,7 +24,7 @@ function Footer() {
       </span>
       <span className="text-center">
         Built by&nbsp;
-        <Link href="https://twitter.com/thealexkates" target="_blank" rel="noreferrer" className="underline">
+        <Link href="https://x.com/thealexkates" target="_blank" rel="noreferrer" className="underline">
           Alex Kates
         </Link>
         . The source code is available on&nbsp;

@@ -1,16 +1,15 @@
 const profile = {
   name: "Alex Kates",
-  bio: `Hi, I'm Alex Kates 👋
-I'm a product engineer currently working at Croissant as a Founding Engineer.
-I'm addicted to writing about building, and building things worth writing about.
-Some extracurriculars include
-AWS Community Builder
-Instructor at MIT xPRO Bootcamp
-Volunteer at Tech for Campaigns`,
+  headline: "I build software, travel whenever I can, and feel most at home outside.",
+  bio: [
+    "I'm Alex, a product engineer and founding engineer at Croissant. I like taking ideas from rough sketches to useful products, especially when the path from zero to one is still messy.",
+    "When I'm away from a keyboard, you'll usually find me traveling, hiking, rock climbing, or looking for an excuse to spend the day outside.",
+  ],
+  interests: ["Building software", "Travel", "Hiking", "Rock climbing"],
   links: {
     website: "https://alexkates.dev",
     github: "https://github.com/alexkates",
-    twitter: "https://twitter.com/thealexkates",
+    twitter: "https://x.com/thealexkates",
     stackoverflow: "https://stackoverflow.com/users/3149835/alex?tab=profile",
     linkedin: "https://www.linkedin.com/in/alexanderkates",
   },
