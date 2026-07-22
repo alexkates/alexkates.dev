@@ -21,9 +21,6 @@ fragment Post on Post {
   publishedAt
   slug
   brief
-  comments(first: 0) {
-    totalDocuments
-  }
   views
   readTimeInMinutes
   content {
@@ -32,7 +29,6 @@ fragment Post on Post {
   }
   tags {
     name
-    postsCount
   }
   reactionCount
 }

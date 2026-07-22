@@ -1,4 +1,4 @@
-schema: https://gql.hashnode.com
+schema: https://gql-beta.hashnode.com
 documents: "./src/**/hashnode/**/*.graphql"
 generates:
   ./src/hashnode/generated/schema.graphql:

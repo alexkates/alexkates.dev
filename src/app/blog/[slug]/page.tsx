@@ -18,7 +18,7 @@ export async function generateMetadata(props: Props) {
 
   const title = post?.seo?.title || post?.title;
   const description = post?.seo?.description || post?.subtitle || post?.title;
-  const images = post?.coverImage?.url;
+  const images = post?.coverImage?.url ?? undefined;
 
   const metadata: Metadata = {
     title,

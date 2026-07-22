@@ -10,13 +10,13 @@ type Props = {
 };
 
 function BlogPostList({ posts, query = "", sort = "", tags = "" }: Props) {
-  const sortedPosts = posts.sort((a, b) => {
+  const sortedPosts = posts.toSorted((a, b) => {
     if (sort === SortTypes.Date) {
       return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
     } else if (sort === SortTypes.Views) {
-      return b.views - a.views;
+      return (b.views ?? 0) - (a.views ?? 0);
     } else if (sort === SortTypes.Likes) {
-      return b.reactionCount - a.reactionCount;
+      return (b.reactionCount ?? 0) - (a.reactionCount ?? 0);
     }
 
     return 0;

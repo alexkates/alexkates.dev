@@ -21,7 +21,6 @@ query User($username: String!) {
       id
       name
       image
-      dateAssigned
       description
     }
   }

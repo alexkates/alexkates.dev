@@ -101,20 +101,21 @@ export function Mdx({ code, baseUri }: MdxProps) {
   const sanatize = (code: string) => removeAligns(transformEmbeds(code));
 
   return (
-    <ReactMarkdown
-      components={components}
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[
-        rehypeRaw,
-        rehypeSlug,
-        rehypeAutolinkHeadings,
-        // @ts-expect-error
-        ...(code.includes("```") ? [[rehypeHighlight, { detect: true }]] : []),
-      ]}
-      urlTransform={transformLink}
-      className="mdx"
-    >
-      {sanatize(code)}
-    </ReactMarkdown>
+    <div className="mdx">
+      <ReactMarkdown
+        components={components}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[
+          rehypeRaw,
+          rehypeSlug,
+          rehypeAutolinkHeadings,
+          // @ts-expect-error
+          ...(code.includes("```") ? [[rehypeHighlight, { detect: true }]] : []),
+        ]}
+        urlTransform={transformLink}
+      >
+        {sanatize(code)}
+      </ReactMarkdown>
+    </div>
   );
 }
