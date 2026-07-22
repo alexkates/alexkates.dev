@@ -1,8 +1,0 @@
-query GetPostBySlug($host: String!, $slug: String!) {
-  publication(host: $host) {
-    ...Publication
-    post(slug: $slug) {
-      ...Post
-    }
-  }
-}

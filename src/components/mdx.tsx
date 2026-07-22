@@ -3,7 +3,6 @@ import "highlight.js/styles/github-dark-dimmed.min.css";
 import { Lightbulb } from "lucide-react";
 import Link from "next/link";
 import ReactMarkdown, { Components } from "react-markdown";
-import { Tweet } from "react-tweet";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
@@ -19,16 +18,6 @@ const components: Components = {
   h5: ({ className, node: _n, ...props }) => <h5 className={cn("mb-0.5 mt-1 text-lg font-normal", className)} {...props} />,
   h6: ({ className, node: _n, ...props }) => <h6 className={cn("mb-[1px] mt-0.5 text-md font-normal", className)} {...props} />,
   a: ({ className, href, node, target, ref, ...props }) => {
-    const tweetMatch = (node?.properties?.href as string)?.match(/twitter\.com\/\w+\/status\/(\d+)/);
-
-    if (typeof node?.properties.href === "string" && tweetMatch) {
-      const tweetId = tweetMatch[1];
-
-      if (!tweetId) return null;
-
-      return <Tweet id={tweetId} />;
-    }
-
     if (typeof node?.properties.href === "string" && node?.properties.href.includes("youtube.com")) {
       const youtubeId = new URL(node?.properties.href).searchParams.get("v");
 

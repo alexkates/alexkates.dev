@@ -1,46 +1,47 @@
-import { Post, Publication, Tag } from "@/hashnode/generated/graphql";
+import profile from "@/data/profile";
+import { BlogPost } from "@/types/blog";
 
-export default function createPostJsonLd(publication: Publication, post: Post) {
-  const tags = (post?.tags ?? []).map((tag: Tag) => tag.name);
+export default function createPostJsonLd(post: BlogPost) {
+  const siteUrl = "https://alexkates.dev";
+  const postUrl = `${siteUrl}/blog/${post.slug}`;
 
   const schema = {
     "@context": "https://schema.org/",
     "@type": "Blog",
-    "@id": publication.url,
-    mainEntityOfPage: publication.url,
-    name: publication.title,
-    description: publication.about?.markdown,
+    "@id": `${siteUrl}/blog`,
+    mainEntityOfPage: `${siteUrl}/blog`,
+    name: "Alex Kates | Blog",
+    description: "Articles by Alex Kates about building software and products.",
     publisher: {
-      "@type": publication.isTeam ? "Organization" : "Person",
-      "@id": publication.url,
-      name: publication.title,
+      "@type": "Person",
+      "@id": siteUrl,
+      name: profile.name,
       image: {
         "@type": "ImageObject",
-        url: publication.preferences?.logo || publication.preferences?.darkMode?.logo,
+        url: `${siteUrl}/headshot.png`,
       },
     },
     blogPost: [
       {
         "@type": "BlogPosting",
-        "@id": post?.url,
-        mainEntityOfPage: post?.url,
-        headline: post?.title,
-        name: post?.title,
-        description: post?.seo?.description || post?.brief,
-        datePublished: post?.publishedAt,
-        dateModified: post?.updatedAt,
+        "@id": postUrl,
+        mainEntityOfPage: postUrl,
+        headline: post.title,
+        name: post.title,
+        description: post.description,
+        datePublished: post.publishedAt,
         author: {
           "@type": "Person",
-          "@id": `https://hashnode.com/@${post?.author?.username}`,
-          name: post?.author?.name,
-          url: `https://hashnode.com/@${post?.author?.username}`,
+          "@id": siteUrl,
+          name: profile.name,
+          url: siteUrl,
         },
         image: {
           "@type": "ImageObject",
-          url: post?.coverImage?.url,
+          url: post.coverImage ? `${siteUrl}${post.coverImage}` : `${siteUrl}/opengraph-image.png`,
         },
-        url: post?.url,
-        keywords: tags,
+        url: postUrl,
+        keywords: post.tags,
       },
     ],
   };

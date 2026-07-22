@@ -1,8 +1,8 @@
-import getAllBlogTags from "@/server/get-all-blog-tags";
+import { getAllTags } from "@/lib/blog";
 import Filter from "./filter";
 
 async function BlogTagsFilter() {
-  const allTags = await getAllBlogTags();
+  const allTags = getAllTags();
 
   return <Filter tags={allTags} />;
 }

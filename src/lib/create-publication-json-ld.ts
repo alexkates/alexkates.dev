@@ -1,20 +1,21 @@
-import { Publication } from "@/hashnode/generated/graphql";
+import profile from "@/data/profile";
 
-export const createPublicationJsonLd = (publication: Publication) => {
+export const createPublicationJsonLd = () => {
+  const siteUrl = "https://alexkates.dev";
   const schema = {
     "@context": "https://schema.org/",
     "@type": "Blog",
-    "@id": publication.url,
-    mainEntityOfPage: publication.url,
-    name: publication.title,
-    description: publication.descriptionSEO,
+    "@id": `${siteUrl}/blog`,
+    mainEntityOfPage: `${siteUrl}/blog`,
+    name: "Alex Kates | Blog",
+    description: "Articles by Alex Kates about building software and products.",
     publisher: {
-      "@type": publication.isTeam ? "Organization" : "Person",
-      "@id": publication.url,
-      name: publication.title,
+      "@type": "Person",
+      "@id": siteUrl,
+      name: profile.name,
       image: {
         "@type": "ImageObject",
-        url: publication.preferences?.logo,
+        url: `${siteUrl}/headshot.png`,
       },
     },
   };

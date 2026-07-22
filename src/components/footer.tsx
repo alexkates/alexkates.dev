@@ -3,7 +3,6 @@ import React from "react";
 
 function Footer() {
   const links = [
-    { href: "https://hashnode.com/headless", label: "Hashnode" },
     { href: "https://nextjs.org", label: "Next.js" },
     { href: "https://ui.shadcn.com", label: "shadcn/ui" },
     { href: "https://vercel.com", label: "Vercel" },
@@ -24,10 +23,7 @@ function Footer() {
         .
       </span>
       <span className="text-center">
-        <Link href="https://hashnode-next.dev" target="_blank" rel="noreferrer" className="underline">
-          Template
-        </Link>
-        &nbsp;built by&nbsp;
+        Built by&nbsp;
         <Link href="https://twitter.com/thealexkates" target="_blank" rel="noreferrer" className="underline">
           Alex Kates
         </Link>

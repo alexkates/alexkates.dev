@@ -1,13 +1,9 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
-import Scripts from "@/components/scripts";
 import { Toaster } from "@/components/ui/toaster";
-import { Inter } from "next/font/google";
 import { Metadata } from "next/types";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export async function generateMetadata() {
   const title = "Hi, I'm Alex Kates 👋";
@@ -67,10 +63,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body>
         <div className="container flex min-h-screen flex-col pt-2">
           <Providers>
-            <Scripts />
             <Header />
             <div className="flex-grow">{children}</div>
             <Footer />

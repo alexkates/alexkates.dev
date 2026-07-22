@@ -1,6 +1,5 @@
 import { createPublicationJsonLd } from "@/lib/create-publication-json-ld";
-import getAllBlogPosts from "@/server/get-all-blog-posts";
-import getPublication from "@/server/get-publication";
+import { getAllPosts } from "@/lib/blog";
 import BlogPostList from "./blog-post-list";
 
 type Props = {
@@ -10,8 +9,8 @@ type Props = {
 };
 
 async function AllBlogPostsList({ query, sort, tags }: Props) {
-  const [posts, publication] = await Promise.all([getAllBlogPosts(), getPublication()]);
-  const publicationJsonLd = createPublicationJsonLd(publication);
+  const posts = getAllPosts();
+  const publicationJsonLd = createPublicationJsonLd();
 
   return (
     <>

@@ -1,9 +1,9 @@
-import { Post } from "@/hashnode/generated/graphql";
+import { BlogPost } from "@/types/blog";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 
 type Props = {
-  post: Post;
+  post: BlogPost;
 };
 
 export default function BlogPostListItem({ post }: Props) {
@@ -17,13 +17,11 @@ export default function BlogPostListItem({ post }: Props) {
           <div className="flex items-center text-sm">
             <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
             <span className="mx-1">•</span>
-            <span>{(post.views ?? 0).toLocaleString()} views</span>
-            <span className="mx-1">•</span>
             <span>{post.readTimeInMinutes} min read</span>
           </div>
         </div>
-        <div className="flex flex-wrap gap-x-2">{post.tags?.map((tag) => <Badge key={tag.name}>{tag.name.toLocaleLowerCase()}</Badge>)}</div>
-        <span className="leading-tight text-sm text-muted-foreground">{post.brief}</span>
+        <div className="flex flex-wrap gap-x-2">{post.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}</div>
+        <span className="leading-tight text-sm text-muted-foreground">{post.description}</span>
       </div>
     </li>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Tag } from "@/hashnode/generated/graphql";
+import { BlogTag } from "@/types/blog";
 import { TagIcon } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Button } from "./ui/button";
@@ -15,7 +15,7 @@ import {
 import { ScrollArea } from "./ui/scroll-area";
 
 type Props = {
-  tags: Pick<Tag, "postsCount" | "name">[];
+  tags: BlogTag[];
 };
 
 function Filter({ tags }: Props) {
@@ -72,9 +72,7 @@ function Filter({ tags }: Props) {
             </Button>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {tags
-            .sort((a, b) => b.postsCount - a.postsCount)
-            .map(({ name, postsCount }) => (
+          {tags.map(({ name, postsCount }) => (
               <DropdownMenuCheckboxItem
                 key={name}
                 checked={searchParams.get("tags")?.includes(name)}

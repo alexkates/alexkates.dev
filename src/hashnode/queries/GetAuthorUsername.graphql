@@ -1,8 +1,0 @@
-query GetAuthorUsername($host: String!) {
-  publication(host: $host) {
-    id
-    author {
-      username
-    }
-  }
-}
