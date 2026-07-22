@@ -22,7 +22,7 @@ export default async function Page() {
       </section>
 
       <section className={cn(fadeIn, "flex flex-col gap-2 animation-delay-800")}>
-        <p className="prose prose-neutral dark:prose-invert">I also write about things I build. Check out some of my recent posts.</p>
+        <p className="prose prose-neutral dark:prose-invert">I also write about things I build. Check out some of my most viewed posts.</p>
         <Suspense fallback={<BlogPostListSkeleton />}>
           <TopBlogPostsList />
         </Suspense>

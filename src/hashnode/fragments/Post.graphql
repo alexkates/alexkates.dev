@@ -30,5 +30,4 @@ fragment Post on Post {
   tags {
     name
   }
-  reactionCount
 }

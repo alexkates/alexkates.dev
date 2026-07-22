@@ -20,8 +20,6 @@ export default function BlogPostListItem({ post }: Props) {
             <span>{(post.views ?? 0).toLocaleString()} views</span>
             <span className="mx-1">•</span>
             <span>{post.readTimeInMinutes} min read</span>
-            <span className="mx-1">•</span>
-            <span>{post.reactionCount} likes</span>
           </div>
         </div>
         <div className="flex flex-wrap gap-x-2">{post.tags?.map((tag) => <Badge key={tag.name}>{tag.name.toLocaleLowerCase()}</Badge>)}</div>
