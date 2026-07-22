@@ -1,11 +1,10 @@
 const profile = {
   name: "Alex Kates",
-  headline: "I build software, travel whenever I can, and feel most at home outside.",
+  headline: "I build software and spend as much time outside as I can.",
   bio: [
-    "I'm Alex, a product engineer and founding engineer at Croissant. I like taking ideas from rough sketches to useful products, especially when the path from zero to one is still messy.",
-    "When I'm away from a keyboard, you'll usually find me traveling, hiking, rock climbing, or looking for an excuse to spend the day outside.",
+    "I'm a product engineer and founding engineer at Croissant. I've been building products for startups for the last 15 years.",
+    "Outside of work, I like to travel, hike, and rock climb.",
   ],
-  interests: ["Building software", "Travel", "Hiking", "Rock climbing"],
   links: {
     website: "https://alexkates.dev",
     github: "https://github.com/alexkates",
