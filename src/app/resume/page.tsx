@@ -32,11 +32,15 @@ export default async function Page() {
   const resumeContent = await readFile(resumePath, "utf-8");
 
   return (
-    <main className="flex flex-col gap-4">
-      <div className={cn(fadeIn, "animation-delay-100 flex justify-end print:hidden")}>
+    <main className="flex flex-col gap-6">
+      <div className={cn(fadeIn, "animation-delay-100 flex items-center justify-between rounded-2xl border bg-muted/20 p-3 print:hidden")}>
+        <p className="pl-2 text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Résumé</p>
         <ExportResumeButton resumeMarkdown={resumeContent} />
       </div>
-      <article id="resume-content" className={cn(fadeIn, "animation-delay-200")}>
+      <article
+        id="resume-content"
+        className={cn(fadeIn, "animation-delay-200 rounded-[2rem] border bg-muted/10 p-6 sm:p-8 print:border-0 print:p-0")}
+      >
         <Mdx code={resumeContent} />
       </article>
     </main>

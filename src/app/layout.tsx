@@ -2,13 +2,13 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
 import { Toaster } from "@/components/ui/toaster";
-import { Metadata } from "next/types";
+import { Metadata, Viewport } from "next/types";
 import "./globals.css";
 
 export async function generateMetadata() {
   const title = "Hi, I'm Alex Kates 👋";
   const description =
-    "I'm a product engineer currently working as Director of Engineering at https://croissant.com. I'm passionate about building great products and teams, especially from zero to one.";
+    "Product engineer and founding engineer at Croissant with 15 years of experience building products for fintech and e-commerce startups.";
 
   const images = "https://alexkates.dev/opengraph-image.png";
   const url = "https://alexkates.dev";
@@ -56,6 +56,13 @@ export async function generateMetadata() {
   return metadata;
 }
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,10 +71,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="container flex min-h-screen flex-col pt-2">
+        <a
+          href="#main-content"
+          className="fixed left-4 top-4 z-50 -translate-y-20 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform focus-visible:translate-y-0"
+        >
+          Skip to content
+        </a>
+        <div className="container flex min-h-screen flex-col py-4 sm:py-6">
           <Providers>
             <Header />
-            <div className="flex-grow">{children}</div>
+            <div id="main-content" className="flex-grow" tabIndex={-1}>
+              {children}
+            </div>
             <Footer />
           </Providers>
         </div>

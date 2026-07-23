@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ChevronDown, Download } from "lucide-react";
 
 interface ExportResumeButtonProps {
@@ -165,17 +165,19 @@ export function ExportResumeButton({ resumeMarkdown }: ExportResumeButtonProps) 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <Download className="h-4 w-4" />
-          Export as
-          <ChevronDown className="h-4 w-4" />
+        <Button variant="outline" size="sm">
+          <Download aria-hidden="true" data-icon="inline-start" />
+          Export As
+          <ChevronDown aria-hidden="true" data-icon="inline-end" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={handleExportPDF}>PDF</DropdownMenuItem>
-        <DropdownMenuItem onClick={handleExportWord}>Word</DropdownMenuItem>
-        <DropdownMenuItem onClick={handleExportHTML}>HTML</DropdownMenuItem>
-        <DropdownMenuItem onClick={handleExportMarkdown}>Markdown</DropdownMenuItem>
+        <DropdownMenuGroup>
+          <DropdownMenuItem onClick={handleExportPDF}>PDF</DropdownMenuItem>
+          <DropdownMenuItem onClick={handleExportWord}>Word</DropdownMenuItem>
+          <DropdownMenuItem onClick={handleExportHTML}>HTML</DropdownMenuItem>
+          <DropdownMenuItem onClick={handleExportMarkdown}>Markdown</DropdownMenuItem>
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );

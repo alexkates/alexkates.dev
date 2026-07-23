@@ -26,7 +26,16 @@ function Search({ placeholder }: Props) {
   }, 300);
 
   return (
-    <Input placeholder={placeholder} onChange={(e) => handleSearch(e.target.value)} defaultValue={searchParams.get("query")?.toString()} autoFocus />
+    <Input
+      name="query"
+      aria-label="Search blog posts"
+      placeholder={placeholder}
+      onChange={(event) => handleSearch(event.target.value)}
+      defaultValue={searchParams.get("query")?.toString()}
+      autoComplete="off"
+      spellCheck={false}
+      className="rounded-xl bg-background"
+    />
   );
 }
 

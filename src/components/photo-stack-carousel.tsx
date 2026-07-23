@@ -39,7 +39,7 @@ export default function PhotoStackCarousel() {
               key={photo.src}
               aria-hidden={position !== 0}
               className={cn(
-                "absolute inset-0 overflow-hidden rounded-[2rem] border-4 border-background bg-muted shadow-2xl transition-all duration-500 ease-out",
+                "absolute inset-0 overflow-hidden rounded-[2rem] border-4 border-background bg-muted shadow-2xl transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none",
                 position < positions.length ? positions[position] : "pointer-events-none scale-90 opacity-0",
               )}
             >
@@ -62,9 +62,9 @@ export default function PhotoStackCarousel() {
           type="button"
           onClick={() => move(-1)}
           aria-label="Previous photo"
-          className="grid size-11 place-items-center rounded-full border bg-background shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-muted"
+          className="grid size-11 place-items-center rounded-full border bg-background shadow-sm transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-muted motion-reduce:transform-none"
         >
-          <ChevronLeft className="size-5" />
+          <ChevronLeft aria-hidden="true" className="size-5" />
         </button>
         <p className="min-w-16 text-center font-mono text-xs text-muted-foreground" aria-live="polite">
           {String(activeIndex + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}
@@ -73,9 +73,9 @@ export default function PhotoStackCarousel() {
           type="button"
           onClick={() => move(1)}
           aria-label="Next photo"
-          className="grid size-11 place-items-center rounded-full border bg-background shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-muted"
+          className="grid size-11 place-items-center rounded-full border bg-background shadow-sm transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-muted motion-reduce:transform-none"
         >
-          <ChevronRight className="size-5" />
+          <ChevronRight aria-hidden="true" className="size-5" />
         </button>
       </div>
     </div>

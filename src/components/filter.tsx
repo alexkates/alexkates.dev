@@ -8,6 +8,7 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -59,20 +60,21 @@ function Filter({ tags }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={"outline"} size={"icon"}>
-          <TagIcon className="h-4 w-4" />
+        <Button variant="outline" size="icon" aria-label="Filter by tag" title="Filter by tag" className="rounded-xl">
+          <TagIcon aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <ScrollArea className="h-72">
           <DropdownMenuLabel className="flex items-center justify-between">
             <span>Tags</span>
-            <Button variant={"link"} size={"sm"} className="underline" onClick={clear}>
+            <Button variant="link" size="sm" onClick={clear}>
               Clear
             </Button>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {tags.map(({ name, postsCount }) => (
+          <DropdownMenuGroup>
+            {tags.map(({ name, postsCount }) => (
               <DropdownMenuCheckboxItem
                 key={name}
                 checked={searchParams.get("tags")?.includes(name)}
@@ -82,6 +84,7 @@ function Filter({ tags }: Props) {
                 {name} ({postsCount})
               </DropdownMenuCheckboxItem>
             ))}
+          </DropdownMenuGroup>
         </ScrollArea>
       </DropdownMenuContent>
     </DropdownMenu>

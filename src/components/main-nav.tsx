@@ -10,29 +10,29 @@ import { usePathname } from "next/navigation";
 export const navLinks = [
   {
     href: "/",
-    label: "home",
+    label: "Home",
   },
   {
     href: `/blog?${new URLSearchParams({
       sort: SortTypes.Date,
     }).toString()}`,
-    label: "blog",
+    label: "Blog",
   },
   {
     href: "/projects",
-    label: "projects",
+    label: "Projects",
   },
   {
     href: "/oss",
-    label: "oss",
+    label: "OSS",
   },
   {
     href: "/about",
-    label: "about",
+    label: "About",
   },
   {
     href: "/resume",
-    label: "resume",
+    label: "Résumé",
   },
 ] as const;
 
@@ -42,10 +42,16 @@ export default function MainNav() {
 
   return (
     <NavigationMenu className="hidden md:flex">
-      <NavigationMenuList className="sm:gap-4 gap-2">
+      <NavigationMenuList className="gap-1">
         {navLinks.map((nav) => (
           <NavigationMenuItem key={nav.href}>
-            <Link href={nav.href} className={cn(isActive(nav.href) && "underline", "hover:underline")}>
+            <Link
+              href={nav.href}
+              className={cn(
+                "rounded-full px-3 py-1.5 text-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                isActive(nav.href) && "bg-muted font-medium",
+              )}
+            >
               {nav.label}
             </Link>
           </NavigationMenuItem>

@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const fadeIn = "animate-in fade-in duration-1000 fill-mode-both";
+export const fadeIn = "motion-safe:animate-in motion-safe:fade-in motion-safe:duration-700 motion-safe:fill-mode-both";

@@ -11,9 +11,13 @@ import remarkGfm from "remark-gfm";
 import { Alert, AlertDescription } from "./ui/alert";
 
 const components: Components = {
-  h1: ({ className, node: _n, ...props }) => <h1 className={cn("mb-4 mt-8 text-4xl font-semibold", className)} {...props} />,
-  h2: ({ className, node: _n, ...props }) => <h2 className={cn("mb-3 mt-6 text-3xl font-semibold", className)} {...props} />,
-  h3: ({ className, node: _n, ...props }) => <h3 className={cn("mb-2 mt-4 text-2xl font-medium", className)} {...props} />,
+  h1: ({ className, node: _n, ...props }) => (
+    <h1 className={cn("mb-4 mt-8 text-balance text-4xl font-semibold tracking-tight", className)} {...props} />
+  ),
+  h2: ({ className, node: _n, ...props }) => (
+    <h2 className={cn("mb-3 mt-8 text-balance text-3xl font-semibold tracking-tight", className)} {...props} />
+  ),
+  h3: ({ className, node: _n, ...props }) => <h3 className={cn("mb-2 mt-6 text-balance text-2xl font-medium", className)} {...props} />,
   h4: ({ className, node: _n, ...props }) => <h4 className={cn("mb-1 mt-2 text-xl font-medium", className)} {...props} />,
   h5: ({ className, node: _n, ...props }) => <h5 className={cn("mb-0.5 mt-1 text-lg font-normal", className)} {...props} />,
   h6: ({ className, node: _n, ...props }) => <h6 className={cn("mb-[1px] mt-0.5 text-md font-normal", className)} {...props} />,
@@ -30,16 +34,16 @@ const components: Components = {
   },
   strong: ({ className, node: _n, ...props }) => <strong className={cn("font-normal", className)} {...props} />,
   em: ({ className, node: _n, ...props }) => <em className={cn("text-sm text-muted-foreground not-italic", className)} {...props} />,
-  p: (props) => <p className={cn("mb-2 tracking-tight", props.className)} {...props} />,
-  ul: ({ className, node: _n, ...props }) => <ul className={cn("ml-6 list-disc space-y-2", className)} {...props} />,
-  ol: ({ className, node: _n, ...props }) => <ol className={cn("ml-6 list-decimal space-y-2", className)} {...props} />,
+  p: (props) => <p className={cn("mb-3 text-pretty leading-7 tracking-tight", props.className)} {...props} />,
+  ul: ({ className, node: _n, ...props }) => <ul className={cn("ml-6 flex list-disc flex-col gap-2", className)} {...props} />,
+  ol: ({ className, node: _n, ...props }) => <ol className={cn("ml-6 flex list-decimal flex-col gap-2", className)} {...props} />,
   li: (props) => <li className={cn("mt-2", props.className)} {...props} />,
   blockquote: ({ className, node: _n, ...props }) => <blockquote className={cn("my-3 border-l-2 pl-6 italic", className)} {...props} />,
   img: ({ className, alt, ...props }) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn("inline-block rounded-md", className)} alt={alt} {...props} />
+    <img loading="lazy" className={cn("my-6 inline-block rounded-2xl border", className)} alt={alt} {...props} />
   ),
-  hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
+  hr: ({ ...props }) => <hr className="my-8" {...props} />,
   pre: ({ className, node: _n, ...props }) => <pre className={cn("mb-4 mt-6 overflow-x-auto rounded-lg p-4", className)} {...props} />,
   code: ({ className, children, node, ...props }) => {
     const isMultiline = node?.children?.length ?? 0 > 1;

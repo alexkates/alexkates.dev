@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import BlogPostListSkeleton from "@/components/paragraph-skeleton";
 import ProjectList from "@/components/project-list";
+import SectionHeading from "@/components/section-heading";
 import TopBlogPostsList from "@/components/top-blog-posts-list";
 import Projects from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -11,18 +12,18 @@ export default async function Page() {
   const projects = Projects.filter((project) => project.name.includes("Croissant"));
 
   return (
-    <article className="flex flex-col gap-6">
-      <section className={cn(fadeIn, "animation-delay-200")}>
+    <article className="flex flex-col gap-12">
+      <section>
         <Hero />
       </section>
 
-      <section className={cn(fadeIn, "flex flex-col gap-2 animation-delay-600")}>
-        <p className="prose prose-neutral dark:prose-invert">Here are a few things I&apos;ve been working on recently.</p>
+      <section className={cn(fadeIn, "animation-delay-400 flex flex-col gap-5 border-t pt-8")}>
+        <SectionHeading eyebrow="Selected work" title="What I’m building" description="A few Croissant products I’ve worked on recently." />
         <ProjectList projects={projects} />
       </section>
 
-      <section className={cn(fadeIn, "flex flex-col gap-2 animation-delay-800")}>
-        <p className="prose prose-neutral dark:prose-invert">I also write about things I build. Check out my latest posts.</p>
+      <section className={cn(fadeIn, "animation-delay-600 flex flex-col gap-5 border-t pt-8")}>
+        <SectionHeading eyebrow="Writing" title="Latest posts" description="Notes on software, products, and things I’ve learned while building." />
         <Suspense fallback={<BlogPostListSkeleton />}>
           <TopBlogPostsList />
         </Suspense>
