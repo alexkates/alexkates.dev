@@ -1,31 +1,41 @@
+import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
 import profile from "@/data/profile";
 import { GitHubLogoIcon, LinkedInLogoIcon, StackIcon } from "@radix-ui/react-icons";
 import { FileTextIcon } from "lucide-react";
-import SocialListItem from "./social-list-item";
-
-const iconDimensions = { width: 16, height: 16 };
+import Link from "next/link";
 
 function SocialList() {
   return (
-    <ul className="flex flex-wrap gap-2">
-      <SocialListItem href={profile.links.twitter} label="X" external>
-        <span aria-hidden className="w-4 text-center font-semibold">
-          𝕏
-        </span>
-      </SocialListItem>
-      <SocialListItem href={profile.links.github} label="GitHub" external>
-        <GitHubLogoIcon {...iconDimensions} />
-      </SocialListItem>
-      <SocialListItem href={profile.links.stackoverflow} label="Stack Overflow" external>
-        <StackIcon {...iconDimensions} />
-      </SocialListItem>
-      <SocialListItem href={profile.links.linkedin} label="LinkedIn" external>
-        <LinkedInLogoIcon {...iconDimensions} />
-      </SocialListItem>
-      <SocialListItem href="/resume" label="Resume">
-        <FileTextIcon {...iconDimensions} />
-      </SocialListItem>
-    </ul>
+    <ButtonGroup aria-label="Social links" className="mx-auto md:mx-0">
+      <Button asChild variant="outline" size="icon">
+        <Link href={profile.links.twitter} target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+          <span aria-hidden className="font-semibold">
+            𝕏
+          </span>
+        </Link>
+      </Button>
+      <Button asChild variant="outline" size="icon">
+        <Link href={profile.links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+          <GitHubLogoIcon />
+        </Link>
+      </Button>
+      <Button asChild variant="outline" size="icon">
+        <Link href={profile.links.stackoverflow} target="_blank" rel="noopener noreferrer" aria-label="Stack Overflow" title="Stack Overflow">
+          <StackIcon />
+        </Link>
+      </Button>
+      <Button asChild variant="outline" size="icon">
+        <Link href={profile.links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <LinkedInLogoIcon />
+        </Link>
+      </Button>
+      <Button asChild variant="outline" size="icon">
+        <Link href="/resume" aria-label="Resume" title="Resume">
+          <FileTextIcon />
+        </Link>
+      </Button>
+    </ButtonGroup>
   );
 }
 
