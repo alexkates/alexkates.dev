@@ -1,41 +1,47 @@
 import { Button } from "@/components/ui/button";
-import { ButtonGroup } from "@/components/ui/button-group";
 import profile from "@/data/profile";
-import { GitHubLogoIcon, LinkedInLogoIcon, StackIcon } from "@radix-ui/react-icons";
-import { FileTextIcon } from "lucide-react";
+import { ArrowTopRightIcon, FileTextIcon, GitHubLogoIcon, LinkedInLogoIcon, StackIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 function SocialList() {
   return (
-    <ButtonGroup aria-label="Social links" className="mx-auto md:mx-0">
-      <Button asChild variant="outline" size="icon">
-        <Link href={profile.links.twitter} target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+    <nav aria-label="Social links" className="mx-auto grid w-full max-w-64 grid-cols-2 gap-2 md:mx-0">
+      <Button asChild variant="outline" className="col-span-2 h-11 justify-between px-3">
+        <Link href={profile.links.github} target="_blank" rel="noopener noreferrer">
+          <span className="flex items-center gap-2">
+            <GitHubLogoIcon data-icon="inline-start" />
+            GitHub
+          </span>
+          <ArrowTopRightIcon data-icon="inline-end" />
+        </Link>
+      </Button>
+      <Button asChild variant="outline" className="h-11 justify-start px-3">
+        <Link href={profile.links.twitter} target="_blank" rel="noopener noreferrer">
           <span aria-hidden className="font-semibold">
             𝕏
           </span>
+          <span>X.com</span>
         </Link>
       </Button>
-      <Button asChild variant="outline" size="icon">
-        <Link href={profile.links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-          <GitHubLogoIcon />
+      <Button asChild variant="outline" className="h-11 justify-start px-3">
+        <Link href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">
+          <LinkedInLogoIcon data-icon="inline-start" />
+          LinkedIn
         </Link>
       </Button>
-      <Button asChild variant="outline" size="icon">
-        <Link href={profile.links.stackoverflow} target="_blank" rel="noopener noreferrer" aria-label="Stack Overflow" title="Stack Overflow">
-          <StackIcon />
+      <Button asChild variant="outline" className="h-11 justify-start px-3">
+        <Link href={profile.links.stackoverflow} target="_blank" rel="noopener noreferrer">
+          <StackIcon data-icon="inline-start" />
+          Stack
         </Link>
       </Button>
-      <Button asChild variant="outline" size="icon">
-        <Link href={profile.links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-          <LinkedInLogoIcon />
+      <Button asChild variant="secondary" className="h-11 justify-start px-3">
+        <Link href="/resume">
+          <FileTextIcon data-icon="inline-start" />
+          Resume
         </Link>
       </Button>
-      <Button asChild variant="outline" size="icon">
-        <Link href="/resume" aria-label="Resume" title="Resume">
-          <FileTextIcon />
-        </Link>
-      </Button>
-    </ButtonGroup>
+    </nav>
   );
 }
 
