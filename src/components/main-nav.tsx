@@ -32,7 +32,7 @@ export const navLinks = [
   },
   {
     href: "/resume",
-    label: "Résumé",
+    label: "Resume",
   },
 ] as const;
 

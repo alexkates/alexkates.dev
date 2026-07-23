@@ -34,7 +34,7 @@ export default async function Page() {
   return (
     <main className="flex flex-col gap-6">
       <div className={cn(fadeIn, "animation-delay-100 flex items-center justify-between rounded-2xl border bg-muted/20 p-3 print:hidden")}>
-        <p className="pl-2 text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Résumé</p>
+        <p className="pl-2 text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Resume</p>
         <ExportResumeButton resumeMarkdown={resumeContent} />
       </div>
       <article
