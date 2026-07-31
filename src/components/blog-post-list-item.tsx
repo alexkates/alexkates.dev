@@ -10,7 +10,7 @@ type Props = {
 export default function BlogPostListItem({ post }: Props) {
   return (
     <li>
-      <article className="flex flex-col gap-4 rounded-2xl border bg-muted/20 p-5 transition-[background-color,border-color] duration-200 hover:border-foreground/20 hover:bg-muted/35">
+      <article className="flex flex-col gap-4 rounded-2xl border bg-muted/20 p-5 transition-[transform,background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none hover:-translate-y-1 hover:border-foreground/20 hover:bg-muted/35 hover:shadow-lg">
         <div className="flex flex-col gap-2">
           <Link
             href={`/blog/${post.slug}`}

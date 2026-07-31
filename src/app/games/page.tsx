@@ -45,12 +45,12 @@ export default function Page() {
               href="https://naturetd.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full items-start justify-between gap-3 rounded-2xl border bg-muted/20 p-5 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="group flex h-full items-start justify-between gap-3 rounded-2xl border bg-muted/20 p-5 transition-[transform,box-shadow,border-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none hover:-translate-y-1 hover:border-foreground/20 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <span className="text-lg font-medium leading-snug">Nature TD</span>
               <ArrowUpRightIcon
                 aria-hidden="true"
-                className="mt-0.5 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                className="mt-0.5 shrink-0 text-muted-foreground transition-[transform,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
               />
             </Link>
           </li>
