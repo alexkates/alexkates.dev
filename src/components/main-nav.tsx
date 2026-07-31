@@ -27,6 +27,10 @@ export const navLinks = [
     label: "OSS",
   },
   {
+    href: "/games",
+    label: "Games",
+  },
+  {
     href: "/about",
     label: "About",
   },

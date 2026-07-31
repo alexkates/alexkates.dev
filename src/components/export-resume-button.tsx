@@ -1,14 +1,26 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { CopyIcon } from "@radix-ui/react-icons";
 import { ChevronDown, Download } from "lucide-react";
+import { toast } from "sonner";
 
 interface ExportResumeButtonProps {
   resumeMarkdown: string;
 }
 
 export function ExportResumeButton({ resumeMarkdown }: ExportResumeButtonProps) {
+  const handleCopyForLLM = async () => {
+    try {
+      await navigator.clipboard.writeText(resumeMarkdown.trim());
+      toast.success("Resume copied for LLMs");
+    } catch {
+      toast.error("Could not copy resume");
+    }
+  };
+
   const handleExportPDF = () => {
     // Get the rendered HTML content
     const article = document.querySelector("#resume-content");
@@ -163,22 +175,28 @@ export function ExportResumeButton({ resumeMarkdown }: ExportResumeButtonProps) 
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm">
-          <Download aria-hidden="true" data-icon="inline-start" />
-          Export As
-          <ChevronDown aria-hidden="true" data-icon="inline-end" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuGroup>
-          <DropdownMenuItem onClick={handleExportPDF}>PDF</DropdownMenuItem>
-          <DropdownMenuItem onClick={handleExportWord}>Word</DropdownMenuItem>
-          <DropdownMenuItem onClick={handleExportHTML}>HTML</DropdownMenuItem>
-          <DropdownMenuItem onClick={handleExportMarkdown}>Markdown</DropdownMenuItem>
-        </DropdownMenuGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <ButtonGroup aria-label="Resume actions">
+      <Button variant="outline" size="sm" onClick={() => void handleCopyForLLM()}>
+        <CopyIcon aria-hidden="true" data-icon="inline-start" />
+        Copy for LLM
+      </Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline" size="sm">
+            <Download aria-hidden="true" data-icon="inline-start" />
+            Export As
+            <ChevronDown aria-hidden="true" data-icon="inline-end" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuGroup>
+            <DropdownMenuItem onClick={handleExportPDF}>PDF</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleExportWord}>Word</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleExportHTML}>HTML</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleExportMarkdown}>Markdown</DropdownMenuItem>
+          </DropdownMenuGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </ButtonGroup>
   );
 }
