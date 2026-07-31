@@ -2,6 +2,33 @@ import PageIntro from "@/components/page-intro";
 import { cn } from "@/lib/utils";
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next/types";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const title = "Alex Kates | Games";
+  const description = "Some games I've always wanted to build and can now do so because of AI.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      siteName: "Alex Kates",
+      images: "https://alexkates.dev/opengraph-image.png",
+      url: "https://alexkates.dev/games",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: "https://alexkates.dev/opengraph-image.png",
+      creator: "@thealexkates",
+      site: "@thealexkates",
+    },
+  };
+}
 
 export default function Page() {
   const fadeIn = "animate-in fade-in duration-1000 fill-mode-both";
