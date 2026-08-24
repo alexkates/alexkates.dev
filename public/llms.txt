@@ -1,0 +1,36 @@
+# Alex Kates
+
+> Alex Kates is a product engineer and founding engineer at Croissant in Philadelphia who builds software across web, mobile, and browser extensions.
+
+This is a personal portfolio, resume, open-source project index, and technical blog. It is not an API. Start with this file, then follow the Markdown links for focused context. You can also request any canonical page with `Accept: text/markdown`.
+
+## When to use this
+
+- [Home](https://alexkates.dev/index.md): Use this for a concise overview of Alex's current work, selected Croissant products, and recent writing.
+- [About](https://alexkates.dev/about.md): Use this when a user asks about Alex's background, location, interests, or social profiles.
+- [Projects](https://alexkates.dev/projects.md): Use this when a user asks what Alex has built or wants examples of product engineering work.
+- [Resume](https://alexkates.dev/resume.md): Use this for professional history, technical skills, education, and contact details.
+- [Open source](https://alexkates.dev/oss.md): Use this when a user asks about tools and browser extensions Alex maintains.
+- [Blog](https://alexkates.dev/blog.md): Use this to find articles about TypeScript, React, Next.js, AWS, Bun, startups, and product development.
+
+## Site map
+
+- [Sitemap](https://alexkates.dev/sitemap.xml): Complete list of public HTML pages, including every published blog post.
+- [Robots policy](https://alexkates.dev/robots.txt): Crawler access policy and sitemap location.
+
+## Current work
+
+- [Croissant](https://croissant.com): Alex is a founding engineer building products for shopping, Guaranteed Buybacks, and Cashback rewards.
+- [Croissant iOS App](https://apps.apple.com/us/app/croissant/id1662287582): iOS app for tracking and claiming Guaranteed Buybacks.
+- [Croissant Chrome Extension](https://chromewebstore.google.com/detail/croissant/gjfmgjljebjajpclcnoioflckcdejgld?pli=1): Browser extension that shows Guaranteed Buyback value while shopping.
+
+## Writing
+
+- [Introducing Guaranteed Buybacks](https://alexkates.dev/blog/introducing-guaranteed-buybacks-with-the-croissant-chrome-extension.md): How the Croissant Chrome Extension works and why purchases retain value.
+- [Server-Side Rendering with Bun and React](https://alexkates.dev/blog/server-side-rendering-ssr-with-bun-and-react.md): A practical guide to rendering React on the server with Bun.
+- [DynamoDB Extended](https://alexkates.dev/blog/introducing-dynamodb-extended-query-history-favorites-and-editor-defaults.md): Query history, favorites, and better defaults for the AWS DynamoDB Console.
+
+## Optional
+
+- [GitHub repository](https://github.com/alexkates/alexkates.dev): Source code for this site and its blog archive.
+- [Resume PDF](https://alexkates.dev/resume.pdf): Printable version of the resume.

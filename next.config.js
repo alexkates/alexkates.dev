@@ -8,6 +8,9 @@ const nextConfig = {
       },
     ],
   },
+  outputFileTracingIncludes: {
+    "/*": ["./content/blog/**/*.md", "./public/resume.md"],
+  },
 };
 
 module.exports = nextConfig;

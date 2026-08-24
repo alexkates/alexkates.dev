@@ -12,12 +12,14 @@ export default function BlogPostListItem({ post }: Props) {
     <li>
       <article className="flex flex-col gap-4 rounded-2xl border bg-muted/20 p-5 transition-[transform,background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none hover:-translate-y-1 hover:border-foreground/20 hover:bg-muted/35 hover:shadow-lg">
         <div className="flex flex-col gap-2">
-          <Link
-            href={`/blog/${post.slug}`}
-            className="rounded-sm text-balance text-lg font-semibold leading-snug underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            {post.title}
-          </Link>
+          <h3>
+            <Link
+              href={`/blog/${post.slug}`}
+              className="rounded-sm text-balance text-lg font-semibold leading-snug underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {post.title}
+            </Link>
+          </h3>
           <div className="flex items-center gap-2 text-xs tabular-nums text-muted-foreground">
             <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
             <span aria-hidden="true">·</span>
