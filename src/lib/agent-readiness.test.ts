@@ -1,9 +1,12 @@
+import { GET as getFeed } from "@/app/feed.xml/route";
+import { GET as getLlmsFull } from "@/app/llms-full.txt/route";
 import { GET as getMarkdown } from "@/app/api/markdown/route";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import profile from "@/data/profile";
 import { negotiateRepresentation } from "@/lib/accept";
 import { getMarkdownForPath } from "@/lib/agent-markdown";
+import { getAllPosts } from "@/lib/blog";
 import createOrganizationJsonLd from "@/lib/create-organization-json-ld";
 import createPersonJsonLd from "@/lib/create-person-json-ld";
 import { proxy } from "@/proxy";
@@ -182,6 +185,55 @@ test("publishes an llms.txt file with agent guidance", () => {
   assert.match(llms, /https:\/\/alexkates\.dev\/sitemap\.xml/);
   assert.match(llms, /https:\/\/alexkates\.dev\/contact\.md/);
   assert.match(llms, /https:\/\/alexkates\.dev\/privacy\.md/);
+  assert.match(llms, /https:\/\/alexkates\.dev\/llms-full\.txt/);
+  assert.match(llms, /https:\/\/alexkates\.dev\/feed\.xml/);
+});
+
+test("publishes llms-full.txt with every page and post", async () => {
+  const response = getLlmsFull();
+  const body = await response.text();
+
+  assert.equal(response.headers.get("Content-Type"), "text/markdown; charset=utf-8");
+  for (const marker of ["# Alex Kates", "# About Alex Kates", "# Contact Alex Kates", "# Privacy policy", "# Blog"]) {
+    assert.ok(body.includes(marker), `missing ${marker}`);
+  }
+  const posts = getAllPosts();
+  for (const post of posts) {
+    assert.ok(body.includes(`# ${post.title}`), `missing post ${post.slug}`);
+  }
+  assert.ok(body.length > readFileSync("public/llms.txt", "utf8").length);
+});
+
+test("publishes a valid RSS 2.0 feed", async () => {
+  const response = getFeed();
+  const xml = await response.text();
+
+  assert.equal(response.headers.get("Content-Type"), "application/rss+xml; charset=utf-8");
+  assert.match(xml, /^<\?xml version="1.0" encoding="UTF-8"\?>/);
+  assert.match(xml, /<rss version="2.0" xmlns:atom="http:\/\/www\.w3\.org\/2005\/Atom">/);
+  assert.match(xml, /<title>Alex Kates<\/title>/);
+
+  const items = xml.match(/<item>/g)?.length ?? 0;
+  const posts = getAllPosts();
+  assert.equal(items, posts.length);
+  for (const post of posts) {
+    assert.ok(xml.includes(`<link>https://alexkates.dev/blog/${post.slug}</link>`), `missing item ${post.slug}`);
+    assert.ok(new Date(post.publishedAt).toUTCString().length > 0);
+  }
+});
+
+test("publishes an RFC 9116 security.txt", () => {
+  for (const path of ["public/.well-known/security.txt", "public/security.txt"]) {
+    const file = readFileSync(path, "utf8");
+    const contact = file.match(/^Contact: (.+)$/m)?.[1];
+    const expires = file.match(/^Expires: (.+)$/m)?.[1];
+
+    assert.ok(contact?.startsWith("mailto:"), `${path} missing Contact`);
+    assert.equal(contact, `mailto:${profile.email}`);
+    assert.ok(expires && !Number.isNaN(new Date(expires).getTime()) && new Date(expires).getTime() > Date.now(), `${path} missing future Expires`);
+    assert.match(file, /^Preferred-Languages: en$/m);
+    assert.match(file, /^Canonical: https:\/\/alexkates\.dev\/\.well-known\/security\.txt$/m);
+  }
 });
 
 test("publishes crawler discovery metadata", () => {

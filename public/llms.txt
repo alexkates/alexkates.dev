@@ -17,8 +17,11 @@ This is a personal portfolio, resume, open-source project index, and technical b
 
 ## Site map
 
+- [Full content](https://alexkates.dev/llms-full.txt): Every page and blog post concatenated as Markdown.
+- [RSS feed](https://alexkates.dev/feed.xml): Feed of all published blog posts.
 - [Sitemap](https://alexkates.dev/sitemap.xml): Complete list of public HTML pages, including every published blog post.
 - [Robots policy](https://alexkates.dev/robots.txt): Crawler access policy and sitemap location.
+- [Security policy](https://alexkates.dev/.well-known/security.txt): Security contact and disclosure information.
 
 ## Current work
 

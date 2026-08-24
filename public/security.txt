@@ -1,0 +1,4 @@
+Contact: mailto:daniel.alexander.kates@gmail.com
+Expires: 2027-08-24T00:00:00Z
+Preferred-Languages: en
+Canonical: https://alexkates.dev/.well-known/security.txt
