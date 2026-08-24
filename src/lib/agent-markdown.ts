@@ -49,9 +49,17 @@ ${projectLinks(selectedProjects)}
 
 ${latestPosts.map((post) => `- [${post.title}](${markdownUrl(`/blog/${post.slug}`)}): ${post.description}`).join("\n")}
 
+## Connect
+
+- Email: ${profile.email}
+- [GitHub](${profile.links.github})
+- [X](${profile.links.twitter})
+- [LinkedIn](${profile.links.linkedin})
+
 ## Explore
 
 - [About](${markdownUrl("/about")}): Background, interests, and social links.
+- [Contact](${markdownUrl("/contact")}): How to reach Alex.
 - [Projects](${markdownUrl("/projects")}): A broader list of products I have built.
 - [Open source](${markdownUrl("/oss")}): Small tools and extensions I maintain.
 - [Resume](${markdownUrl("/resume")}): Professional experience and technical skills.
@@ -72,6 +80,40 @@ ${profile.bio.join("\n\n")}
 - [LinkedIn](${profile.links.linkedin})
 - [Stack Overflow](${profile.links.stackoverflow})
 - [Resume](${markdownUrl("/resume")})
+`;
+}
+
+function renderContact() {
+  return `# Contact ${profile.name}
+
+> The fastest way to reach Alex is email. He reads everything and replies as soon as he can, usually within a few days.
+
+- Email: [${profile.email}](mailto:${profile.email}) — good for work inquiries, questions about projects or writing, or just saying hello.
+- [GitHub](${profile.links.github}): Code and open-source projects.
+- [X](${profile.links.twitter}): Most responsive social channel.
+- [LinkedIn](${profile.links.linkedin}): Professional background and messages.
+- [Stack Overflow](${profile.links.stackoverflow}): Public Q&A profile.
+
+Alex is based in Philadelphia, Pennsylvania.
+`;
+}
+
+function renderPrivacy() {
+  return `# Privacy policy
+
+> What alexkates.dev collects, what it does not, and how anything you send is handled.
+
+This is a personal website. There are no accounts, no newsletters, no ads, and no comment forms. Alex does not sell data or build advertising profiles, and visitors are never asked for personal information.
+
+The site is served by Vercel. Like any web host, Vercel processes standard request data such as IP address, user agent, and the requested URL to deliver pages, protect against abuse, and keep the site online.
+
+The site uses Vercel Analytics for anonymous, aggregated usage metrics such as page views. Individual visitors cannot be identified, and no tracking cookies are used.
+
+If you email ${profile.email}, the address and message are used only to read your note and reply. There are no marketing lists.
+
+Pages on this site link to third-party websites such as GitHub, LinkedIn, and Croissant. Their own privacy policies apply once you leave this site.
+
+If the site changes in a way that affects this policy, this page will be updated.
 `;
 }
 
@@ -150,6 +192,12 @@ export function getMarkdownForPath(pathname: string): MarkdownResult {
       break;
     case "/about":
       body = renderAbout();
+      break;
+    case "/contact":
+      body = renderContact();
+      break;
+    case "/privacy":
+      body = renderPrivacy();
       break;
     case "/projects":
       body = renderProjects();

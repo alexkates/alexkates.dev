@@ -2,6 +2,8 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
 import { Toaster } from "@/components/ui/sonner";
+import createOrganizationJsonLd from "@/lib/create-organization-json-ld";
+import createPersonJsonLd from "@/lib/create-person-json-ld";
 import { Metadata, Viewport } from "next/types";
 import "./globals.css";
 
@@ -35,6 +37,9 @@ export async function generateMetadata() {
     title,
     description,
     keywords,
+    alternates: {
+      canonical: "/",
+    },
     openGraph: {
       title,
       description,
@@ -68,6 +73,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personJsonLd = createPersonJsonLd();
+  const organizationJsonLd = createOrganizationJsonLd();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
@@ -87,6 +95,12 @@ export default function RootLayout({
           </Providers>
         </div>
         <Toaster />
+        <script id="person-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+        <script
+          id="organization-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </body>
     </html>
   );

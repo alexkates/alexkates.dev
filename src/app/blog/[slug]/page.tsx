@@ -25,6 +25,9 @@ export async function generateMetadata(props: Props) {
   const metadata: Metadata = {
     title,
     description,
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
     openGraph: {
       title,
       description,

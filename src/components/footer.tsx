@@ -38,6 +38,15 @@ function Footer() {
         </Link>
         .
       </span>
+      <span className="flex items-center justify-center gap-2">
+        <Link href="/contact" className="underline underline-offset-4 transition-colors hover:text-foreground">
+          Contact
+        </Link>
+        <span aria-hidden="true">·</span>
+        <Link href="/privacy" className="underline underline-offset-4 transition-colors hover:text-foreground">
+          Privacy
+        </Link>
+      </span>
     </footer>
   );
 }

@@ -3,7 +3,10 @@ import { getMarkdownForPath } from "@/lib/agent-markdown";
 export const dynamic = "force-dynamic";
 
 export function GET(request: Request) {
-  const pathname = new URL(request.url).searchParams.get("path") ?? "";
+  // Under a proxy rewrite, request.url keeps the original path, so resolve
+  // the target page from the explicit header/query before falling back.
+  const url = new URL(request.url);
+  const pathname = request.headers.get("x-markdown-path") ?? url.searchParams.get("path") ?? url.pathname;
   const result = getMarkdownForPath(pathname);
 
   return new Response(result.body, {

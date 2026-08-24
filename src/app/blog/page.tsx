@@ -5,7 +5,14 @@ import ParagraphSkeleton from "@/components/paragraph-skeleton";
 import Search from "@/components/search";
 import Sort from "@/components/sort";
 import { cn, fadeIn } from "@/lib/utils";
+import { Metadata } from "next/types";
 import { Suspense } from "react";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/blog",
+  },
+};
 
 export default async function Page(props: {
   searchParams?: Promise<{

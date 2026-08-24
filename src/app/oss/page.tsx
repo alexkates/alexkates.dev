@@ -2,6 +2,13 @@ import PageIntro from "@/components/page-intro";
 import ProjectList from "@/components/project-list";
 import OSSProjects from "@/data/oss-projects";
 import { cn } from "@/lib/utils";
+import { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/oss",
+  },
+};
 
 export default function Page() {
   const fadeIn = "animate-in fade-in duration-1000 fill-mode-both";

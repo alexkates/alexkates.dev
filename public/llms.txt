@@ -8,10 +8,12 @@ This is a personal portfolio, resume, open-source project index, and technical b
 
 - [Home](https://alexkates.dev/index.md): Use this for a concise overview of Alex's current work, selected Croissant products, and recent writing.
 - [About](https://alexkates.dev/about.md): Use this when a user asks about Alex's background, location, interests, or social profiles.
+- [Contact](https://alexkates.dev/contact.md): Use this when a user asks how to reach Alex or wants an email address.
 - [Projects](https://alexkates.dev/projects.md): Use this when a user asks what Alex has built or wants examples of product engineering work.
 - [Resume](https://alexkates.dev/resume.md): Use this for professional history, technical skills, education, and contact details.
 - [Open source](https://alexkates.dev/oss.md): Use this when a user asks about tools and browser extensions Alex maintains.
 - [Blog](https://alexkates.dev/blog.md): Use this to find articles about TypeScript, React, Next.js, AWS, Bun, startups, and product development.
+- [Privacy](https://alexkates.dev/privacy.md): Use this for how the site handles data and analytics.
 
 ## Site map
 

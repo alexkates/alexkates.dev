@@ -4,7 +4,7 @@ import type { MetadataRoute } from "next";
 const siteUrl = "https://alexkates.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["/", "/about", "/projects", "/oss", "/games", "/resume", "/blog"];
+  const pages = ["/", "/about", "/contact", "/privacy", "/projects", "/oss", "/games", "/resume", "/blog"];
 
   return [
     ...pages.map((pathname) => ({

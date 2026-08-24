@@ -4,6 +4,13 @@ import SocialList from "@/components/social-list";
 import profile from "@/data/profile";
 import { cn, fadeIn } from "@/lib/utils";
 import Image from "next/image";
+import { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function Page() {
   return (

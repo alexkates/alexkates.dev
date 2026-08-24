@@ -1,5 +1,6 @@
 const profile = {
   name: "Alex Kates",
+  email: "daniel.alexander.kates@gmail.com",
   headline: "I build software and spend as much time outside as I can.",
   bio: [
     "I'm a product engineer in Philadelphia and a founding engineer at Croissant. I've spent the last 15 years building products for fintech and e-commerce startups.",
