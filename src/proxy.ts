@@ -49,12 +49,13 @@ export function proxy(request: NextRequest) {
 
   if (representation === "text/html") return addDocumentHeaders(NextResponse.next(), pathname);
 
-  const url = request.nextUrl.clone();
-  url.pathname = "/api/markdown";
-  url.search = "";
+  const headers = new Headers(request.headers);
+  headers.set("x-markdown-path", pathname);
+
+  const url = new URL("/api/markdown", request.url);
   url.searchParams.set("path", pathname);
 
-  const response = NextResponse.rewrite(url);
+  const response = NextResponse.rewrite(url, { request: { headers } });
   appendVaryAccept(response.headers);
   return response;
 }
