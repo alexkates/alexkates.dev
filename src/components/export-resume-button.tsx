@@ -14,8 +14,23 @@ interface ExportResumeButtonProps {
 export function ExportResumeButton({ resumeMarkdown }: ExportResumeButtonProps) {
   const handleCopyForLLM = async () => {
     try {
-      await navigator.clipboard.writeText(resumeMarkdown.trim());
-      toast.success("Resume copied for LLMs");
+      const prompt = `You are helping evaluate Alex Kates (Full-Stack Engineer, Philadelphia) for a role.
+
+Resume (markdown):
+---
+${resumeMarkdown.trim()}
+---
+
+More context if needed:
+- Resume: https://alexkates.dev/resume.md
+- About: https://alexkates.dev/about.md
+- Projects: https://alexkates.dev/projects.md
+- Contact: https://alexkates.dev/contact.md
+
+Start with a 3-bullet summary of fit for a senior full-stack / founding engineer role, then ask me for the job description to tailor the evaluation.`;
+
+      await navigator.clipboard.writeText(prompt);
+      toast.success("Resume + prompt copied for LLMs");
     } catch {
       toast.error("Could not copy resume");
     }
