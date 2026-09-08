@@ -3,7 +3,7 @@ import Project from "@/types/project";
 const Projects: Project[] = [
   {
     name: "Croissant iOS App",
-    description: "Track and claim Guaranteed Buybacks with the Croissant iOS App.",
+    description: "See what your things are worth. Sell them when you're ready.",
     url: "https://apps.apple.com/us/app/croissant/id1662287582",
     image: {
       src: "/croissant-ios-app.png",
@@ -13,7 +13,7 @@ const Projects: Project[] = [
   },
   {
     name: "Croissant Chrome Extension",
-    description: "Get Guaranteed Buybacks for 1 year when you shop at favorite brands.",
+    description: "Know what you can get back before you buy.",
     url: "https://chromewebstore.google.com/detail/croissant/gjfmgjljebjajpclcnoioflckcdejgld?pli=1",
     image: {
       src: "/croissant-share.png",
@@ -24,7 +24,7 @@ const Projects: Project[] = [
   {
     name: "HelloNature",
     url: "https://hellonature.app",
-    description: "See nature through a new lens. Discover and share wildlife with fellow naturalists.",
+    description: "Find and share the wildlife around you.",
     image: {
       src: "/hellonature.png",
       width: 1080,
@@ -34,7 +34,7 @@ const Projects: Project[] = [
 
   {
     name: "Hashnode Next",
-    description: "The fastest way to go headless with Hashnode.",
+    description: "Your Hashnode blog, with a front end of your own.",
     url: "https://hashnode-next.dev",
     image: {
       src: "/hashnode-next.png",
@@ -54,7 +54,7 @@ const Projects: Project[] = [
   },
   {
     name: "OG Tester",
-    description: "Trust your Open Graph tags. OG Tester helps you preview your site's meta tags.",
+    description: "Check how your site looks when someone shares it.",
     url: "https://ogtester.app",
     image: {
       src: "/ogtester.png",
@@ -74,7 +74,7 @@ const Projects: Project[] = [
   },
   {
     name: "FitGPT",
-    description: "FitGPT generates custom workout and meal plans with AI power.",
+    description: "Make a workout and meal plan with AI.",
     url: "https://fitgpt.xyz",
     image: {
       src: "/fitgpt.png",

@@ -1,54 +1,37 @@
+import profile from "@/data/profile";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import ModeToggle from "./mode-toggle";
 
-function Footer() {
-  const links = [
-    { href: "https://nextjs.org", label: "Next.js" },
-    { href: "https://ui.shadcn.com", label: "shadcn/ui" },
-    { href: "https://vercel.com", label: "Vercel" },
-  ];
-
+export default function Footer() {
   return (
-    <footer className="mt-16 flex flex-col items-center justify-center gap-1 border-t py-8 text-center text-xs leading-relaxed text-muted-foreground">
-      <span>
-        Powered by&nbsp;
-        {links.map((link, index) => (
-          <React.Fragment key={link.href}>
-            <Link href={link.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-foreground">
-              {link.label}
-            </Link>
-            {index < links.length - 1 ? index === links.length - 2 ? <span>&nbsp;and&nbsp;</span> : <span>,&nbsp;</span> : null}
-          </React.Fragment>
-        ))}
-        .
-      </span>
-      <span className="text-center">
-        Built by&nbsp;
-        <Link href="https://x.com/thealexkates" target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-foreground">
-          Alex Kates
-        </Link>
-        . The source code is available on&nbsp;
-        <Link
-          href="https://github.com/alexkates/alexkates.dev"
-          target="_blank"
-          rel="noreferrer"
-          className="underline underline-offset-4 hover:text-foreground"
-        >
-          GitHub
-        </Link>
-        .
-      </span>
-      <span className="flex items-center justify-center gap-2">
-        <Link href="/contact" className="underline underline-offset-4 transition-colors hover:text-foreground">
-          Contact
-        </Link>
-        <span aria-hidden="true">·</span>
-        <Link href="/privacy" className="underline underline-offset-4 transition-colors hover:text-foreground">
-          Privacy
-        </Link>
-      </span>
+    <footer className="site-footer">
+      <div className="footer-top">
+        <div>
+          <p className="eyebrow">Have something in mind?</p>
+          <a className="footer-hello" href={`mailto:${profile.email}`}>
+            Let&apos;s talk.
+            <ArrowUpRight aria-hidden="true" />
+          </a>
+        </div>
+        <div className="footer-socials">
+          <a href={profile.links.github}>GitHub ↗</a>
+          <a href={profile.links.linkedin}>LinkedIn ↗</a>
+          <a href={profile.links.twitter}>X ↗</a>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>
+          Alex Kates <span className="footer-location">· Philadelphia, PA</span>
+        </span>
+        <div>
+          <Link href="/resume">Resume</Link>
+          <Link href="/oss">Open source</Link>
+          <Link href="/games">Games</Link>
+          <Link href="/privacy">Privacy</Link>
+          <ModeToggle />
+        </div>
+      </div>
     </footer>
   );
 }
-
-export default Footer;

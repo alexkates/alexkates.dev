@@ -8,7 +8,7 @@ import { Metadata, Viewport } from "next/types";
 import "./globals.css";
 
 export async function generateMetadata() {
-  const title = "Hi, I'm Alex Kates 👋";
+  const title = "Alex Kates | Product engineer";
   const description =
     "Product engineer and founding engineer at Croissant with 15 years of experience building products for fintech and e-commerce startups.";
 
@@ -66,8 +66,8 @@ export async function generateMetadata() {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: "#f8f7f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#191a18" },
   ],
 };
 
@@ -88,7 +88,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <div className="container flex min-h-screen flex-col py-4 sm:py-6">
+        <div className="site-shell">
           <Providers>
             <Header />
             <div id="main-content" className="flex-grow" tabIndex={-1}>
@@ -99,11 +99,7 @@ export default function RootLayout({
         </div>
         <Toaster />
         <script id="person-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
-        <script
-          id="organization-jsonld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <script id="organization-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       </body>
     </html>
   );

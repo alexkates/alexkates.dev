@@ -1,50 +1,108 @@
-import Bio from "@/components/bio";
-import Hero from "@/components/hero";
 import ProjectList from "@/components/project-list";
-import SectionHeading from "@/components/section-heading";
-import TopBlogPostsList from "@/components/top-blog-posts-list";
 import Projects from "@/data/projects";
-import profile from "@/data/profile";
-import { cn } from "@/lib/utils";
+import TopBlogPosts from "@/data/top-blog-posts";
+import { getAllPosts } from "@/lib/blog";
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
-  const fadeIn = "animate-in fade-in duration-1000 fill-mode-both";
-  const projects = Projects.filter((project) => project.name.includes("Croissant"));
-
+  const selected = [Projects[0], Projects[2], Projects[4], Projects[3]];
+  const posts = getAllPosts();
+  const writing = TopBlogPosts.slice(0, 3).flatMap((slug) => posts.find((post) => post.slug === slug) ?? []);
   return (
-    <main className="flex flex-col gap-12">
-      <section>
-        <Hero />
-      </section>
-
-      <section className={cn(fadeIn, "animation-delay-400 flex flex-col gap-5 border-t pt-8")}>
-        <SectionHeading eyebrow="Selected work" title="What I’m building" description="A few Croissant products I’ve worked on recently." />
-        <ProjectList projects={projects} />
-      </section>
-
-      <section className={cn(fadeIn, "animation-delay-600 flex flex-col gap-5 border-t pt-8")}>
-        <SectionHeading eyebrow="Writing" title="Latest posts" description="Notes on software, products, and things I’ve learned while building." />
-        <TopBlogPostsList />
-      </section>
-
-      <section className={cn(fadeIn, "animation-delay-800 flex flex-col gap-5 border-t pt-8")}>
-        <SectionHeading
-          eyebrow="About"
-          title="The short version"
-          description="Who I am, what I work on, and how to reach me."
-        />
-        <Bio />
-        <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-          The fastest way to reach me is email at{" "}
-          <a href={`mailto:${profile.email}`} className="underline underline-offset-4">
-            {profile.email}
-          </a>
-          . I also respond on X and LinkedIn, or you can use the{" "}
-          <a href="/contact" className="underline underline-offset-4">
-            contact page
-          </a>
-          .
+    <main>
+      <section className="home-hero">
+        <p className="eyebrow hero-eyebrow">
+          <span className="status-dot" />
+          Product engineer · Philadelphia
         </p>
+        <h1>
+          I make things
+          <br />
+          people <span className="serif-word">use.</span>
+        </h1>
+        <div className="hero-bottom">
+          <p>
+            I&apos;m Alex, a founding engineer at <a href="https://croissant.com">Croissant</a>.<br className="desktop-break" /> I build products for the
+            web, your phone, and the things in between.
+          </p>
+          <a className="round-link" href="#work" aria-label="Explore selected work">
+            <ArrowDown aria-hidden="true" />
+          </a>
+        </div>
+        <div className="hero-note">
+          <span>15 years of building software</span>
+          <span>Still curious.</span>
+        </div>
+      </section>
+
+      <section id="work" className="home-section" aria-labelledby="work-heading">
+        <div className="section-top">
+          <h2 id="work-heading">
+            <span className="section-index">01</span>Selected work
+          </h2>
+          <Link className="text-link" href="/projects">
+            All projects <ArrowUpRight aria-hidden="true" />
+          </Link>
+        </div>
+        <ProjectList projects={selected} />
+      </section>
+
+      <section className="home-section writing-section" aria-labelledby="writing-heading">
+        <div className="section-top">
+          <h2 id="writing-heading">
+            <span className="section-index">02</span>A few things I&apos;ve written
+          </h2>
+          <Link className="text-link" href="/blog">
+            All writing <ArrowUpRight aria-hidden="true" />
+          </Link>
+        </div>
+        <div>
+          {writing.map((post) => (
+            <Link className="writing-row" key={post.slug} href={`/blog/${post.slug}`}>
+              <time dateTime={post.publishedAt}>{new Date(post.publishedAt).getUTCFullYear()}</time>
+              <h3>{post.title}</h3>
+              <ArrowUpRight aria-hidden="true" />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="outside-section" aria-labelledby="outside-heading">
+        <div className="outside-copy">
+          <p className="eyebrow">Away from the keyboard</p>
+          <h2 id="outside-heading">
+            Usually
+            <br />
+            <span className="serif-word">somewhere outside.</span>
+          </h2>
+          <p>I spend a lot of my free time hiking, climbing, and finding a reason to go somewhere new.</p>
+          <Link href="/about" className="text-link">
+            A little more about me <ArrowRight aria-hidden="true" />
+          </Link>
+        </div>
+        <Link href="/about" className="photo-pair" aria-label="More about Alex and his travels">
+          <figure className="travel-photo travel-photo-back">
+            <Image
+              src="/about/rock-climbing.webp"
+              alt="Alex rock climbing outdoors"
+              fill
+              sizes="(max-width: 640px) 45vw, 250px"
+              className="object-cover"
+            />
+          </figure>
+          <figure className="travel-photo travel-photo-front">
+            <Image
+              src="/about/zion-hike.webp"
+              alt="Alex hiking above Zion Canyon"
+              fill
+              sizes="(max-width: 640px) 50vw, 280px"
+              className="object-cover"
+            />
+            <figcaption>Zion, Utah</figcaption>
+          </figure>
+        </Link>
       </section>
     </main>
   );

@@ -28,10 +28,10 @@ export default async function Page(props: {
 
   return (
     <main className="mb-8 flex flex-col gap-10">
-      <PageIntro eyebrow="Writing" title="Blog">
-        <p>Notes on software, products, and things I&apos;ve learned while building.</p>
+      <PageIntro eyebrow="Writing" title="Notes from building.">
+        <p>Things I have learned while making software.</p>
       </PageIntro>
-      <section className={cn(fadeIn, "animation-delay-300 flex gap-2 rounded-2xl border bg-muted/20 p-3")} aria-label="Blog controls">
+      <section className={cn(fadeIn, "animation-delay-300 flex flex-wrap gap-2 border-b pb-5")} aria-label="Blog controls">
         <Search placeholder="Search posts…" />
         <Sort />
         <Suspense fallback={null}>

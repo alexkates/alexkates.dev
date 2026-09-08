@@ -58,11 +58,11 @@ export default async function Page(props: Props) {
   const { coverImage, publishedAt, readTimeInMinutes, title, markdown } = post;
 
   return (
-    <>
-      <header className={cn(fadeIn, "animation-delay-200 mb-8 overflow-hidden rounded-[2rem] border bg-muted/20")}>
-        <div className="flex flex-col gap-4 p-6 sm:p-8">
+    <main className="reading-page">
+      <header className={cn(fadeIn, "animation-delay-200 mb-10 overflow-hidden")}>
+        <div className="flex flex-col gap-4 py-10">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Article</p>
-          <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h1>
+          <h1 className="article-title">{title}</h1>
           <div className="flex items-center gap-2 text-xs tabular-nums text-muted-foreground">
             <time dateTime={publishedAt}>{formatDate(publishedAt)}</time>
             <span aria-hidden="true">·</span>
@@ -73,11 +73,11 @@ export default async function Page(props: Props) {
           <Image src={coverImage} alt="" width={1200} height={630} priority className="aspect-[1.9/1] w-full border-t object-cover" />
         ) : null}
       </header>
-      <article className={cn(fadeIn, "animation-delay-400 rounded-[2rem] border bg-muted/10 p-6 sm:p-8")}>
+      <article className={cn(fadeIn, "animation-delay-400 article-body")}>
         <Mdx code={markdown} />
       </article>
       <script id="jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-    </>
+    </main>
   );
 }
 

@@ -1,43 +1,36 @@
-import Bio from "@/components/bio";
+import PageIntro from "@/components/page-intro";
 import PhotoStackCarousel from "@/components/photo-stack-carousel";
-import SocialList from "@/components/social-list";
 import profile from "@/data/profile";
-import { cn, fadeIn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next/types";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/about",
-  },
-};
+export const metadata: Metadata = { title: "About | Alex Kates", alternates: { canonical: "/about" } };
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-12 pb-8">
-      <section
-        className={cn(
-          fadeIn,
-          "animation-delay-200 grid items-start gap-8 rounded-[2rem] border bg-muted/20 p-5 sm:p-7 md:grid-cols-[minmax(220px,0.8fr)_2fr]",
-        )}
-      >
-        <div className="flex flex-col gap-5 md:-mt-2">
-          <div className="relative mx-auto aspect-square w-full max-w-64 overflow-hidden rounded-3xl border bg-muted shadow-sm md:mx-0">
-            <Image src="/headshot.png" alt="Alex Kates" fill priority sizes="(min-width: 768px) 256px, 70vw" className="object-cover" />
-          </div>
-          <SocialList />
-        </div>
-
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-3">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">About me</p>
-            <h1 className="max-w-3xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl">{profile.headline}</h1>
-          </div>
-          <Bio />
+    <main>
+      <PageIntro eyebrow="A little about me" title="Builder. Outdoor person.">
+        <p>I like making useful things and spending time outside.</p>
+      </PageIntro>
+      <section className="about-bio">
+        <Image src="/headshot.png" alt="Alex Kates" width={320} height={320} priority className="about-portrait" />
+        <div>
+          <h2>I&apos;m Alex.</h2>
+          {profile.bio.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+          <p>I like working close to the product, figuring out what matters, and seeing it through to the details.</p>
+          <Link className="text-link" href="/resume">
+            My experience ↗
+          </Link>
         </div>
       </section>
-
-      <section className={cn(fadeIn, "animation-delay-400 border-t pt-10")}>
+      <section className="about-photos">
+        <div className="section-top">
+          <h2>A few places I&apos;ve been</h2>
+          <span className="eyebrow">Out of office</span>
+        </div>
         <PhotoStackCarousel />
       </section>
     </main>
