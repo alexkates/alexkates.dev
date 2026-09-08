@@ -3,7 +3,7 @@ import Project from "@/types/project";
 const Projects: Project[] = [
   {
     name: "Croissant iOS App",
-    description: "See what your things are worth. Sell them when you're ready.",
+    description: "An iOS app for tracking purchases and claiming buybacks.",
     url: "https://apps.apple.com/us/app/croissant/id1662287582",
     image: {
       src: "/croissant-ios-app.png",
@@ -13,7 +13,7 @@ const Projects: Project[] = [
   },
   {
     name: "Croissant Chrome Extension",
-    description: "Know what you can get back before you buy.",
+    description: "A Chrome extension that shows buyback offers while you shop.",
     url: "https://chromewebstore.google.com/detail/croissant/gjfmgjljebjajpclcnoioflckcdejgld?pli=1",
     image: {
       src: "/croissant-share.png",
@@ -24,7 +24,7 @@ const Projects: Project[] = [
   {
     name: "HelloNature",
     url: "https://hellonature.app",
-    description: "Find and share the wildlife around you.",
+    description: "An app for sharing wildlife sightings.",
     image: {
       src: "/hellonature.png",
       width: 1080,
@@ -34,7 +34,7 @@ const Projects: Project[] = [
 
   {
     name: "Hashnode Next",
-    description: "Your Hashnode blog, with a front end of your own.",
+    description: "A Next.js starter for blogs using the Hashnode API.",
     url: "https://hashnode-next.dev",
     image: {
       src: "/hashnode-next.png",
@@ -44,7 +44,7 @@ const Projects: Project[] = [
   },
   {
     name: "DynamoDB Extended",
-    description: "Query history, favorites, and better defaults for AWS DynamoDB Console.",
+    description: "Saved queries and query history for the DynamoDB console.",
     url: "https://dynamodb-extended.app",
     image: {
       src: "/dynamodb-extended.png",
@@ -54,7 +54,7 @@ const Projects: Project[] = [
   },
   {
     name: "OG Tester",
-    description: "Check how your site looks when someone shares it.",
+    description: "A tool for checking Open Graph tags and link previews.",
     url: "https://ogtester.app",
     image: {
       src: "/ogtester.png",
@@ -64,7 +64,7 @@ const Projects: Project[] = [
   },
   {
     name: "React Email Tester",
-    description: "Create and test React Email templates with live preview.",
+    description: "An editor with live previews for React Email templates.",
     url: "https://www.react-email-tester.app",
     image: {
       src: "/react-email-tester.png",
@@ -74,7 +74,7 @@ const Projects: Project[] = [
   },
   {
     name: "FitGPT",
-    description: "Make a workout and meal plan with AI.",
+    description: "An AI app that generates workout and meal plans.",
     url: "https://fitgpt.xyz",
     image: {
       src: "/fitgpt.png",

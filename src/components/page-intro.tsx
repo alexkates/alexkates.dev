@@ -6,14 +6,14 @@ export default function PageIntro({
   children,
   className,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   children?: React.ReactNode;
   className?: string;
 }) {
   return (
     <section className={cn("page-intro", className)}>
-      <p className="eyebrow">{eyebrow}</p>
+      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
       <h1>{title}</h1>
       {children ? <div className="page-description">{children}</div> : null}
     </section>

@@ -6,8 +6,8 @@ export const metadata: Metadata = { title: "Contact | Alex Kates", alternates: {
 export default function Page() {
   return (
     <main>
-      <PageIntro eyebrow="Contact" title="Say hello.">
-        <p>Have a question, an idea, or something you&apos;re working on? Email me.</p>
+      <PageIntro title="Contact">
+        <p>Email is the best way to reach me.</p>
       </PageIntro>
       <a className="contact-email" href={`mailto:${profile.email}`}>
         {profile.email} ↗

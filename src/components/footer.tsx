@@ -8,9 +8,8 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-top">
         <div>
-          <p className="eyebrow">Have something in mind?</p>
           <a className="footer-hello" href={`mailto:${profile.email}`}>
-            Let&apos;s talk.
+            Email me
             <ArrowUpRight aria-hidden="true" />
           </a>
         </div>

@@ -4,7 +4,7 @@ const OSSProjects: Project[] = [
   {
     name: "HelloNature",
     url: "https://hellonature.app",
-    description: "See nature through a new lens. Discover and share wildlife with fellow naturalists.",
+    description: "An app for sharing wildlife sightings.",
     image: {
       src: "/hellonature.png",
       width: 1080,
@@ -13,7 +13,7 @@ const OSSProjects: Project[] = [
   },
   {
     name: "Hashnode Next",
-    description: "The fastest way to go headless with Hashnode.",
+    description: "A Next.js starter for blogs using the Hashnode API.",
     url: "https://hashnode-next.dev",
     image: {
       src: "/hashnode-next.png",
@@ -23,7 +23,7 @@ const OSSProjects: Project[] = [
   },
   {
     name: "DynamoDB Extended",
-    description: "Query history, favorites, and better defaults for AWS DynamoDB Console.",
+    description: "Saved queries and query history for the DynamoDB console.",
     url: "https://dynamodb-extended.app",
     image: {
       src: "/dynamodb-extended.png",
@@ -33,7 +33,7 @@ const OSSProjects: Project[] = [
   },
   {
     name: "OG Tester",
-    description: "Trust your Open Graph tags. OG Tester helps you preview your site's meta tags.",
+    description: "A tool for checking Open Graph tags and link previews.",
     url: "https://ogtester.app",
     image: {
       src: "/ogtester.png",
@@ -43,7 +43,7 @@ const OSSProjects: Project[] = [
   },
   {
     name: "React Email Tester",
-    description: "Create and test React Email templates with live preview.",
+    description: "An editor with live previews for React Email templates.",
     url: "https://www.react-email-tester.app",
     image: {
       src: "/react-email-tester.png",

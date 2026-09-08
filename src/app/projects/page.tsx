@@ -15,8 +15,8 @@ export default function Page() {
 
   return (
     <main className="flex flex-col gap-10">
-      <PageIntro eyebrow="Selected work" title="Things I've built.">
-        <p>Apps, little tools, and ideas I wanted to see in the world.</p>
+      <PageIntro title="Projects">
+        <p>My work at Croissant and some projects of my own.</p>
       </PageIntro>
       <section className={cn(fadeIn, "animation-delay-400")} aria-label="Projects">
         <ProjectList projects={Projects} />

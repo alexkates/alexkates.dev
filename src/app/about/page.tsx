@@ -10,26 +10,21 @@ export const metadata: Metadata = { title: "About | Alex Kates", alternates: { c
 export default function Page() {
   return (
     <main>
-      <PageIntro eyebrow="A little about me" title="Builder. Outdoor person.">
-        <p>I like making useful things and spending time outside.</p>
-      </PageIntro>
+      <PageIntro title="About me" />
       <section className="about-bio">
         <Image src="/headshot.png" alt="Alex Kates" width={320} height={320} priority className="about-portrait" />
         <div>
-          <h2>I&apos;m Alex.</h2>
           {profile.bio.map((p) => (
             <p key={p}>{p}</p>
           ))}
-          <p>I like working close to the product, figuring out what matters, and seeing it through to the details.</p>
           <Link className="text-link" href="/resume">
-            My experience ↗
+            Resume ↗
           </Link>
         </div>
       </section>
       <section className="about-photos">
         <div className="section-top">
-          <h2>A few places I&apos;ve been</h2>
-          <span className="eyebrow">Out of office</span>
+          <h2>Travel photos</h2>
         </div>
         <PhotoStackCarousel />
       </section>

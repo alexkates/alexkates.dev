@@ -18,14 +18,14 @@ export default function Page() {
           Product engineer · Philadelphia
         </p>
         <h1>
-          I make things
+          Alex
           <br />
-          people <span className="serif-word">use.</span>
+          <span className="serif-word">Kates.</span>
         </h1>
         <div className="hero-bottom">
           <p>
-            I&apos;m Alex, a founding engineer at <a href="https://croissant.com">Croissant</a>.<br className="desktop-break" /> I build products for the
-            web, your phone, and the things in between.
+            I&apos;m a founding engineer at <a href="https://croissant.com">Croissant</a>.<br className="desktop-break" /> I work on our web app, iOS
+            app, and browser extension.
           </p>
           <a className="round-link" href="#work" aria-label="Explore selected work">
             <ArrowDown aria-hidden="true" />
@@ -33,7 +33,7 @@ export default function Page() {
         </div>
         <div className="hero-note">
           <span>15 years of building software</span>
-          <span>Still curious.</span>
+          <span>Previously at Credit Genie and PayPal</span>
         </div>
       </section>
 
@@ -52,7 +52,7 @@ export default function Page() {
       <section className="home-section writing-section" aria-labelledby="writing-heading">
         <div className="section-top">
           <h2 id="writing-heading">
-            <span className="section-index">02</span>A few things I&apos;ve written
+            <span className="section-index">02</span>Writing
           </h2>
           <Link className="text-link" href="/blog">
             All writing <ArrowUpRight aria-hidden="true" />
@@ -71,15 +71,14 @@ export default function Page() {
 
       <section className="outside-section" aria-labelledby="outside-heading">
         <div className="outside-copy">
-          <p className="eyebrow">Away from the keyboard</p>
           <h2 id="outside-heading">
-            Usually
+            Outside of
             <br />
-            <span className="serif-word">somewhere outside.</span>
+            <span className="serif-word">work.</span>
           </h2>
-          <p>I spend a lot of my free time hiking, climbing, and finding a reason to go somewhere new.</p>
+          <p>I travel, hike, and rock climb. These are a few photos from my trips.</p>
           <Link href="/about" className="text-link">
-            A little more about me <ArrowRight aria-hidden="true" />
+            About me <ArrowRight aria-hidden="true" />
           </Link>
         </div>
         <Link href="/about" className="photo-pair" aria-label="More about Alex and his travels">
